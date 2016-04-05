@@ -15,7 +15,6 @@
     <font>fonts\fnt_small</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_client</object>
     <object>objects\obj_textbox</object>
     <object>objects\obj_text</object>
     <object>objects\obj_button</object>
@@ -24,7 +23,6 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mainMenu</room>
-    <room>rooms\room0</room>
     <room>rooms\rm_wait</room>
   </rooms>
   <help>
