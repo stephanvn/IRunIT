@@ -8,22 +8,45 @@
   <sprites name="sprites">
     <sprite>sprites\spr_textbox</sprite>
     <sprite>sprites\spr_button</sprite>
+    <sprite>sprites\spr_blue</sprite>
+    <sprite>sprites\spr_red</sprite>
+    <sprite>sprites\spr_server</sprite>
+    <sprite>sprites\spr_choose</sprite>
+    <sprite>sprites\spr_gaylord</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="Server">
+      <script>scripts\NewConnection.gml</script>
+      <script>scripts\ReceiveData.gml</script>
+    </scripts>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_small</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_textbox</object>
-    <object>objects\obj_text</object>
-    <object>objects\obj_button</object>
-    <object>objects\obj_player</object>
-    <object>objects\obj_wait</object>
+    <object>objects\obj_choose_server</object>
+    <object>objects\obj_choose_client</object>
+    <objects name="Client">
+      <object>objects\obj_controller</object>
+      <object>objects\par_textbox</object>
+    </objects>
+    <objects name="Server">
+      <object>objects\obj_server</object>
+      <object>objects\obj_client_dummy</object>
+      <object>objects\obj_project</object>
+      <object>objects\obj_worker</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_mainMenu</room>
-    <room>rooms\rm_wait</room>
+    <room>rooms\rm_startmenu</room>
+    <rooms name="Client">
+      <room>rooms\rm_client</room>
+    </rooms>
+    <rooms name="Server">
+      <room>rooms\rm_server</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
