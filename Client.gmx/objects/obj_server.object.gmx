@@ -25,12 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar players, socketlist;
+            <string>globalvar players, socketlist, gameActive;
 
 broadcast_buffer = buffer_create(32, buffer_fixed, 1);
 player_buffer = buffer_create(16384, buffer_fixed, 1);
 players = ds_map_create();
 socketlist = ds_list_create();
+gameActive = false;
 
 server = network_create_server(network_socket_tcp, 6510, 32); // Start a TCP server on port 6510 with a maximum of 32 players
 
