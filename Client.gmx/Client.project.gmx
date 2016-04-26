@@ -14,6 +14,7 @@
     <sprite>sprites\spr_choose</sprite>
     <sprite>sprites\spr_gaylord</sprite>
     <sprite>sprites\spr_start</sprite>
+    <sprite>sprites\spr_stop</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

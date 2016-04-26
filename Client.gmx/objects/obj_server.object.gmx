@@ -237,8 +237,12 @@ if (debug == true)
     draw_text(0, 0, "Framerate: "+string(fps));
     draw_text(0, 20, "Debug mode is on");
     draw_text(0, 40, "alarm 0: "+string(alarm[0]));
-
-    draw_text(0,100, string(minutes)+":"+string(seconds)); //minutes
+    
+    secondsString = string(seconds);
+    if(seconds &lt; 10) {
+        secondsString = "0" + string(seconds);
+    }
+    draw_text(0,100, string(minutes)+":"+string(secondsString)); //minutes
 }
 </string>
           </argument>
