@@ -15,6 +15,7 @@
     <sprite>sprites\spr_gaylord</sprite>
     <sprite>sprites\spr_start</sprite>
     <sprite>sprites\spr_stop</sprite>
+    <sprite>sprites\spr_cash</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
