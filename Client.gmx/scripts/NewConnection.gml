@@ -1,4 +1,3 @@
-    
     //NOTE: ds_lists are basically GameMaker's version of arraylists. We'll be using ds_lists to store all the connected clients.
 
     var type = ds_map_find_value(async_load, "type"); // Get the type of the arrived message. 1 = connect, else = disconnect
