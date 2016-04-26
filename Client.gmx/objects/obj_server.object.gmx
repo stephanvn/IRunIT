@@ -33,6 +33,8 @@ players = ds_map_create();
 socketlist = ds_list_create();
 gameActive = false;
 
+debug = true;
+
 server = network_create_server(network_socket_tcp, 6510, 32); // Start a TCP server on port 6510 with a maximum of 32 players
 
 if (server &lt; 0) { //network_server_create returns a bool. If it returns &lt;0, the game failed to start a server.
@@ -41,7 +43,32 @@ if (server &lt; 0) { //network_server_create returns a bool. If it returns &lt;0
 }
 
 // Setup a timer so we can broadcast the server IP out to local clients looking...
-alarm[0]=60; 
+
+seconds = 10;
+minutes = 10;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>show_message("stephan is een lieve jongen");
 </string>
           </argument>
         </arguments>
@@ -128,6 +155,31 @@ if( count&gt;0 )
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>    totalseconds = alarm[0] / 60 ;
+    minutes = floor(totalseconds / 60);
+    seconds = floor(totalseconds % 60);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="68">
       <action>
         <libid>1</libid>
@@ -178,6 +230,16 @@ if (eventid == server) {
             <string>draw_set_halign(fa_center);
 draw_self();
 draw_text(x, y + 60, "Server is hosting.#Connected players: "+string(ds_map_size(players)));
+draw_set_halign(fa_left);
+
+if (debug == true) 
+{
+    draw_text(0, 0, "Framerate: "+string(fps));
+    draw_text(0, 20, "Debug mode is on");
+    draw_text(0, 40, "alarm 0: "+string(alarm[0]));
+
+    draw_text(0,100, string(minutes)+":"+string(seconds)); //minutes
+}
 </string>
           </argument>
         </arguments>

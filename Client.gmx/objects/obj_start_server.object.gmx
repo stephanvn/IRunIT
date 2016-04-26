@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gameActive = true;
+            <string>obj_server.alarm[0] = room_speed * 60 * 10;
 </string>
           </argument>
         </arguments>
