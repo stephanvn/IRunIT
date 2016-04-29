@@ -25,27 +25,30 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar players, socketlist, gameActive;
-
-broadcast_buffer = buffer_create(32, buffer_fixed, 1);
-player_buffer = buffer_create(16384, buffer_fixed, 1);
-players = ds_map_create();
-socketlist = ds_list_create();
-gameActive = false;
-
-debug = true;
-
-server = network_create_server(network_socket_tcp, 6510, 32); // Start a TCP server on port 6510 with a maximum of 32 players
-
-if (server &lt; 0) { //network_server_create returns a bool. If it returns &lt;0, the game failed to start a server.
-    show_message("Server failed to start");
-    game_end();
-}
-
-// Setup a timer so we can broadcast the server IP out to local clients looking...
-
-seconds = 10;
-minutes = 10;
+            <string>    globalvar players, socketlist, gameActive;
+    
+    broadcast_buffer = buffer_create(32, buffer_fixed, 1);
+    player_buffer = buffer_create(16384, buffer_fixed, 1);
+    players = ds_map_create();
+    socketlist = ds_list_create();
+    gameActive = false;
+    
+    debug = true;
+    
+    // Start a TCP server on port 6510 with a maximum of 32 players
+    server = network_create_server(network_socket_tcp, 6510, 32);
+    
+    // network_server_create returns a bool. If it returns &lt;0, the game failed to start a server.
+    if (server &lt; 0) 
+    {
+        show_message("Server failed to start");
+        game_end();
+    }
+    
+    // Setup a timer so we can broadcast the server IP out to local clients looking...
+    
+    seconds = 10;
+    minutes = 10;
 </string>
           </argument>
         </arguments>
@@ -197,14 +200,18 @@ if( count&gt;0 )
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Server network control
-var eventid = ds_map_find_value(async_load, "id");
-
-if (eventid == server) {
-    NewConnection(); // If the socket ID is the server one, then we have a new client connecting, OR an old client disconnecting
-} else {
-    ReceiveData(); // If the arrived message isn't a connection or disconnection, we'll process it with this script
-}
+            <string>    /// Server network control
+    var eventid = ds_map_find_value(async_load, "id");
+    
+    if (eventid == server) 
+    {
+        // If the socket ID is the server one, then we have a new client connecting, OR an old client disconnecting
+        NewConnection();
+    } else 
+    {
+        // If the arrived message isn't a connection or disconnection, we'll process it with this script
+        ReceiveData();
+    }
 </string>
           </argument>
         </arguments>
@@ -227,23 +234,23 @@ if (eventid == server) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_center);
-draw_self();
-draw_text(x, y + 60, "Server is hosting.#Connected players: "+string(ds_map_size(players)));
-draw_set_halign(fa_left);
-
-if (debug == true) 
-{
-    draw_text(0, 0, "Framerate: "+string(fps));
-    draw_text(0, 20, "Debug mode is on");
-    draw_text(0, 40, "alarm 0: "+string(alarm[0]));
+            <string>    draw_set_halign(fa_center);
+    draw_self();
+    draw_text(x, y + 60, "Server is hosting.#Connected players: "+string(ds_map_size(players)));
+    draw_set_halign(fa_left);
     
-    secondsString = string(seconds);
-    if(seconds &lt; 10) {
-        secondsString = "0" + string(seconds);
+    if (debug == true) 
+    {
+        draw_text(0, 0, "Framerate: "+string(fps));
+        draw_text(0, 20, "Debug mode is on");
+        draw_text(0, 40, "alarm 0: "+string(alarm[0]));
+        
+        secondsString = string(seconds);
+        if(seconds &lt; 10) {
+            secondsString = "0" + string(seconds);
+        }
+        draw_text(0,100, string(minutes)+":"+string(secondsString)); //minutes
     }
-    draw_text(0,100, string(minutes)+":"+string(secondsString)); //minutes
-}
 </string>
           </argument>
         </arguments>
