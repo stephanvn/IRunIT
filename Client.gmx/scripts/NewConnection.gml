@@ -2,8 +2,10 @@
 
     // Get the type of the arrived message. 1 = connect, else = disconnect
     var type = ds_map_find_value(async_load, "type");
-    var sock = ds_map_find_value(async_load, "socket"); // The ID of the new socket
-    var ip = ds_map_find_value(async_load, "ip"); // The IP that belongs to the new socket
+    // The ID of the new socket
+    var sock = ds_map_find_value(async_load, "socket");
+    // The IP that belongs to the new socket
+    var ip = ds_map_find_value(async_load, "ip");
 
     // If we're dealing with a new connection
     if (type == 1)
