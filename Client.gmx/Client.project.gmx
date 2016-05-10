@@ -29,6 +29,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_small</font>
+    <font>fonts\fnt_large</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_choose_server</object>
