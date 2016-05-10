@@ -13,6 +13,7 @@
     <sprite>sprites\spr_server</sprite>
     <sprite>sprites\spr_choose</sprite>
     <sprite>sprites\spr_gaylord</sprite>
+    <sprite>sprites\spr_teamindicator</sprite>
     <sprite>sprites\spr_start</sprite>
   </sprites>
   <backgrounds name="background"/>
@@ -39,7 +40,6 @@
       <object>objects\obj_project</object>
       <object>objects\obj_worker</object>
       <object>objects\obj_start_server</object>
-      <object>objects\obj_timer</object>
     </objects>
   </objects>
   <rooms name="rooms">

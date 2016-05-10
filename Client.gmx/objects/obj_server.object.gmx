@@ -236,9 +236,17 @@ if (debug == true)
 {
     draw_text(0, 0, "Framerate: "+string(fps));
     draw_text(0, 20, "Debug mode is on");
-    draw_text(0, 40, "alarm 0: "+string(alarm[0]));
+    draw_text(0,60, "Round 1 countdown: "+string(minutes)+":"+string(seconds)); //timer
+}
 
-    draw_text(0,100, string(minutes)+":"+string(seconds)); //minutes
+if (server_state == "starting_game") 
+{
+
+    for (var i=0; i&lt;ds_list_size(players2); i++)
+    {
+        var index = ds_map_find_value(socketlist, sock);
+        
+    }   
 }
 </string>
           </argument>
