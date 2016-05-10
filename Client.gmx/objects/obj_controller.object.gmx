@@ -93,9 +93,14 @@ draw_text(160, 100, "Client connected.#Press and hold Enter to make#your sprite 
 
 draw_text(x, y, keyboard_string);
 
-if (state == "waiting") {
+if (state == "waiting") 
+{
     draw_set_font(fnt_large);
     draw_text(view_xview + view_wview / 2, view_yview + view_hview / 2, "waiting for host to start the game");
+}
+else if (state == "playing") 
+{
+    draw_text(view_xview + view_wview / 2, view_yview + view_hview / 2, "PLAYWINGGGG");
 }
 </string>
           </argument>

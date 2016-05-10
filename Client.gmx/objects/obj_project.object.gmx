@@ -36,8 +36,6 @@ month1_value = 0;
 month2_value = 0;
 month3_value = 0;
 month4_expired = 0;
-
-
 </string>
           </argument>
         </arguments>

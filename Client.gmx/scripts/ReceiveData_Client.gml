@@ -11,4 +11,8 @@
         case 0: // New player joined
             obj_controller.state = "waiting";
         break;
+        
+        case 1: // The server has started the game
+            obj_controller.state = "playing";
+        break;
     }

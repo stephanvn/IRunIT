@@ -25,8 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_server.alarm[0] = room_speed * 60 * 10;
+            <string>///Start the game
+obj_server.alarm[0] = room_speed * 60 * 10;
 sprite_index = spr_stop;
+
+buffer_seek(buff, buffer_seek_start, 0);
+buffer_write(buff, buffer_s16, 1);
+
+for (var i=0; i&lt;ds_list_size(socketlist); i++)
+{
+    network_send_packet( ds_list_find_value(socketlist, i), buff, buffer_tell(buff));
+}
 </string>
           </argument>
         </arguments>
