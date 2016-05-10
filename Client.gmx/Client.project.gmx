@@ -24,6 +24,7 @@
     <scripts name="Server">
       <script>scripts\NewConnection.gml</script>
       <script>scripts\ReceiveData.gml</script>
+      <script>scripts\ReceiveData_Client.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

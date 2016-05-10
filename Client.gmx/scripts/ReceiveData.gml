@@ -12,6 +12,9 @@
     {
         case 1: // New player joined
             other_player.name = buffer_read(buff, buffer_string);
+            buffer_seek(buff, buffer_seek_start, 0);
+            buffer_write(buff, buffer_s16, 0);
+            network_send_packet(sock, buff, buffer_tell(buff));
         break;
         
         case 2: // Change sprite (client pressed enter)
