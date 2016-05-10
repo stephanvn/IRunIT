@@ -32,6 +32,7 @@ player_buffer = buffer_create(16384, buffer_fixed, 1);
 players = ds_map_create();
 socketlist = ds_list_create();
 gameActive = false;
+server_state = "Waiting to start...";
 
 debug = true;
 
@@ -241,7 +242,6 @@ if (debug == true)
 
 if (server_state == "starting_game") 
 {
-
     for (var i=0; i&lt;ds_list_size(players2); i++)
     {
         var index = ds_map_find_value(socketlist, sock);
