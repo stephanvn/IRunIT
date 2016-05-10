@@ -237,7 +237,9 @@ if (debug == true)
 {
     draw_text(0, 0, "Framerate: "+string(fps));
     draw_text(0, 20, "Debug mode is on");
-    draw_text(0,60, "Round 1 countdown: "+string(minutes)+":"+string(seconds)); //timer
+    if(gameActive) {
+        draw_text(0,60, "Round 1 countdown: "+string(minutes)+":"+string(seconds)); //timer
+    }
 }
 
 if (server_state == "starting_game") 

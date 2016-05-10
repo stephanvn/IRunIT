@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>obj_server.alarm[0] = room_speed * 60 * 10;
 sprite_index = spr_stop;
+gameActive = true;
 </string>
           </argument>
         </arguments>
