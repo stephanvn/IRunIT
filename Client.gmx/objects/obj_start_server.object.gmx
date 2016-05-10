@@ -25,27 +25,27 @@
         <arguments>
           <argument>
             <kind>1</kind>
-<<<<<<< HEAD
             <string>///Start the game
-obj_server.alarm[0] = room_speed * 60 * 10;
-sprite_index = spr_stop;
 
-buffer_seek(buff, buffer_seek_start, 0);
-buffer_write(buff, buffer_s16, 1);
-
-for (var i=0; i&lt;ds_list_size(socketlist); i++)
-{
-    network_send_packet( ds_list_find_value(socketlist, i), buff, buffer_tell(buff));
-=======
-            <string>if(!gameActive) {
-    obj_server.alarm[0] = room_speed * 60 * 10;
+if(!gameActive) {
     sprite_index = spr_stop;
     gameActive = true;
+    obj_server.alarm[0] = room_speed * 60 * 10;
+    sprite_index = spr_stop;
+    with (obj_server) 
+    {
+        buffer_seek(buff, buffer_seek_start, 0);
+        buffer_write(buff, buffer_s16, 1);
+        for (var i=0; i&lt;ds_list_size(socketlist); i++)
+        {
+            network_send_packet( ds_list_find_value(socketlist, i), buff, buffer_tell(buff));
+        }
+    }
 }
-else {
+else 
+{
     sprite_index = spr_start;
     gameActive = false;
->>>>>>> origin/dev
 }
 </string>
           </argument>
