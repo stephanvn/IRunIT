@@ -89,18 +89,18 @@ else {
           <argument>
             <kind>1</kind>
             <string>draw_set_halign(fa_center);
-draw_text(160, 100, "Client connected.#Press and hold Enter to make#your sprite turn red on the server");
+ draw_text(view_wview / 2, view_hview / 2, "Client connected.#Press and hold Enter to make#your sprite turn red on the server");
 
 draw_text(x, y, keyboard_string);
 
 if (state == "waiting") 
 {
     draw_set_font(fnt_large);
-    draw_text(view_xview + view_wview / 2, view_yview + view_hview / 2, "waiting for host to start the game");
+    draw_text(view_wview / 2, view_hview / 2, "waiting for host to start the game");
 }
 else if (state == "playing") 
 {
-    draw_text(view_xview + view_wview / 2, view_yview + view_hview / 2, "PLAYWINGGGG");
+    draw_text(view_wview / 2, view_hview / 2, "PLAYWINGGGG");
 }
 </string>
           </argument>

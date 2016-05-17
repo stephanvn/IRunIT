@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Start the game
 
-if(!gameActive) {
+if (!gameActive) {
     sprite_index = spr_stop;
     gameActive = true;
     obj_server.alarm[0] = room_speed * 60 * 10;
@@ -40,6 +40,7 @@ if(!gameActive) {
         {
             network_send_packet( ds_list_find_value(socketlist, i), buff, buffer_tell(buff));
         }
+        SetUpFirstRound();
     }
 }
 else 
