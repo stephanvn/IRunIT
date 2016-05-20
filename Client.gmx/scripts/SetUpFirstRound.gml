@@ -2,23 +2,12 @@ var amount_projects = 2;
 
 for (var i=0; i<ds_map_size(players); i++) 
 {
-    amount_projects += 2;       
+    amount_projects += 2;
 }
 
-for (var j=0; j<amount_projects; j++) 
-{
-    var p = instance_create(0, 0, obj_project);
-    p.name = "Test project";
-    p.category = 1;
-    
-    p.project_id = j;
-    p.req_blue = 2;
-    p.req_red = 2;
-    p.req_yellow = 2;
-    p.req_green = 2;
-    
-    p.month1_value = 100;
-    p.month2_value = 90;
-    p.month3_value = 80;
-    p.month4_expired = 70;
-}
+GenerateProjects(amount_projects, 1);
+buffer_seek(buff, buffer_seek_start, 0);
+buffer_write(buff, buffer_s16, 1); //Write a single byte (1) as an identifier for this message
+buffer_write(buff, buffer_s16, amount_projects); //Write the amount of projects we just generated so the client knows what's up
+WriteProjectsToBuffer(projects1);
+SendToEveryone();

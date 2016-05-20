@@ -17,6 +17,7 @@
     <sprite>sprites\spr_start</sprite>
     <sprite>sprites\spr_stop</sprite>
     <sprite>sprites\spr_cash</sprite>
+    <sprite>sprites\spr_project_icon</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -24,10 +25,14 @@
     <scripts name="Server">
       <script>scripts\NewConnection.gml</script>
       <script>scripts\ReceiveData.gml</script>
+      <script>scripts\SetUpFirstRound.gml</script>
+      <script>scripts\GenerateProjects.gml</script>
+      <script>scripts\SendToEveryone.gml</script>
     </scripts>
     <scripts name="Client">
       <script>scripts\ReceiveData_Client.gml</script>
     </scripts>
+    <script>scripts\WriteProjectsToBuffer.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_small</font>

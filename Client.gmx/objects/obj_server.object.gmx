@@ -25,8 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar players, socketlist, gameActive;
+            <string>globalvar players, socketlist, gameActive, projects1, projects2, projects3;
 
+projects1 = ds_map_create();
+projects2 = ds_map_create();
+projects3 = ds_map_create();
 broadcast_buffer = buffer_create(32, buffer_fixed, 1);
 player_buffer = buffer_create(16384, buffer_fixed, 1);
 buff = buffer_create(256, buffer_grow, 1); // Create a buffer for the network messages
