@@ -12,7 +12,23 @@
             obj_controller.state = "waiting";
         break;
         
-        case 1: // The server has started the game
+        case 1: // The server has started the game and the server has sent us the available projects
             obj_controller.state = "playing";
+            var amount = buffer_read(buff, buffer_u8);
+            for (var i=0; i<amount; i++) 
+            {
+                var p = instance_create(0, 0, obj_project);
+                p.project_id = buffer_read(buff, buffer_u8); 
+                p.name = buffer_read(buff, buffer_string); 
+                p.category = buffer_read(buff, buffer_u8); 
+                p.req_blue = buffer_read(buff, buffer_u8); 
+                p.req_red = buffer_read(buff, buffer_u8); 
+                p.req_yellow = buffer_read(buff, buffer_u8); 
+                p.req_green = buffer_read(buff, buffer_u8); 
+                p.month1_value = buffer_read(buff, buffer_s16); 
+                p.month2_value = buffer_read(buff, buffer_s16); 
+                p.month3_value = buffer_read(buff, buffer_s16); 
+                p.month4_expired = buffer_read(buff, buffer_s16); 
+            }
         break;
     }
