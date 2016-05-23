@@ -18,6 +18,7 @@
     <sprite>sprites\spr_stop</sprite>
     <sprite>sprites\spr_cash</sprite>
     <sprite>sprites\spr_project_icon</sprite>
+    <sprite>sprites\spr_bieden</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -44,6 +45,7 @@
     <objects name="Client">
       <object>objects\obj_controller</object>
       <object>objects\par_textbox</object>
+      <object>objects\obj_bieden</object>
     </objects>
     <objects name="Server">
       <object>objects\obj_server</object>
@@ -57,6 +59,7 @@
     <room>rooms\rm_startmenu</room>
     <rooms name="Client">
       <room>rooms\rm_client</room>
+      <room>rooms\rm_bieden</room>
     </rooms>
     <rooms name="Server">
       <room>rooms\rm_server</room>
