@@ -59,7 +59,6 @@
     <room>rooms\rm_startmenu</room>
     <rooms name="Client">
       <room>rooms\rm_client</room>
-      <room>rooms\rm_bieden</room>
     </rooms>
     <rooms name="Server">
       <room>rooms\rm_server</room>
