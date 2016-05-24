@@ -6,6 +6,7 @@
     var sock = ds_map_find_value(async_load, "id");
     // Get the player object that belongs to this socket
     var other_player = ds_map_find_value(players, sock );
+
     
     // Is this a KEY command?
     switch (cmd)
@@ -20,19 +21,7 @@
         
         case 2: // Receive a bid from a client
             other_player.bid = buffer_read(buff, buffer_s16);
-            var error = false;
-            for (var i=0; i<ds_list_size(socketlist); i++) 
-            {
-                var playerloop = ds_map_find_value(players, ds_list_find_value(socketlist, i));
-                if (playerloop.bid == -1) 
-                {
-                    error = true;
-                }
-            }
-            if (error == false) 
-            {
-                show_message("iedereen heeft geboden");
-            }
+            WaitForBids();
         break;
     
         case 3: // Change sprite back (client released enter)
