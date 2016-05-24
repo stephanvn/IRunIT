@@ -19,6 +19,13 @@
     <sprite>sprites\spr_project_icon</sprite>
     <sprite>sprites\spr_bid_button</sprite>
     <sprite>sprites\spr_gaylord</sprite>
+    <sprites name="Gamescreen">
+      <sprite>sprites\spr_cardpile1</sprite>
+      <sprite>sprites\spr_level</sprite>
+      <sprite>sprites\spr_emptycard</sprite>
+      <sprite>sprites\spr_projectempty</sprite>
+      <sprite>sprites\spr_cardpile2</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -46,6 +53,14 @@
       <object>objects\obj_controller</object>
       <object>objects\par_textbox</object>
       <object>objects\obj_bid_button</object>
+      <objects name="Gamescreen">
+        <object>objects\obj_cardpile1</object>
+        <object>objects\obj_cardpile2</object>
+        <object>objects\obj_emptycard</object>
+        <object>objects\obj_emptycardfield</object>
+        <object>objects\obj_level</object>
+        <object>objects\obj_projectempty</object>
+      </objects>
     </objects>
     <objects name="Server">
       <object>objects\obj_server</object>
@@ -59,6 +74,7 @@
     <room>rooms\rm_startmenu</room>
     <rooms name="Client">
       <room>rooms\rm_client</room>
+      <room>rooms\rm_gamescreen</room>
     </rooms>
     <rooms name="Server">
       <room>rooms\rm_server</room>
