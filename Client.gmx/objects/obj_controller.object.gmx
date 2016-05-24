@@ -92,7 +92,8 @@ else {
             <kind>1</kind>
             <string>draw_set_halign(fa_left);
 draw_text(0, 0, "Game state: " + state);
-draw_text(700, 0, "Budget: " + string(capital));
+draw_sprite(spr_cash, image_index, 735, 15);
+draw_text(765, 8,  string(capital));
 </string>
           </argument>
         </arguments>
