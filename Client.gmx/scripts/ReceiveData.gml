@@ -17,8 +17,8 @@
             network_send_packet(sock, buff, buffer_tell(buff));
         break;
         
-        case 2: // Change sprite (client pressed enter)
-            //other_player.sprite_index = spr_red;
+        case 2: // Receive a bid from a client
+            other_player.bid = buffer_read(buff, buffer_s16);
         break;
     
         case 3: // Change sprite back (client released enter)
