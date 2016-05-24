@@ -41,7 +41,7 @@ skill_communication = 0;
 skill_planning = 0;
 
 player_number = 0;
-bid = 0;
+bid = -1;
 </string>
           </argument>
         </arguments>
