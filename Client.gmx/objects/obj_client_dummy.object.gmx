@@ -41,7 +41,6 @@ skill_communication = 0;
 skill_planning = 0;
 
 player_number = 0;
-sprite_index = spr_blue;
 </string>
           </argument>
         </arguments>

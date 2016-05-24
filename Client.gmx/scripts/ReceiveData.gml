@@ -18,11 +18,11 @@
         break;
         
         case 2: // Change sprite (client pressed enter)
-            other_player.sprite_index = spr_red;
+            //other_player.sprite_index = spr_red;
         break;
     
         case 3: // Change sprite back (client released enter)
-            other_player.sprite_index = spr_blue;
+            //other_player.sprite_index = spr_blue;
         break;    
             
         case 4: // You can keep adding network events endlessly like this
