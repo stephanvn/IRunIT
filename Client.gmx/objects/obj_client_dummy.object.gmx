@@ -64,8 +64,8 @@ bid = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = 128 + (128 * player_number);
-y = 200;
+            <string>x = 50 + (90 * player_number);
+y = 60;
 </string>
           </argument>
         </arguments>
