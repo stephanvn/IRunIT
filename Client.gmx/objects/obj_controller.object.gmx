@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>name = get_string("Enter your name","");
+            <string>globalvar buff, client;
+name = get_string("Enter your name","");
 buff = buffer_create(256, buffer_grow, 1); // Create a buffer for the network messages
 client = network_create_socket(network_socket_tcp); // Create a TCP/IP socket
 var connection = network_connect(client, "localhost", 6510); // Connect to our server
@@ -88,20 +89,8 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_center);
- draw_text(view_wview / 2, view_hview / 2, "Client connected.#Press and hold Enter to make#your sprite turn red on the server");
-
-draw_text(x, y, keyboard_string);
-
-if (state == "waiting") 
-{
-    draw_set_font(fnt_large);
-    draw_text(view_wview / 2, (view_hview / 2) - 20, "waiting for host to start the game");
-}
-else if (state == "playing") 
-{
-    draw_text(view_wview / 2, (view_hview / 2) - 20, "PLAYWINGGGG");
-}
+            <string>draw_set_halign(fa_left);
+draw_text(0, 0, "Game state: " + state);
 </string>
           </argument>
         </arguments>

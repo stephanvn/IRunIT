@@ -54,8 +54,8 @@
       <object>objects\par_textbox</object>
       <object>objects\obj_bid_button</object>
       <objects name="Gamescreen">
-        <object>objects\obj_cardpile1</object>
-        <object>objects\obj_cardpile2</object>
+        <object>objects\obj_client_dummy</object>
+        <object>objects\obj_client_dummy</object>
         <object>objects\obj_emptycard</object>
         <object>objects\obj_emptycardfield</object>
         <object>objects\obj_level</object>
