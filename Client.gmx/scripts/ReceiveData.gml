@@ -21,7 +21,11 @@
         
         case 2: // Receive a bid from a client
             other_player.bid = buffer_read(buff, buffer_s16);
+            ds_map_add(bidlist, "bid", other_player.bid);
+            ds_map_add(bidlist, "player_number", other_player.player_number);
+
             WaitForBids();
+            
         break;
     
         case 3: // Change sprite back (client released enter)
