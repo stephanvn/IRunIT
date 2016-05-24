@@ -50,13 +50,17 @@
             <kind>1</kind>
             <string>if(obj_controller.state == "bidding") {
     bid_fee = real(get_string("Voer een bied bedrag in", ""));
-    
-    buffer_seek(buff, buffer_seek_start, 0); // You always have to do this before writing to a buffer. (it resets it to the 0 position)
-    buffer_write(buff, buffer_s16, 2 ); // Write the unique identifier so that the server will be able to recognize what kind of message this is
-    buffer_write(buff, buffer_s16, bid_fee); // Write the bid_fee you just entered to the buffer
-    network_send_packet(client, buff, buffer_tell(buff)); // Send this message to the server
-    
-    obj_controller.state = "bidding_done";
+    if(bid_fee &lt;= obj_controller.capital &amp;&amp; bid_fee &gt;= 0) {
+        buffer_seek(buff, buffer_seek_start, 0); // You always have to do this before writing to a buffer. (it resets it to the 0 position)
+        buffer_write(buff, buffer_s16, 2 ); // Write the unique identifier so that the server will be able to recognize what kind of message this is
+        buffer_write(buff, buffer_s16, bid_fee); // Write the bid_fee you just entered to the buffer
+        network_send_packet(client, buff, buffer_tell(buff)); // Send this message to the server
+        
+        obj_controller.state = "bidding_done";
+    }
+    else {
+        show_message("Het bod is hoger dan het beschikbare budget");
+    }
 }
 </string>
           </argument>
@@ -81,7 +85,9 @@
           <argument>
             <kind>1</kind>
             <string>if(obj_controller.state == "bidding") {
-    draw_self();
+    draw_self();    
+}
+if(obj_controller.state == "bidding_done") {
     draw_text(view_wview / 2, (view_hview / 2) - 30, "€" + string(bid_fee) + " geboden");
 }
 </string>
