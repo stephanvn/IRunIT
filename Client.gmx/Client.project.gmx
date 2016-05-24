@@ -38,6 +38,7 @@
       <script>scripts\SendToEveryone.gml</script>
       <script>scripts\WriteProjectsToBuffer.gml</script>
       <script>scripts\WaitForBids.gml</script>
+      <script>scripts\FindHighestBidder.gml</script>
     </scripts>
     <scripts name="Client">
       <script>scripts\ReceiveData_Client.gml</script>

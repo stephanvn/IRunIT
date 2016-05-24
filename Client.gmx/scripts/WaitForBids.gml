@@ -11,4 +11,5 @@ var error = false;
     if (error == false) 
     {
         show_message("iedereen heeft geboden");
+        FindHighestBidder();
     }
