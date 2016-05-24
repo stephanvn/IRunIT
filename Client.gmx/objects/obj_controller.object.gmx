@@ -96,11 +96,11 @@ draw_text(x, y, keyboard_string);
 if (state == "waiting") 
 {
     draw_set_font(fnt_large);
-    draw_text(view_wview / 2, view_hview / 2, "waiting for host to start the game");
+    draw_text(view_wview / 2, (view_hview / 2) - 20, "waiting for host to start the game");
 }
 else if (state == "playing") 
 {
-    draw_text(view_wview / 2, view_hview / 2, "PLAYWINGGGG");
+    draw_text(view_wview / 2, (view_hview / 2) - 20, "PLAYWINGGGG");
 }
 </string>
           </argument>
