@@ -31,6 +31,7 @@ buff = buffer_create(256, buffer_grow, 1); // Create a buffer for the network me
 client = network_create_socket(network_socket_tcp); // Create a TCP/IP socket
 var connection = network_connect(client, "localhost", 6510); // Connect to our server
 state = "init";
+capital = 0;
 
 if (connection != 0) { // show error if connection failed
     show_message("Error - can not connect to server!!");
@@ -91,6 +92,7 @@ else {
             <kind>1</kind>
             <string>draw_set_halign(fa_left);
 draw_text(0, 0, "Game state: " + state);
+draw_text(700, 0, "Budget: " + string(capital));
 </string>
           </argument>
         </arguments>

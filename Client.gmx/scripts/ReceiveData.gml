@@ -14,6 +14,7 @@
             other_player.name = buffer_read(buff, buffer_string);
             buffer_seek(buff, buffer_seek_start, 0);
             buffer_write(buff, buffer_s16, 0);
+            buffer_write(buff, buffer_s16, other_player.capital);
             network_send_packet(sock, buff, buffer_tell(buff));
         break;
         
