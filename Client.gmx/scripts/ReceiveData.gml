@@ -40,10 +40,6 @@
                 show_message("Hoogste bod tot nu toe: $" + string(ds_map_find_value(bidlist, "bid")));
                 show_message("Geboden door: " + string(ds_map_find_value(bidlist, "name")));
             }
-            
-            // var b;
-            // b.bid = other_player.bid;
-            // b.player = other_player.number;
 
             WaitForBids();
             
