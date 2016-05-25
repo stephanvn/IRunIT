@@ -12,4 +12,6 @@ var error = false;
     {
         show_message("iedereen heeft geboden");
         show_message("WaitForBids value: " + string(ds_map_find_value(bidlist, "bid")));
+        
+        return true;
     }
