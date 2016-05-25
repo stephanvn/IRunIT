@@ -11,5 +11,5 @@ var error = false;
     if (error == false) 
     {
         show_message("iedereen heeft geboden");
-        show_message(ds_map_find_value(bidlist, "bid"));
+        show_message("WaitForBids value: " + string(ds_map_find_value(bidlist, "bid")));
     }

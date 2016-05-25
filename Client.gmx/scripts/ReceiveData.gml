@@ -23,20 +23,21 @@
             other_player.bid = buffer_read(buff, buffer_s16);
             currentHighestBid = ds_map_find_value(bidlist, "bid");
             
-            if is_undefined(ds_map_find_value(bidlist, "bid")) 
+            if is_undefined(currentHighestBid) 
             {
                 ds_map_add(bidlist, "bid", other_player.bid);
+            }
+            
+            else if(other_player.bid > currentHighestBid) 
+            {
+                ds_map_delete(bidlist, "bid");
+                ds_map_add(bidlist, "bid", other_player.bid);
+                show_message("Hoogste bod tot nu toe " + string(ds_map_find_value(bidlist, "bid")));
             }
             
             // var b;
             // b.bid = other_player.bid;
             // b.player = other_player.number;
-            
-            if(other_player.bid > currentHighestBid) 
-            {
-                show_message("Hoogste bod tot nu toe");
-                ds_map_add(bidlist, "bid", other_player.bid);
-            }
 
             WaitForBids();
             
