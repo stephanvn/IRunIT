@@ -11,5 +11,5 @@ var error = false;
     if (error == false) 
     {
         show_message("iedereen heeft geboden");
-        FindHighestBidder();
+        show_message(ds_map_find_value(bidlist, "bid"));
     }

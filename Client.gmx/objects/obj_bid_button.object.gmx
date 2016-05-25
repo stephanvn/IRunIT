@@ -88,7 +88,7 @@
     draw_self();    
 }
 if(obj_controller.state == "bidding_done") {
-    draw_text(view_wview / 2, (view_hview / 2) - 30, "€" + string(bid_fee) + " geboden");
+    draw_text(view_wview / 2, (view_hview / 2) - 30, "$" + string(bid_fee) + " geboden");
 }
 </string>
           </argument>

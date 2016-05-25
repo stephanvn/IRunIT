@@ -21,8 +21,22 @@
         
         case 2: // Receive a bid from a client
             other_player.bid = buffer_read(buff, buffer_s16);
-            ds_map_add(bidlist, "bid", other_player.bid);
-            ds_map_add(bidlist, "player_number", other_player.player_number);
+            currentHighestBid = ds_map_find_value(bidlist, "bid");
+            
+            if is_undefined(ds_map_find_value(bidlist, "bid")) 
+            {
+                ds_map_add(bidlist, "bid", other_player.bid);
+            }
+            
+            // var b;
+            // b.bid = other_player.bid;
+            // b.player = other_player.number;
+            
+            if(other_player.bid > currentHighestBid) 
+            {
+                show_message("Hoogste bod tot nu toe");
+                ds_map_add(bidlist, "bid", other_player.bid);
+            }
 
             WaitForBids();
             
