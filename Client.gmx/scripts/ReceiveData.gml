@@ -37,11 +37,14 @@
                 ds_map_add(bidlist, "bid", other_player.bid);
                 ds_map_add(bidlist, "name", other_player.name);
                 
-                show_message("Hoogste bod tot nu toe: $" + string(ds_map_find_value(bidlist, "bid")));
-                show_message("Geboden door: " + string(ds_map_find_value(bidlist, "name")));
+                show_message("Hoogste bod tot nu toe: $" + string(currentHighestBid));
             }
 
-            WaitForBids();
+            if(WaitForBids() == true) 
+            {
+                other_player.capital -= other_player.bid;
+                show_message("Biedronde gewonnen, er is $" + string(other_player.bid) + " afgeschreven");
+            }
             
         break;
     
