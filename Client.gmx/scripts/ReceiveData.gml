@@ -21,8 +21,6 @@
         
         case 2: // Receive a bid from a client
             other_player.bid = buffer_read(buff, buffer_s16);
-            if (CheckAllPlayerBidded()) {
-                //Start project picking
-            }
+            SortPlayerBids();
         break;
     }

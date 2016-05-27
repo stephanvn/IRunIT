@@ -34,4 +34,7 @@
                 p.month4_expired = buffer_read(buff, buffer_s16); 
             }
         break;
+        case 2: // Capital calculation change for highest bidder
+            obj_controller.capital -= buffer_read(buff, buffer_u8);
+        break;
     }
