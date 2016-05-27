@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar players, bidlist, socketlist, gameActive, projects1, projects2, projects3;
+            <string>globalvar players, highest_bid, socketlist, gameActive, projects1, projects2, projects3;
 
 projects1 = ds_map_create();
 projects2 = ds_map_create();
