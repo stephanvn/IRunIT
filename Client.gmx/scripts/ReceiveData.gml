@@ -21,10 +21,7 @@
         
         case 2: // Receive a bid from a client
             other_player.bid = buffer_read(buff, buffer_s16);
-            if(SortPlayerBids(other_player, sock))
-            {
-                // Start the selection of cards
-            } 
+            SortPlayerBids(other_player, sock, buff);
         break;
     
         case 3: // Change sprite back (client released enter)
