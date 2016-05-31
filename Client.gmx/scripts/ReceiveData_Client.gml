@@ -34,7 +34,28 @@
                 p.month4_expired = buffer_read(buff, buffer_s16); 
             }
         break;
-        case 2: // Capital calculation change for highest bidder
-            obj_controller.capital -= buffer_read(buff, buffer_u8);
+        
+        case 2: // Update capital information from the server
+            obj_controller.capital = buffer_read(buff, buffer_u16);
+        break;
+        
+        case 3: // Local client's turn to pick projects
+            obj_controller.canPickProjects = true;
+        break;
+        
+        case 4: // Remove projects chosen by someone else
+            var amount = buffer_read(buff, buffer_u8);
+            var projectid;
+            for (var i=0; i<amount; i++) 
+            {
+                projectid[i] = buffer_read(buff, buffer_u8);
+            }
+            with (obj_project) 
+            {
+                for (var j=0; j<array_length_1d(projectid); j++) 
+                {
+                    if (project_id == projectid[i]) { instance_destroy(); }
+                }
+            }
         break;
     }

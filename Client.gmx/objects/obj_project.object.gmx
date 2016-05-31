@@ -40,6 +40,8 @@ month1_value = 0;
 month2_value = 0;
 month3_value = 0;
 month4_expired = 0;
+
+image_single = 0;
 </string>
           </argument>
         </arguments>
@@ -110,6 +112,41 @@ y = 200;
           <argument>
             <kind>1</kind>
             <string>show = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (obj_controller.canPickProjects == true)
+{
+    if (image_single=0) 
+    {
+        y -= 3;
+        image_single = 1;
+    }
+    else 
+    {
+        y += 3;
+        image_single = 0;
+    }
+}
 </string>
           </argument>
         </arguments>

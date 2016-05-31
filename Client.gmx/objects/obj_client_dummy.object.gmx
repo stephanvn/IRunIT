@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>//Initialize default player 
 name = "empty";
+sock = 0;
 
 capital = 15;
 workers_red = 2;

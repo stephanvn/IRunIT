@@ -12,6 +12,7 @@
     {
         var obj = instance_create(0, 0, obj_client_dummy);
         obj.player_number = ds_map_size(players);
+        obj.socket = sock;
         // Add client to our list of connected clients
         ds_list_add(socketlist, sock);
         // Store this object in a ds_map along with the socket so we can easily look it up later

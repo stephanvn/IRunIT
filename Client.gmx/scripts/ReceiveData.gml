@@ -24,9 +24,19 @@
             ds_list_add(bidlist, other_player.bid);
             ds_map_add(bidmap, other_player.bid, other_player);
             ds_list_sort(bidlist, false);
+            
+            other_player.capital -= other_player.bid;
+            buffer_seek(buff, buffer_seek_start, 0);
+            buffer_write(buff, buffer_s16, 2);
+            buffer_write(buff, buffer_u16, other_player.capital);
+            network_send_packet(sock, buff, buffer_tell(buff));
+            
             if (CheckAllPlayersBidded()) 
             {
-                //later
+                    var obj = ds_map_find_value(bidmap, ds_list_find_value(bidlist, 0));
+                    buffer_seek(buff, buffer_seek_start, 0);
+                    buffer_write(buff, buffer_s16, 3);
+                    network_send_packet(obj.socket, buff, buffer_tell(buff));
             }
         break;
     

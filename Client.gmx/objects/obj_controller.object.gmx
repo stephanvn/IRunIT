@@ -32,10 +32,10 @@ client = network_create_socket(network_socket_tcp); // Create a TCP/IP socket
 var connection = network_connect(client, "localhost", 6510); // Connect to our server
 state = "init";
 capital = 0;
+canPickProjects = false;
 
 if (connection != 0) { // show error if connection failed
     show_message("Error - can not connect to server!!");
-    game_end();
 }
 else {
     buffer_seek(buff, buffer_seek_start, 0); // You always have to do this before writing to a buffer. (it resets it to the 0 position)
