@@ -91,7 +91,9 @@ y = 60;
             <string>draw_self();
 draw_set_halign(fa_center);
 draw_text(x, y+40, name);
-draw_text(x, y+60, "Bod: "+string(bid));
+if(bid &gt; -1) {
+    draw_text(x, y+60, "Bod: "+string(bid));
+}
 </string>
           </argument>
         </arguments>
