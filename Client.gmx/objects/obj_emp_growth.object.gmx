@@ -25,7 +25,52 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>blueGrowth = 0;
+greenGrowth = 0;
+yellowGrowth = 0;
+redGrowth = 0;
+
+employeeCardRandom = irandom(9) // use 11 when using choise meployee cards
+
+if(employeeCardRandom &lt; 4) // one static employee
+{
+    switch(irandom(3))
+    {
+        case(0): blueGrowth++; break;
+        case(1): greenGrowth++; break;
+        case(2): yellowGrowth++; break;
+        case(3): redGrowth++; break;
+    }
+}
+else if(employeeCardRandom &lt; 10) // two static employees
+{
+    prev = 9000; // some random number since cant make empty variables
+    for(i = 0 ; i &lt;= 1 ; i++)
+    {
+        r = irandom(3);
+        while(r == prev)
+        {
+            r = irandom(3);
+        }
+        switch(irandom(3))
+        {
+            case(0): blueGrowth++; break;
+            case(1): greenGrowth++; break;
+            case(2): yellowGrowth++; break;
+            case(3): redGrowth++; break;
+        }
+        i++;
+    }
+}
+else if(employeeCardRandom == 10) // one choise employee
+{
+}
+else if(employeeCardRandom == 11) // two choise employeex
+{
+}
+
+
+</string>
           </argument>
         </arguments>
       </action>
