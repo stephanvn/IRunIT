@@ -68,6 +68,8 @@
       <object>objects\obj_project</object>
       <object>objects\obj_worker</object>
       <object>objects\obj_start_server</object>
+      <object>objects\obj_teamdev</object>
+      <object>objects\obj_emp_growth</object>
     </objects>
   </objects>
   <rooms name="rooms">
