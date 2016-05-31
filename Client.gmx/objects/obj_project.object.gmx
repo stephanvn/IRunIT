@@ -138,12 +138,14 @@ y = 200;
 {
     if (image_single=0) 
     {
-        y -= 3;
-        image_single = 1;
+        if (ds_list_size(pickedProjects) &lt; obj_controller.maxpicks-1) 
+        {
+            ds_list_add(pickedProjects, project_id);
+            image_single = 1;
+        }
     }
     else 
     {
-        y += 3;
         image_single = 0;
     }
 }

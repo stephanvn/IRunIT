@@ -14,6 +14,7 @@
     <sprite>sprites\spr_choose</sprite>
     <sprite>sprites\spr_teamindicator</sprite>
     <sprite>sprites\spr_start</sprite>
+    <sprite>sprites\spr_send</sprite>
     <sprite>sprites\spr_stop</sprite>
     <sprite>sprites\spr_cash</sprite>
     <sprite>sprites\spr_project_icon</sprite>
@@ -38,11 +39,13 @@
       <script>scripts\SetUpFirstRound.gml</script>
       <script>scripts\GenerateProjects.gml</script>
       <script>scripts\SendToEveryone.gml</script>
+      <script>scripts\SendToEveryoneExcept.gml</script>
       <script>scripts\WriteProjectsToBuffer.gml</script>
       <script>scripts\CheckAllPlayersBidded.gml</script>
     </scripts>
     <scripts name="Client">
       <script>scripts\ReceiveData_Client.gml</script>
+      <script>scripts\SendPickedProjects.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -73,6 +76,7 @@
       <object>objects\obj_teamdev</object>
       <object>objects\obj_emp_growth</object>
     </objects>
+    <object>objects\obj_send</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_startmenu</room>

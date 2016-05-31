@@ -41,9 +41,11 @@
         
         case 3: // Local client's turn to pick projects
             obj_controller.canPickProjects = true;
+            obj_controller.state = "You get to pick your shitty projects now";
         break;
         
         case 4: // Remove projects chosen by someone else
+        show_message("receive");
             var amount = buffer_read(buff, buffer_u8);
             var projectid;
             for (var i=0; i<amount; i++) 

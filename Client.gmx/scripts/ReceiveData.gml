@@ -40,8 +40,28 @@
             }
         break;
     
-        case 3: // Change sprite back (client released enter)
-
+        case 3: // Client has picked their projects
+            var amount = buffer_read(buff, buffer_u8);
+            projectid[0] = 0;
+            for (var i=0; i<amount; i++) 
+            {
+                projectid[i] = buffer_read(buff, buffer_u8);
+            }
+            with (obj_project) 
+            {
+                for (var j=0; j<array_length_1d(obj_server.projectid); j++) 
+                {
+                    if (project_id == obj_server.projectid[j]) { instance_destroy(); }
+                }
+            }
+            buffer_seek(buff, buffer_seek_start, 0);
+            buffer_write(buff, buffer_s16, 4);
+            buffer_write(buff, buffer_u8, amount);
+            for (var i=0; i<amount; i++) 
+            {
+                buffer_write(buff, buffer_u8, projectid[i]);
+            }
+            SendToEveryoneExcept(sock);
         break;    
             
         case 4: // You can keep adding network events endlessly like this
