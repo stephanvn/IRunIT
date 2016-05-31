@@ -103,6 +103,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\startlogo</background>
+    <background>background\moneyBag</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -145,7 +146,7 @@
       </objects>
     </objects>
     <objects name="Server">
-      <object>objects\obj_server</object>
+      <object>objects\obj_client_dummy</object>
       <object>objects\obj_client_dummy</object>
       <object>objects\obj_project</object>
       <object>objects\obj_worker</object>
