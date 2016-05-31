@@ -61,6 +61,7 @@
         <object>objects\obj_emptycardfield</object>
         <object>objects\obj_level</object>
         <object>objects\obj_projectempty</object>
+        <object>objects\obj_draw</object>
       </objects>
     </objects>
     <objects name="Server">
