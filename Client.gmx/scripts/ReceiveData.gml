@@ -19,13 +19,19 @@
             network_send_packet(sock, buff, buffer_tell(buff));
         break;
         
-        case 2: // Receive a bid from a client
+        case 2: // Receive a bid from a client during the bid round
             other_player.bid = buffer_read(buff, buffer_s16);
-            SortPlayerBids(other_player, sock, buff);
+            ds_list_add(bidlist, other_player.bid);
+            ds_map_add(bidmap, other_player.bid, other_player);
+            ds_list_sort(bidlist, false);
+            if (CheckAllPlayersBidded()) 
+            {
+                //later
+            }
         break;
     
         case 3: // Change sprite back (client released enter)
-            //other_player.sprite_index = spr_blue;
+
         break;    
             
         case 4: // You can keep adding network events endlessly like this

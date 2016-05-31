@@ -42,7 +42,6 @@
     <scripts name="Client">
       <script>scripts\ReceiveData_Client.gml</script>
     </scripts>
-    <script>scripts\SortPlayerBids.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_small</font>

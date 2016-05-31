@@ -17,18 +17,9 @@
         // Store this object in a ds_map along with the socket so we can easily look it up later
         ds_map_add(players, sock, obj);
     }
-    // If we're dealing with someone disconnecting from the game
-    else
+    else     // If we're dealing with someone disconnecting from the game
     {
-        // Get the index in our ds_list of the disconnecting client.
-        var index1 = ds_list_find_index(socketlist, sock);
-        // Get the player object that belongs to this socket
-        var index2 = ds_map_find_value(players, sock );
-        // Remove from our client list. Again, very similar to ArrayLists
-        ds_list_delete(socketlist, index1);
-        // Remove the entry from our client object list as well
-        ds_map_delete(players, index2);
-    
-        // Finally, delete the object associated with the socket
-        with (index2) { instance_destroy(); }
+        ds_list_delete(socketlist, ds_list_find_index(socketlist, sock) ); // Remove from our client list. Again, very similar to ArrayLists
+        ds_map_delete(players, ds_map_find_value(players, sock )); // Remove the entry from our client object list as well
+        with (ds_map_find_value(players, sock )) { instance_destroy(); }         // Finally, delete the object associated with the socket
     }
