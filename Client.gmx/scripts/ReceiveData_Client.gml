@@ -44,18 +44,18 @@
         break;
         
         case 4: // Remove projects chosen by someone else
-        show_message("receive");
             var amount = buffer_read(buff, buffer_u8);
-            var projectid;
+            global.chosenprojects = ds_list_create();
             for (var i=0; i<amount; i++) 
             {
-                projectid[i] = buffer_read(buff, buffer_u8);
+                ds_list_add(global.chosenprojects, buffer_read(buff, buffer_u8));
             }
             with (obj_project) 
             {
-                for (var j=0; j<array_length_1d(projectid); j++) 
+                for (var j=0; j<ds_list_size(global.chosenprojects); j++) 
                 {
-                    if (project_id == projectid[i]) { instance_destroy(); }
+                    if (project_id == ds_list_find_value(global.chosenprojects, j)) { 
+                        instance_destroy(); }
                 }
             }
         break;

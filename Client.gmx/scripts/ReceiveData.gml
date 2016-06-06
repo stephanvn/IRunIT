@@ -18,7 +18,7 @@
             buffer_write(sendbuff, buffer_u16, other_player.capital);
             network_send_packet(sock, sendbuff, buffer_tell(sendbuff));
         break;
-        
+
         case 2: // Receive a bid from a client during the bid round
             other_player.bid = buffer_read(buff, buffer_s16);
             ds_list_add(bidlist, other_player.bid);
@@ -32,25 +32,27 @@
             network_send_packet(sock, sendbuff, buffer_tell(sendbuff));
             if (CheckAllPlayersBidded()) 
             {
-                    var obj = ds_map_find_value(bidmap, ds_list_find_value(bidlist, 0));
-                    buffer_seek(sendbuff, buffer_seek_start, 0);
-                    buffer_write(sendbuff, buffer_s16, 3);
-                    network_send_packet(obj.socket, sendbuff, buffer_tell(sendbuff));
+                var obj = ds_map_find_value(bidmap, ds_list_find_value(bidlist, 0));
+                buffer_seek(sendbuff, buffer_seek_start, 0);
+                buffer_write(sendbuff, buffer_s16, 3);
+                network_send_packet(obj.socket, sendbuff, buffer_tell(sendbuff));
             }
         break;
         
         case 3: // Client has picked their projects
             var amount = buffer_read(buff, buffer_u8);
-            var chosenprojects = ds_list_create();
+            global.chosenprojects = ds_list_create();
             for (var i=0; i<amount; i++) 
             {
-                ds_list_add(chosenprojects, buffer_read(buff, buffer_u8));
+                ds_list_add(global.chosenprojects, buffer_read(buff, buffer_u8));
             }
             with (obj_project) 
             {
-                for (var j=0; j<ds_list_size(obj_server.chosenprojects); j++) 
+                for (var j=0; j<ds_list_size(global.chosenprojects); j++) 
                 {
-                    if (project_id == ds_list_find_value(obj_server.chosenprojects, j)) { instance_destroy(); }
+                    if (project_id == ds_list_find_value(global.chosenprojects, j)) { 
+                        ds_map_delete(projects1, project_id)
+                        instance_destroy(); }
                 }
             }
             buffer_seek(sendbuff, buffer_seek_start, 0);
@@ -58,7 +60,7 @@
             buffer_write(sendbuff, buffer_u8, amount);
             for (var i=0; i<amount; i++) 
             {
-                buffer_write(sendbuff, buffer_u8,  ds_list_find_value(chosenprojects, i) );
+                buffer_write(sendbuff, buffer_u8, ds_list_find_value(global.chosenprojects, i) );
             }
             SendToEveryoneExcept(sock);
         break;
