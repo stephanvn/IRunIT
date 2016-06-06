@@ -25,14 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar buff, client, pickedProjects;
+            <string>globalvar sendbuff, client, pickedProjects;
 name = get_string("Enter your name","");
-buff = buffer_create(256, buffer_grow, 1); // Create a buffer for the network messages
+sendbuff = buffer_create(256, buffer_grow, 1); // Create a buffer for the network messages
 client = network_create_socket(network_socket_tcp); // Create a TCP/IP socket
 var connection = network_connect(client, "localhost", 6510); // Connect to our server
 state = "init";
 capital = 0;
-maxpicks = 2;
+maxpicks = 3;
 canPickProjects = false;
 pickedProjects = ds_list_create();
 
@@ -40,10 +40,10 @@ if (connection != 0) { // show error if connection failed
     show_message("Error - can not connect to server!!");
 }
 else {
-    buffer_seek(buff, buffer_seek_start, 0); // You always have to do this before writing to a buffer. (it resets it to the 0 position)
-    buffer_write(buff, buffer_s16, 1 ); // Write the unique identifier so that the server will be able to recognize what kind of message this is
-    buffer_write(buff, buffer_string, name); // Write the name you just entered to the buffer
-    network_send_packet(client, buff, buffer_tell(buff)); // Send this message to the server
+    buffer_seek(sendbuff, buffer_seek_start, 0); // You always have to do this before writing to a buffer. (it resets it to the 0 position)
+    buffer_write(sendbuff, buffer_s16, 1 ); // Write the unique identifier so that the server will be able to recognize what kind of message this is
+    buffer_write(sendbuff, buffer_string, name); // Write the name you just entered to the buffer
+    network_send_packet(client, sendbuff, buffer_tell(sendbuff)); // Send this message to the server
 }
 </string>
           </argument>
@@ -97,56 +97,6 @@ draw_text(0, 0, "Game state: " + state);
 draw_text(0, 20, "Player: " + string(name));
 draw_sprite(spr_cash, image_index, 735, 15);
 draw_text(765, 8, "$" + string(capital));
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>buffer_seek(buff, buffer_seek_start, 0);
-buffer_write(buff, buffer_s16, 2);
-network_send_packet(client, buff, buffer_tell(buff));
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>buffer_seek(buff, buffer_seek_start, 0);
-buffer_write(buff, buffer_s16, 3);
-network_send_packet(client, buff, buffer_tell(buff));
 </string>
           </argument>
         </arguments>

@@ -4,5 +4,5 @@ var exception = argument0;
 for (var i=0; i<ds_list_size(socketlist); i++)
 {
     if (ds_list_find_value(socketlist, i) != exception) {
-    network_send_packet( ds_list_find_value(socketlist, i), buff, buffer_tell(buff)); }
+    network_send_packet( ds_list_find_value(socketlist, i), sendbuff, buffer_tell(sendbuff)); }
 }

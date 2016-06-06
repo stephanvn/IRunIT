@@ -134,11 +134,13 @@ y = 200;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_controller.canPickProjects == true)
+            <string>show_message(string(ds_list_size(pickedProjects)));
+
+if (obj_controller.canPickProjects == true)
 {
     if (image_single=0) 
     {
-        if (ds_list_size(pickedProjects) &lt; obj_controller.maxpicks-1) 
+        if (ds_list_size(pickedProjects) &lt; obj_controller.maxpicks) 
         {
             ds_list_add(pickedProjects, project_id);
             image_single = 1;
@@ -146,6 +148,8 @@ y = 200;
     }
     else 
     {
+        var pos = ds_list_find_index(pickedProjects, project_id);
+        ds_list_delete(pickedProjects, pos);
         image_single = 0;
     }
 }

@@ -15,7 +15,6 @@
         
         case 1: // The server has started the game and the server has sent us the available projects
             obj_controller.state = "bidding";
-            
             // Amount of projects
             var amount = buffer_read(buff, buffer_u8);
             for (var i=0; i<amount; i++) 
