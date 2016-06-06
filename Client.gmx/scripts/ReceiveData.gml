@@ -16,6 +16,8 @@
             buffer_seek(buff, buffer_seek_start, 0);
             buffer_write(buff, buffer_s16, 0);
             buffer_write(buff, buffer_u16, other_player.capital);
+            buffer_write(buff, buffer_u16, other_player.workers_red);
+            buffer_write(buff, buffer_u16, other_player.workers_blue);
             network_send_packet(sock, buff, buffer_tell(buff));
         break;
         
@@ -41,7 +43,7 @@
         break;
     
         case 3: // Client has picked their projects
-            var amount = buffer_read(buff, buffer_u8);
+            /*var amount = buffer_read(buff, buffer_u8);
             projectid[0] = 0;
             for (var i=0; i<amount; i++) 
             {
@@ -61,7 +63,7 @@
             {
                 buffer_write(buff, buffer_u8, projectid[i]);
             }
-            SendToEveryoneExcept(sock);
+            SendToEveryoneExcept(sock);*/
         break;    
             
         case 4: // You can keep adding network events endlessly like this
