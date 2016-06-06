@@ -18,6 +18,8 @@
             buffer_write(sendbuff, buffer_u16, other_player.capital);
             buffer_write(sendbuff, buffer_u16, other_player.workers_red);
             buffer_write(sendbuff, buffer_u16, other_player.workers_blue);
+            buffer_write(sendbuff, buffer_u16, other_player.workers_yellow);
+            buffer_write(sendbuff, buffer_u16, other_player.workers_green);
             network_send_packet(sock, sendbuff, buffer_tell(sendbuff));
         break;
 
@@ -34,6 +36,7 @@
             network_send_packet(sock, sendbuff, buffer_tell(sendbuff));
             if (CheckAllPlayersBidded()) 
             {
+                IterateThroughBidders();
                 var obj = ds_map_find_value(bidmap, ds_list_find_value(bidlist, 0));
                 buffer_seek(sendbuff, buffer_seek_start, 0);
                 buffer_write(sendbuff, buffer_s16, 3);
@@ -66,7 +69,7 @@
             }
             SendToEveryoneExcept(sock);
         break;
-		
+
         case 4: // You can keep adding network events endlessly like this
         break;
     }
