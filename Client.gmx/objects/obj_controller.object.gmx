@@ -32,7 +32,11 @@ client = network_create_socket(network_socket_tcp); // Create a TCP/IP socket
 var connection = network_connect(client, "localhost", 6510); // Connect to our server
 state = "init";
 capital = 0;
-maxpicks = 3;
+workers_red = 0;
+workers_blue = 0;
+workers_yellow = 0;
+workers_green = 0;
+maxpicks = 2;
 canPickProjects = false;
 pickedProjects = ds_list_create();
 
@@ -97,6 +101,10 @@ draw_text(0, 0, "Game state: " + state);
 draw_text(0, 20, "Player: " + string(name));
 draw_sprite(spr_cash, image_index, 735, 15);
 draw_text(765, 8, "$" + string(capital));
+draw_text(605, 38, "Rode medewerkers: " + string(workers_red));
+draw_text(588, 68, "Blauwe medewerkers: " + string(workers_blue));
+draw_text(610, 98, "Gele medewerkers: " + string(workers_yellow));
+draw_text(590, 128, "Groene medewerkers: " + string(workers_green));
 </string>
           </argument>
         </arguments>

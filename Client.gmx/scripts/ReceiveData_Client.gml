@@ -11,6 +11,8 @@
         case 0: // New player joined
             obj_controller.state = "waiting";
             obj_controller.capital = buffer_read(buff, buffer_u16);
+            obj_controller.workers_red = buffer_read(buff, buffer_u16);
+            //obj_controller.workers_blue = buffer_read(buff, buffer_u16);
         break;
         
         case 1: // The server has started the game and the server has sent us the available projects

@@ -16,6 +16,8 @@
             buffer_seek(sendbuff, buffer_seek_start, 0);
             buffer_write(sendbuff, buffer_s16, 0);
             buffer_write(sendbuff, buffer_u16, other_player.capital);
+            buffer_write(sendbuff, buffer_u16, other_player.workers_red);
+            buffer_write(sendbuff, buffer_u16, other_player.workers_blue);
             network_send_packet(sock, sendbuff, buffer_tell(sendbuff));
         break;
 
@@ -64,7 +66,7 @@
             }
             SendToEveryoneExcept(sock);
         break;
-
+		
         case 4: // You can keep adding network events endlessly like this
         break;
     }

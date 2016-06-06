@@ -32,7 +32,7 @@ sock = 0;
 capital = 15;
 workers_red = 2;
 workers_blue = 2;
-workes_yellow = 2;
+workers_yellow = 2;
 workers_green = 2;
 
 skill_troubleshooting = 0;
