@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_start_server" x="32" y="480" name="inst_E05E48EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_client_dummy" x="704" y="96" name="inst_87DF7647" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_server" x="704" y="96" name="inst_87DF7647" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
