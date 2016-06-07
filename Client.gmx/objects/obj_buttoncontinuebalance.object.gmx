@@ -25,14 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with (obj_infoloonkosten)
+            <string>with (obj_backscreenbalance)
    {
     instance_destroy();
    }
-with (obj_buttoncontinue)
+with (obj_drawbalancetext)
    {
     instance_destroy();
    }
+with (obj_buttoncontinuebalance) 
+    {
+    instance_destroy();
+    };
+
 </string>
           </argument>
         </arguments>
