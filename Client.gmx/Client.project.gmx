@@ -121,6 +121,7 @@
       <script>scripts\StartRound.gml</script>
       <script>scripts\LoadProjectcardJson.gml</script>
       <script>scripts\NewPlayerJoined.gml</script>
+      <script>scripts\MakeProjectSelection.gml</script>
     </scripts>
     <scripts name="Client">
       <script>scripts\ReceiveData_Client.gml</script>
