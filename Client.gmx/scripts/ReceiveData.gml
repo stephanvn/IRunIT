@@ -33,7 +33,6 @@
             ds_list_add(bidlist, other_player.bid);
             ds_map_add(bidmap, other_player.bid, other_player);
             ds_list_sort(bidlist, false);
-            
             other_player.capital -= other_player.bid;
             buffer_seek(sendbuff, buffer_seek_start, 0);
             buffer_write(sendbuff, buffer_s16, 2);
@@ -41,11 +40,7 @@
             network_send_packet(sock, sendbuff, buffer_tell(sendbuff));
             if (CheckAllPlayersBidded()) 
             {
-                //IterateThroughBidders();
-                var obj = ds_map_find_value(bidmap, ds_list_find_value(bidlist, 0));
-                buffer_seek(sendbuff, buffer_seek_start, 0);
-                buffer_write(sendbuff, buffer_s16, 3);
-                network_send_packet(obj.socket, sendbuff, buffer_tell(sendbuff));
+                LetNextPlayerPickProjects();
             }
         break;
         
@@ -73,6 +68,7 @@
                 buffer_write(sendbuff, buffer_u8, ds_list_find_value(global.chosenprojects, i) );
             }
             SendToEveryoneExcept(sock);
+            LetNextPlayerPickProjects();
         break;
 
         case 4: // You can keep adding network events endlessly like this

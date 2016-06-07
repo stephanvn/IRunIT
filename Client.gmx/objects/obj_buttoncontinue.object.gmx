@@ -43,6 +43,7 @@ with (obj_loonkostenprices)
    {
     instance_destroy();
    }
+
 </string>
           </argument>
         </arguments>

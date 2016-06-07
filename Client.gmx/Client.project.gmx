@@ -117,6 +117,8 @@
       <script>scripts\SendToEveryoneExcept.gml</script>
       <script>scripts\WriteProjectsToBuffer.gml</script>
       <script>scripts\CheckAllPlayersBidded.gml</script>
+      <script>scripts\LetNextPlayerPickProjects.gml</script>
+      <script>scripts\StartRound.gml</script>
       <script>scripts\LoadProjectcardJson.gml</script>
     </scripts>
     <scripts name="Client">
@@ -134,6 +136,7 @@
     <objects name="Client">
       <object>objects\obj_controller</object>
       <object>objects\par_textbox</object>
+      <object>objects\obj_send</object>
       <object>objects\obj_bid_button</object>
       <objects name="Gamescreen">
         <object>objects\obj_emptycard</object>
@@ -143,10 +146,14 @@
         <object>objects\obj_draw</object>
         <object>objects\obj_levelbox</object>
         <object>objects\obj_info</object>
+        <object>objects\obj_balance</object>
         <object>objects\obj_infoloonkosten</object>
+        <object>objects\obj_backscreenbalance</object>
         <object>objects\obj_buttoncontinue</object>
         <object>objects\obj_drawinfoloonkosten</object>
         <object>objects\obj_loonkostenprices</object>
+        <object>objects\obj_buttoncontinuebalance</object>
+        <object>objects\obj_drawbalancetext</object>
       </objects>
     </objects>
     <objects name="Server">
@@ -158,13 +165,13 @@
       <object>objects\obj_teamdev</object>
       <object>objects\obj_emp_growth</object>
     </objects>
-    <object>objects\obj_send</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_startmenu</room>
     <rooms name="Client">
       <room>rooms\rm_client</room>
       <room>rooms\rm_gamescreen</room>
+      <room>rooms\rm_balance</room>
     </rooms>
     <rooms name="Server">
       <room>rooms\rm_server</room>

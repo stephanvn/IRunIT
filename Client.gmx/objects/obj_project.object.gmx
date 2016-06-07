@@ -27,21 +27,19 @@
             <kind>1</kind>
             <string>show = false;
 
-var i = floor(random(global.totalCards1));
-
 project_id = 0;
-name = global.cardData1[# i, TITEL];
+name = 0;
 category = 0;
 
-req_blue = global.cardData1[# i, BLUE];
-req_red = global.cardData1[# i, RED];
-req_yellow = global.cardData1[# i, YELLOW];
-req_green = global.cardData1[# i, GREEN];
+req_blue = 0;
+req_red = 0;
+req_yellow = 0;
+req_green = 0;
 
-month1_value = global.cardData1[# i, NIEUW];
-month2_value = global.cardData1[# i, MAANDTWEE];
-month3_value = global.cardData1[# i, MAANDDRIE];
-month4_expired = global.cardData1[# i, VERWIJDEREN];
+month1_value = 0;
+month2_value = 0;
+month3_value = 0;
+month4_expired = 0;
 
 image_single = 0;
 </string>
@@ -136,9 +134,7 @@ y = 200;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_message(string(ds_list_size(pickedProjects)));
-
-if (obj_controller.canPickProjects == true)
+            <string>if (obj_controller.canPickProjects == true)
 {
     if (image_single=0) 
     {

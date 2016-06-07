@@ -101,8 +101,14 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_left);
-draw_text(0, 0, "Game state: " + state);
+            <string>draw_set_font(fnt_large);
+draw_set_halign(fa_center);
+draw_set_color(c_green);
+draw_text(room_width/2, 50, state);
+draw_set_color(c_black);
+
+draw_set_font(fnt_small);
+draw_set_halign(fa_left);
 draw_text(0, 20, "Player: " + string(name));
 draw_sprite(spr_cash, image_index, 735, 15);
 draw_text(765, 8, "$" + string(capital));
