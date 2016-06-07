@@ -20,6 +20,11 @@
             buffer_write(sendbuff, buffer_u16, other_player.workers_blue);
             buffer_write(sendbuff, buffer_u16, other_player.workers_yellow);
             buffer_write(sendbuff, buffer_u16, other_player.workers_green);
+            buffer_write(sendbuff, buffer_u16, other_player.skill_troubleshooting);
+            buffer_write(sendbuff, buffer_u16, other_player.skill_intel);
+            buffer_write(sendbuff, buffer_u16, other_player.skill_teamwork);
+            buffer_write(sendbuff, buffer_u16, other_player.skill_communication);
+            buffer_write(sendbuff, buffer_u16, other_player.skill_planning);
             network_send_packet(sock, sendbuff, buffer_tell(sendbuff));
         break;
 

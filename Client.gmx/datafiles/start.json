@@ -1,0 +1,50 @@
+[
+ {
+   "BLUE":0,
+   "GREEN":2,
+   "YELLOW":2,
+   "RED":0,
+   "NIEUW":7,
+   "MAANDTWEE":6,
+   "MAANDDRIE":5,
+   "VERWIJDEREN":-1,
+   "TITEL":"Productinformatie scannen in de AH",
+   "VOORDEEL":"PLANNEN EN ORGANISEREN > 3 dan is de omzet €1 hoger bij het voltooien van de opdracht"
+ },
+ {
+   "BLUE":2,
+   "GREEN":0,
+   "YELLOW":0,
+   "RED":2,
+   "NIEUW":7,
+   "MAANDTWEE":6,
+   "MAANDDRIE":5,
+   "VERWIJDEREN":-1,
+   "TITEL":"Dashboard tolheffing Kiltunnel",
+   "VOORDEEL":"COMMUNICATIE > 3 dan mag deze opdracht een ronde langer als nieuw worden beschouwd"
+ },
+ {
+   "BLUE":2,
+   "GREEN":2,
+   "YELLOW":0,
+   "RED":0,
+   "NIEUW":7,
+   "MAANDTWEE":6,
+   "MAANDDRIE":5,
+   "VERWIJDEREN":-1,
+   "TITEL":"Mijn NS Abonnementsadvies",
+   "VOORDEEL":"SAMENWERKEN > 3 dan mag bij het voltooien van de opdracht een vaardigheid naar keuze met 1 worden verhoogd"
+ },
+ {
+   "BLUE":0,
+   "GREEN":0,
+   "YELLOW":2,
+   "RED":2,
+   "NIEUW":7,
+   "MAANDTWEE":6,
+   "MAANDDRIE":5,
+   "VERWIJDEREN":-1,
+   "TITEL":"Toegangspasje Landal Vakantiepark",
+   "VOORDEEL":"CREATIEF PROBLEEM OPLOSSEN > 3 dan mag een TI of een SNE resource voor deze opdracht worden ingevuld door een willekeurige andere resource"
+ }
+]
