@@ -15,6 +15,11 @@
             obj_controller.workers_blue = buffer_read(buff, buffer_u16);
             obj_controller.workers_yellow = buffer_read(buff, buffer_u16);
             obj_controller.workers_green = buffer_read(buff, buffer_u16);
+            obj_controller.skill_troubleshooting = buffer_read(buff, buffer_u16);
+            obj_controller.skill_intel = buffer_read(buff, buffer_u16);
+            obj_controller.skill_teamwork = buffer_read(buff, buffer_u16);
+            obj_controller.skill_communication = buffer_read(buff, buffer_u16);
+            obj_controller.skill_planning = buffer_read(buff, buffer_u16);
         break;
         
         case 1: // The server has started the game and the server has sent us the available projects

@@ -36,6 +36,11 @@ workers_red = 0;
 workers_blue = 0;
 workers_yellow = 0;
 workers_green = 0;
+skill_troubleshooting = 0;
+skill_intel = 0;
+skill_teamwork = 0;
+skill_communication = 0;
+skill_planning = 0;
 maxpicks = 2;
 canPickProjects = false;
 pickedProjects = ds_list_create();
@@ -105,6 +110,11 @@ draw_text(605, 33, "Rode medewerkers: " + string(workers_red));
 draw_text(589, 53, "Blauwe medewerkers: " + string(workers_blue));
 draw_text(609, 73, "Gele medewerkers: " + string(workers_yellow));
 draw_text(586, 93, "Groene medewerkers: " + string(workers_green));
+draw_text(586, 123, "Problemen oplossen: " + string(skill_troubleshooting));
+draw_text(586, 143, "Onderzoek doen: " + string(skill_intel));
+draw_text(586, 163, "Samenwerken: " + string(skill_teamwork));
+draw_text(586, 183, "Communicatie: " + string(skill_communication));
+draw_text(586, 203, "Planning/organiseren: " + string(skill_planning));
 </string>
           </argument>
         </arguments>
