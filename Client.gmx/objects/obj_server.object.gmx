@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar players, highest_bid, socketlist, gameActive, projects1, projects2, projects3;
+            <string>globalvar players, highest_bid, socketlist, gameActive, projects1, projects2, projects3, bidturn;
 
 projects1 = ds_map_create();
 projects2 = ds_map_create();
@@ -38,6 +38,7 @@ bidlist = ds_list_create();
 bidmap = ds_map_create();
 socketlist = ds_list_create();
 gameActive = false;
+bidturn = 0;
 server_state = "Waiting to start...";
 
 debug = true;

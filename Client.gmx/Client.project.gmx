@@ -43,6 +43,8 @@
       <script>scripts\SendToEveryoneExcept.gml</script>
       <script>scripts\WriteProjectsToBuffer.gml</script>
       <script>scripts\CheckAllPlayersBidded.gml</script>
+      <script>scripts\LetNextPlayerPickProjects.gml</script>
+      <script>scripts\StartRound.gml</script>
     </scripts>
     <scripts name="Client">
       <script>scripts\ReceiveData_Client.gml</script>
@@ -59,6 +61,7 @@
     <objects name="Client">
       <object>objects\obj_controller</object>
       <object>objects\par_textbox</object>
+      <object>objects\obj_send</object>
       <object>objects\obj_bid_button</object>
       <objects name="Gamescreen">
         <object>objects\obj_emptycard</object>
@@ -77,7 +80,6 @@
       <object>objects\obj_teamdev</object>
       <object>objects\obj_emp_growth</object>
     </objects>
-    <object>objects\obj_send</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_startmenu</room>

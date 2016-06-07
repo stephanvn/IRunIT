@@ -134,9 +134,7 @@ y = 200;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_message(string(ds_list_size(pickedProjects)));
-
-if (obj_controller.canPickProjects == true)
+            <string>if (obj_controller.canPickProjects == true)
 {
     if (image_single=0) 
     {
