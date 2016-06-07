@@ -1,3 +1,5 @@
+/* Zorg er eerst ff voor dat je die lijsten etc aanmaakt en een duidelijke naam geeft zodat de functie voor die lijst duidelijk is
+
 var jsonFile1 = file_text_open_read("categorie1.json");
 var jsonFile2 = file_text_open_read("categorie2.json");
 var jsonFile3 = file_text_open_read("categorie3.json");
@@ -82,3 +84,5 @@ for (var i = 0; i < global.totalCards3; i++)
     global.cardData3[# i, TITEL] = theEntry[? "TITEL"];
     global.cardData3[# i, VOORDEEL] = theEntry[? "VOORDEEL"];
 }
+
+*/
