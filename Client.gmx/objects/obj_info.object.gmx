@@ -29,7 +29,7 @@
 y = room_height/2;
 
 instance_create(x, y, obj_infoloonkosten);
-instance_create(910, 475, obj_buttoncontinue);
+instance_create(910, 475, obj_buttoncontinueloon);
 instance_create(150, 150, obj_drawinfoloonkosten);
 instance_create(250, 200, obj_loonkostenprices);
 </string>

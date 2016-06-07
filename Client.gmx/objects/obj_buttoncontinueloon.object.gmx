@@ -29,7 +29,7 @@
    {
     instance_destroy();
    }
-with (obj_buttoncontinue)
+with (obj_buttoncontinueloon)
    {
     instance_destroy();
    }

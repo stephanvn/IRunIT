@@ -149,7 +149,7 @@
         <object>objects\obj_balance</object>
         <object>objects\obj_infoloonkosten</object>
         <object>objects\obj_backscreenbalance</object>
-        <object>objects\obj_buttoncontinue</object>
+        <object>objects\obj_buttoncontinueloon</object>
         <object>objects\obj_drawinfoloonkosten</object>
         <object>objects\obj_loonkostenprices</object>
         <object>objects\obj_buttoncontinuebalance</object>
