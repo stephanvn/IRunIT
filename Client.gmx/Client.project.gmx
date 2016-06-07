@@ -149,7 +149,6 @@
         <object>objects\obj_info</object>
         <object>objects\obj_balance</object>
         <object>objects\obj_infoloonkosten</object>
-        <object>objects\obj_buttoncontinue</object>
         <object>objects\obj_worker_red</object>
         <object>objects\obj_worker_blue</object>
         <object>objects\obj_worker_green</object>
