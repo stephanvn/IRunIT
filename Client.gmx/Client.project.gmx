@@ -99,6 +99,7 @@
       <sprite>sprites\spr_levelbox</sprite>
       <sprite>sprites\spr_info</sprite>
       <sprite>sprites\spr_infotemplate</sprite>
+      <sprite>sprites\spr_buttoncontinue</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -142,6 +143,7 @@
         <object>objects\obj_levelbox</object>
         <object>objects\obj_info</object>
         <object>objects\obj_infoloonkosten</object>
+        <object>objects\obj_buttoncontinue</object>
       </objects>
     </objects>
     <objects name="Server">
