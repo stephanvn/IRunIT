@@ -3,6 +3,76 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="9" name="datafiles">
+    <datafile>
+      <name>categorie1.json</name>
+      <exists>-1</exists>
+      <size>4930</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>categorie1.json</filename>
+    </datafile>
+    <datafile>
+      <name>categorie2.json</name>
+      <exists>-1</exists>
+      <size>3189</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>categorie2.json</filename>
+    </datafile>
+    <datafile>
+      <name>categorie3.json</name>
+      <exists>-1</exists>
+      <size>3256</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>categorie3.json</filename>
+    </datafile>
+    <datafile>
+      <name>start.json</name>
+      <exists>-1</exists>
+      <size>1218</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>start.json</filename>
+    </datafile>
+  </datafiles>
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
@@ -12,18 +82,54 @@
     <sprite>sprites\spr_red</sprite>
     <sprite>sprites\spr_server</sprite>
     <sprite>sprites\spr_choose</sprite>
+    <sprite>sprites\spr_teamindicator</sprite>
+    <sprite>sprites\spr_start</sprite>
+    <sprite>sprites\spr_send</sprite>
+    <sprite>sprites\spr_stop</sprite>
+    <sprite>sprites\spr_cash</sprite>
+    <sprite>sprites\spr_project_icon</sprite>
+    <sprite>sprites\spr_bid_button</sprite>
     <sprite>sprites\spr_gaylord</sprite>
+    <sprites name="Gamescreen">
+      <sprite>sprites\spr_cardpile1</sprite>
+      <sprite>sprites\spr_level</sprite>
+      <sprite>sprites\spr_emptycard</sprite>
+      <sprite>sprites\spr_projectempty</sprite>
+      <sprite>sprites\spr_cardpile2</sprite>
+      <sprite>sprites\spr_levelbox</sprite>
+      <sprite>sprites\spr_info</sprite>
+      <sprite>sprites\spr_infotemplate</sprite>
+      <sprite>sprites\spr_buttoncontinue</sprite>
+      <sprite>sprites\spr_loonkostenprices</sprite>
+    </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\startlogo</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Server">
       <script>scripts\NewConnection.gml</script>
       <script>scripts\ReceiveData.gml</script>
+      <script>scripts\SetUpFirstRound.gml</script>
+      <script>scripts\GenerateProjects.gml</script>
+      <script>scripts\SendToEveryone.gml</script>
+      <script>scripts\SendToEveryoneExcept.gml</script>
+      <script>scripts\WriteProjectsToBuffer.gml</script>
+      <script>scripts\CheckAllPlayersBidded.gml</script>
+      <script>scripts\LetNextPlayerPickProjects.gml</script>
+      <script>scripts\StartRound.gml</script>
+      <script>scripts\LoadProjectcardJson.gml</script>
+      <script>scripts\NewPlayerJoined.gml</script>
+    </scripts>
+    <scripts name="Client">
+      <script>scripts\ReceiveData_Client.gml</script>
+      <script>scripts\SendPickedProjects.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_small</font>
+    <font>fonts\fnt_large</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_choose_server</object>
@@ -31,23 +137,61 @@
     <objects name="Client">
       <object>objects\obj_controller</object>
       <object>objects\par_textbox</object>
+      <object>objects\obj_send</object>
+      <object>objects\obj_bid_button</object>
+      <objects name="Gamescreen">
+        <object>objects\obj_emptycard</object>
+        <object>objects\obj_emptycardfield</object>
+        <object>objects\obj_level</object>
+        <object>objects\obj_projectempty</object>
+        <object>objects\obj_draw</object>
+        <object>objects\obj_levelbox</object>
+        <object>objects\obj_info</object>
+        <object>objects\obj_balance</object>
+        <object>objects\obj_infoloonkosten</object>
+        <object>objects\obj_worker_red</object>
+        <object>objects\obj_worker_blue</object>
+        <object>objects\obj_worker_green</object>
+        <object>objects\obj_worker_yellow</object>
+        <object>objects\obj_backscreenbalance</object>
+        <object>objects\obj_buttoncontinueloon</object>
+        <object>objects\obj_drawinfoloonkosten</object>
+        <object>objects\obj_loonkostenprices</object>
+        <object>objects\obj_buttoncontinuebalance</object>
+        <object>objects\obj_drawbalancetext</object>
+      </objects>
     </objects>
     <objects name="Server">
       <object>objects\obj_server</object>
       <object>objects\obj_client_dummy</object>
       <object>objects\obj_project</object>
-      <object>objects\obj_worker</object>
+      <object>objects\obj_start_server</object>
+      <object>objects\obj_teamdev</object>
+      <object>objects\obj_emp_growth</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_startmenu</room>
     <rooms name="Client">
       <room>rooms\rm_client</room>
+      <room>rooms\rm_gamescreen</room>
     </rooms>
     <rooms name="Server">
       <room>rooms\rm_server</room>
     </rooms>
   </rooms>
+  <constants number="10">
+    <constant name="BLUE">0</constant>
+    <constant name="GREEN">1</constant>
+    <constant name="YELLOW">2</constant>
+    <constant name="RED">3</constant>
+    <constant name="NIEUW">4</constant>
+    <constant name="MAANDTWEE">5</constant>
+    <constant name="MAANDDRIE">6</constant>
+    <constant name="VERWIJDEREN">7</constant>
+    <constant name="TITEL">8</constant>
+    <constant name="VOORDEEL">9</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

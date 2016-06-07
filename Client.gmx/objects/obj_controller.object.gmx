@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,20 +25,88 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>name = get_string("Enter your name","");
-buff = buffer_create(256, buffer_grow, 1); // Create a buffer for the network messages
+            <string>globalvar sendbuff, client, pickedProjects;
+name = get_string("Enter your name","");
+sendbuff = buffer_create(256, buffer_grow, 1); // Create a buffer for the network messages
 client = network_create_socket(network_socket_tcp); // Create a TCP/IP socket
 var connection = network_connect(client, "localhost", 6510); // Connect to our server
+state = "init";
+capital = 0;
+workers_red = 0;
+workers_blue = 0;
+workers_yellow = 0;
+workers_green = 0;
+skill_troubleshooting = 0;
+skill_intel = 0;
+skill_teamwork = 0;
+skill_communication = 0;
+skill_planning = 0;
+maxpicks = 2;
+canPickProjects = false;
+pickedProjects = ds_list_create();
 
 if (connection != 0) { // show error if connection failed
     show_message("Error - can not connect to server!!");
-    game_end();
 }
 else {
-    buffer_seek(buff, buffer_seek_start, 0); // You always have to do this before writing to a buffer. (it resets it to the 0 position)
-    buffer_write(buff, buffer_s16, 1 ); // Write the unique identifier so that the server will be able to recognize what kind of message this is
-    buffer_write(buff, buffer_string, name); // Write the name you just entered to the buffer
-    network_send_packet(client, buff, buffer_tell(buff)); // Send this message to the server
+    buffer_seek(sendbuff, buffer_seek_start, 0); // You always have to do this before writing to a buffer. (it resets it to the 0 position)
+    buffer_write(sendbuff, buffer_s16, 1 ); // Write the unique identifier so that the server will be able to recognize what kind of message this is
+    buffer_write(sendbuff, buffer_string, name); // Write the name you just entered to the buffer
+    network_send_packet(client, sendbuff, buffer_tell(sendbuff)); // Send this message to the server
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="68">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+    ReceiveData_Client(); // If the arrived message isn't a connection or disconnection, we'll process it with this script
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (room == rm_gamescreen) 
+{
+    instance_create(0,0,obj_worker_red);
+    instance_create(0,0,obj_worker_blue);
+    instance_create(0,0,obj_worker_yellow);
+    instance_create(0,0,obj_worker_green);    
 }
 </string>
           </argument>
@@ -62,60 +130,26 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_center);
-draw_text(160, 100, "Client connected.#Press and hold Enter to make#your sprite turn red on the server");
+            <string>draw_set_font(fnt_large);
+draw_set_halign(fa_center);
+draw_set_color(c_green);
+draw_text(room_width/2, 50, state);
+draw_set_color(c_black);
 
-draw_text(x, y, keyboard_string);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>buffer_seek(buff, buffer_seek_start, 0);
-buffer_write(buff, buffer_s16, 2);
-network_send_packet(client, buff, buffer_tell(buff));
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>buffer_seek(buff, buffer_seek_start, 0);
-buffer_write(buff, buffer_s16, 3);
-network_send_packet(client, buff, buffer_tell(buff));
+draw_set_font(fnt_small);
+draw_set_halign(fa_left);
+draw_text(0, 20, "Player: " + string(name));
+draw_sprite(spr_cash, image_index, 735, 15);
+draw_text(765, 8, "$" + string(capital));
+draw_text(605, 33, "Rode medewerkers: " + string(workers_red));
+draw_text(589, 53, "Blauwe medewerkers: " + string(workers_blue));
+draw_text(609, 73, "Gele medewerkers: " + string(workers_yellow));
+draw_text(586, 93, "Groene medewerkers: " + string(workers_green));
+draw_text(586, 123, "Problemen oplossen: " + string(skill_troubleshooting));
+draw_text(586, 143, "Onderzoek doen: " + string(skill_intel));
+draw_text(586, 163, "Samenwerken: " + string(skill_teamwork));
+draw_text(586, 183, "Communicatie: " + string(skill_communication));
+draw_text(586, 203, "Planning/organiseren: " + string(skill_planning));
 </string>
           </argument>
         </arguments>

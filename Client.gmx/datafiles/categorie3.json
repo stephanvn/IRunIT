@@ -1,0 +1,122 @@
+[
+ {
+   "Blue":4,
+   "Green":1,
+   "Yellow":5,
+   "Red":2,
+   "Nieuw":30,
+   "1maand":25,
+   "2maand":20,
+   "Verwijderen":-8,
+   "Titel":"Landelijke koppeling weerstations KNMI",
+   "Voordeel":"COMMUNICATIE > 8 dan mag deze opdracht een ronde langer als nieuw worden beschouwd"
+ },
+ {
+   "Blue":2,
+   "Green":4,
+   "Yellow":3,
+   "Red":5,
+   "Nieuw":35,
+   "1maand":25,
+   "2maand":15,
+   "Verwijderen":-10,
+   "Titel":"Ontwikkelen maatwerk middleware",
+   "Voordeel":"ONDERZOEK DOEN > 8 dan is er 1 TI resource minder nodig"
+ },
+ {
+   "Blue":2,
+   "Green":5,
+   "Yellow":3,
+   "Red":1,
+   "Nieuw":24,
+   "1maand":18,
+   "2maand":12,
+   "Verwijderen":-5,
+   "Titel":"Technisch advies nieuw digitaal bedrijfsconcept",
+   "Voordeel":"SAMENWERKEN > 8 dan mag bij het voltooien van de opdracht een vaardigheid naar keuze met 1 worden verhoogd"
+ },
+ {
+   "Blue":5,
+   "Green":2,
+   "Yellow":1,
+   "Red":3,
+   "Nieuw":29,
+   "1maand":23,
+   "2maand":17,
+   "Verwijderen":-6,
+   "Titel":"Real-time wachttijdensysteem voor een groot pretpark",
+   "Voordeel":"SAMENWERKEN > 8 dan mag bij het voltooien van de opdracht een vaardigheid naar keuze met 1 worden verhoogd"
+ },
+ {
+   "Blue":3,
+   "Green":1,
+   "Yellow":4,
+   "Red":2,
+   "Nieuw":25,
+   "1maand":20,
+   "2maand":15,
+   "Verwijderen":-7,
+   "Titel":"Systeem voor de monitoring van oplaadpunten voor elektrische auto's",
+   "Voordeel":"CREATIEF PROBLEEM OPLOSSEN > 8 dan mag een SNE resource voor deze opdracht worden ingevuld door een willekeurige andere resources"
+ },
+ {
+   "Blue":5,
+   "Green":3,
+   "Yellow":1,
+   "Red":5,
+   "Nieuw":33,
+   "1maand":22,
+   "2maand":11,
+   "Verwijderen":-5,
+   "Titel":"Het ontwikkelen van een navigatiemodule voor een autonoom-rijdend voertuig",
+   "Voordeel":"PLANNEN EN ORGANISEREN > 8 dan is de omzet €1 hoger bij het voltooien van de opdracht"
+ },
+ {
+   "Blue":1,
+   "Green":4,
+   "Yellow":2,
+   "Red":5,
+   "Nieuw":28,
+   "1maand":21,
+   "2maand":14,
+   "Verwijderen":-7,
+   "Titel":"Mobiel wireless access-point (router op een drone) voor WIFI op locatie",
+   "Voordeel":"COMMUNICATIE > 8 dan mag deze opdracht een ronde langer als nieuw worden beschouwd"
+ },
+ {
+   "Blue":1,
+   "Green":3,
+   "Yellow":2,
+   "Red":4,
+   "Nieuw":23,
+   "1maand":20,
+   "2maand":17,
+   "Verwijderen":-6,
+   "Titel":"Parkeerplaats-toewijzing op basis van videoregistratie van de parkeerplaatsen en nummerborden",
+   "Voordeel":"CREATIEF PROBLEEM OPLOSSEN > 8 dan mag een SIE resource voor deze opdracht worden ingevuld door een willekeurige andere resources"
+ },
+ {
+   "Blue":3,
+   "Green":5,
+   "Yellow":4,
+   "Red":1,
+   "Nieuw":26,
+   "1maand":20,
+   "2maand":14,
+   "Verwijderen":-6,
+   "Titel":"Technische ontwerp voor het dataverkeer van een drone netwerk",
+   "Voordeel":"PLANNEN EN ORGANISEREN > 8 dan is de omzet €1 hoger bij het voltooien van de opdracht"
+ },
+ {
+   "Blue":4,
+   "Green":2,
+   "Yellow":5,
+   "Red":3,
+   "Nieuw":32,
+   "1maand":24,
+   "2maand":18,
+   "Verwijderen":-8,
+   "Titel":"Inpassing nieuwe digitale meetapparatuur in de bedrijfsinfrastructuur",
+   "Voordeel":"ONDERZOEK DOEN > 8 dan is er 1 SNE resource minder nodig"
+ }
+]

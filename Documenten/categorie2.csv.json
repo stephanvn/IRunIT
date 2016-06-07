@@ -1,0 +1,122 @@
+[
+ {
+   "Blue":3,
+   "Green":3,
+   "Yellow":3,
+   "Red":0,
+   "Nieuw":18,
+   "1maand":14,
+   "2maand":10,
+   "verwijderen":-4,
+   "titel":"Cybercrimininaliteit: speur naar bewijsmateriaal in de computersystemen",
+   "voordeel":"PLANNEN EN ORGANISEREN > 6 dan is de omzet €1 hoger bij het voltooien van de opdracht"
+ },
+ {
+   "Blue":0,
+   "Green":5,
+   "Yellow":4,
+   "Red":2,
+   "Nieuw":23,
+   "1maand":17,
+   "2maand":11,
+   "verwijderen":-3,
+   "titel":"Koppeling huishoudapparatuur aan centraal regelpaneel",
+   "voordeel":"PLANNEN EN ORGANISEREN > 6 dan is de omzet €1 hoger bij het voltooien van de opdracht"
+ },
+ {
+   "Blue":5,
+   "Green":2,
+   "Yellow":0,
+   "Red":4,
+   "Nieuw":22,
+   "1maand":18,
+   "2maand":14,
+   "verwijderen":-5,
+   "titel":"Ontwikkeling van nieuwe netwerkbeveiligingen",
+   "voordeel":"CREATIEF PROBLEEM OPLOSSEN > 6 dan mag een BIM resource voor deze opdracht worden ingevuld door een willekeurige andere resources"
+ },
+ {
+   "Blue":3,
+   "Green":3,
+   "Yellow":3,
+   "Red":0,
+   "Nieuw":18,
+   "1maand":16,
+   "2maand":14,
+   "verwijderen":-4,
+   "titel":"Het beveiligen van een webwinkel",
+   "voordeel":"ONDERZOEK DOEN > 6 dan is er 1 resources naar keuze minder nodig"
+ },
+ {
+   "Blue":0,
+   "Green":3,
+   "Yellow":5,
+   "Red":2,
+   "Nieuw":19,
+   "1maand":16,
+   "2maand":13,
+   "verwijderen":-4,
+   "titel":"Software-bibliotheek voor het gebruik van de ori�ntatie-sensoren in een smartphone",
+   "voordeel":"ONDERZOEK DOEN > 6 dan is er 1 resources naar keuze minder nodig"
+ },
+ {
+   "Blue":4,
+   "Green":0,
+   "Yellow":1,
+   "Red":5,
+   "Nieuw":21,
+   "1maand":17,
+   "2maand":13,
+   "verwijderen":-5,
+   "titel":"Functioneel ontwerp van een netwerk monitoring software",
+   "voordeel":"COMMUNICATIE > 6 dan mag deze opdracht een ronde langer als nieuw worden beschouwd"
+ },
+ {
+   "Blue":4,
+   "Green":2,
+   "Yellow":0,
+   "Red":3,
+   "Nieuw":16,
+   "1maand":14,
+   "2maand":12,
+   "verwijderen":-3,
+   "titel":"Virtualiseer een bestaande serveromgeving",
+   "voordeel":"SAMENWERKEN > 6 dan mag bij het voltooien van de opdracht een vaardigheid naar keuze met 1 worden verhoogd"
+ },
+ {
+   "Blue":3,
+   "Green":4,
+   "Yellow":3,
+   "Red":0,
+   "Nieuw":20,
+   "1maand":16,
+   "2maand":12,
+   "verwijderen":-4,
+   "titel":"Collectie software warmte sensoren",
+   "voordeel":"SAMENWERKEN > 6 dan mag bij het voltooien van de opdracht een vaardigheid naar keuze met 1 worden verhoogd"
+ },
+ {
+   "Blue":2,
+   "Green":0,
+   "Yellow":4,
+   "Red":3,
+   "Nieuw":17,
+   "1maand":15,
+   "2maand":13,
+   "verwijderen":-3,
+   "titel":"Adviesrapport migratie bestaande applicaties naar de cloud",
+   "voordeel":"COMMUNICATIE > 6 dan mag deze opdracht een ronde langer als nieuw worden beschouwd"
+ },
+ {
+   "Blue":0,
+   "Green":2,
+   "Yellow":2,
+   "Red":5,
+   "Nieuw":20,
+   "1maand":15,
+   "2maand":10,
+   "verwijderen":-2,
+   "titel":"Ontwikkeling real-time rapportage energieverbruik",
+   "voordeel":"CREATIEF PROBLEEM OPLOSSEN > 6 dan mag een TI resource voor deze opdracht worden ingevuld door een willekeurige andere resources"
+ }
+]
