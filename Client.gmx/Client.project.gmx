@@ -168,7 +168,6 @@
     <rooms name="Client">
       <room>rooms\rm_client</room>
       <room>rooms\rm_gamescreen</room>
-      <room>rooms\rm_balance</room>
     </rooms>
     <rooms name="Server">
       <room>rooms\rm_server</room>
