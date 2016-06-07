@@ -13,19 +13,7 @@
     {
         case 1: // New player joined 
             other_player.name = buffer_read(buff, buffer_string);
-            buffer_seek(sendbuff, buffer_seek_start, 0);
-            buffer_write(sendbuff, buffer_s16, 0);
-            buffer_write(sendbuff, buffer_u16, other_player.capital);
-            buffer_write(sendbuff, buffer_u16, other_player.workers_red);
-            buffer_write(sendbuff, buffer_u16, other_player.workers_blue);
-            buffer_write(sendbuff, buffer_u16, other_player.workers_yellow);
-            buffer_write(sendbuff, buffer_u16, other_player.workers_green);
-            buffer_write(sendbuff, buffer_u16, other_player.skill_troubleshooting);
-            buffer_write(sendbuff, buffer_u16, other_player.skill_intel);
-            buffer_write(sendbuff, buffer_u16, other_player.skill_teamwork);
-            buffer_write(sendbuff, buffer_u16, other_player.skill_communication);
-            buffer_write(sendbuff, buffer_u16, other_player.skill_planning);
-            network_send_packet(sock, sendbuff, buffer_tell(sendbuff));
+            NewPlayerJoined(other_player.name, other_player, sock);
         break;
 
         case 2: // Receive a bid from a client during the bid round
