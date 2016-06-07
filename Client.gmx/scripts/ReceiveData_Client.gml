@@ -49,7 +49,7 @@
         
         case 3: // Local client's turn to pick projects
             obj_controller.canPickProjects = true;
-            obj_controller.state = "You get to pick your shitty projects now";
+            obj_controller.state = "Your turn to pick projects";
         break;
         
         case 4: // Remove projects chosen by someone else
@@ -67,5 +67,10 @@
                         instance_destroy(); }
                 }
             }
+        break;
+        
+        case 5: //Round 1 started
+            obj_controller.state = "Round 1 has begun";
+            room_goto(rm_gamescreen);
         break;
     }

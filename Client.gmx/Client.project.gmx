@@ -147,13 +147,16 @@
         <object>objects\obj_info</object>
         <object>objects\obj_infoloonkosten</object>
         <object>objects\obj_buttoncontinue</object>
+        <object>objects\obj_worker_red</object>
+        <object>objects\obj_worker_blue</object>
+        <object>objects\obj_worker_green</object>
+        <object>objects\obj_worker_yellow</object>
       </objects>
     </objects>
     <objects name="Server">
       <object>objects\obj_server</object>
       <object>objects\obj_client_dummy</object>
       <object>objects\obj_project</object>
-      <object>objects\obj_worker</object>
       <object>objects\obj_start_server</object>
       <object>objects\obj_teamdev</object>
       <object>objects\obj_emp_growth</object>
