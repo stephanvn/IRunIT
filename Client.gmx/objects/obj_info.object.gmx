@@ -27,9 +27,8 @@
             <kind>1</kind>
             <string>instance_create(150, 150, obj_infoloonkosten);
 instance_create(910, 475, obj_buttoncontinue);
-
-draw_text(0,0, "Medewerkers moeten een salaris krijgen, ongeacht of je ze inzet.")
-draw_text(500,500, "Hieronder een overzicht van de kosten bij het aantal medewerkers.")
+instance_create(150, 150, obj_drawinfoloonkosten);
+instance_create(250, 200, obj_loonkostenprices);
 </string>
           </argument>
         </arguments>
