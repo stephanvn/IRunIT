@@ -36,7 +36,7 @@
             network_send_packet(sock, sendbuff, buffer_tell(sendbuff));
             if (CheckAllPlayersBidded()) 
             {
-                IterateThroughBidders();
+                //IterateThroughBidders();
                 var obj = ds_map_find_value(bidmap, ds_list_find_value(bidlist, 0));
                 buffer_seek(sendbuff, buffer_seek_start, 0);
                 buffer_write(sendbuff, buffer_s16, 3);

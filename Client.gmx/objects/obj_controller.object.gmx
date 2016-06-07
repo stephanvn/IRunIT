@@ -101,10 +101,10 @@ draw_text(0, 0, "Game state: " + state);
 draw_text(0, 20, "Player: " + string(name));
 draw_sprite(spr_cash, image_index, 735, 15);
 draw_text(765, 8, "$" + string(capital));
-draw_text(605, 38, "Rode medewerkers: " + string(workers_red));
-draw_text(588, 68, "Blauwe medewerkers: " + string(workers_blue));
-draw_text(610, 98, "Gele medewerkers: " + string(workers_yellow));
-draw_text(590, 128, "Groene medewerkers: " + string(workers_green));
+draw_text(605, 33, "Rode medewerkers: " + string(workers_red));
+draw_text(589, 53, "Blauwe medewerkers: " + string(workers_blue));
+draw_text(609, 73, "Gele medewerkers: " + string(workers_yellow));
+draw_text(586, 93, "Groene medewerkers: " + string(workers_green));
 </string>
           </argument>
         </arguments>
