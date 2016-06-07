@@ -3,7 +3,7 @@
   <spriteName>spr_info</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-101</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -28,11 +28,11 @@
             <string>x = room_width/2;
 y = room_height/2;
 
-instance_create(x, y, obj_infoloonkosten);
-instance_create(910, 475, obj_buttoncontinue);
+instance_create(x, y, obj_backscreenbalance);
+instance_create(810, 475, obj_buttoncontinuebalance);
+instance_create(x, y, obj_drawbalancetext);
 
-draw_text(0,0, "Medewerkers moeten een salaris krijgen, ongeacht of je ze inzet.")
-draw_text(500,500, "Hieronder een overzicht van de kosten bij het aantal medewerkers.")
+
 </string>
           </argument>
         </arguments>

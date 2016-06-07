@@ -145,8 +145,12 @@
         <object>objects\obj_draw</object>
         <object>objects\obj_levelbox</object>
         <object>objects\obj_info</object>
+        <object>objects\obj_balance</object>
         <object>objects\obj_infoloonkosten</object>
+        <object>objects\obj_backscreenbalance</object>
         <object>objects\obj_buttoncontinue</object>
+        <object>objects\obj_buttoncontinuebalance</object>
+        <object>objects\obj_drawbalancetext</object>
       </objects>
     </objects>
     <objects name="Server">
@@ -164,6 +168,7 @@
     <rooms name="Client">
       <room>rooms\rm_client</room>
       <room>rooms\rm_gamescreen</room>
+      <room>rooms\rm_balance</room>
     </rooms>
     <rooms name="Server">
       <room>rooms\rm_server</room>
