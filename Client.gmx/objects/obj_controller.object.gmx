@@ -110,6 +110,10 @@ else {
     
     instance_create(0,0,obj_info);
     instance_create(0,0,obj_balance);    
+    instance_create(0,0,obj_roundtime);
+    instance_create(0,0,obj_capital);
+    instance_create(0,0,obj_teamname);
+    instance_create(0,0,obj_level_info);
 }
 </string>
           </argument>
@@ -139,13 +143,23 @@ else {
     draw_set_halign(fa_center);
     draw_set_color(c_green);
     draw_text(room_width/2 + 80, 0, state);
-    draw_set_color(c_black);
     
+    draw_set_color(c_black);
     draw_set_font(fnt_small);
     draw_set_halign(fa_left);
     draw_text(0, 0, "Team: " + string(name));
-    draw_text(700, 0, "Capital: $" + string(capital));
+    draw_text(700, 0, "Geld: $" + string(capital));
     draw_line(0, 25, room_width, 25);
+}
+
+if(room == rm_gamescreen) 
+{
+    draw_set_font(fnt_small);
+    draw_set_halign(fa_left);
+    draw_set_color(c_black);
+    draw_text(765, 5, "Team: "+string(name));
+    draw_text(1015, 5, "Geld: "+string(capital));
+    draw_text(1162, 505, "Level");
 }
 </string>
           </argument>
