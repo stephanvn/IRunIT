@@ -149,17 +149,21 @@
         <object>objects\obj_levelbox</object>
         <object>objects\obj_info</object>
         <object>objects\obj_balance</object>
-        <object>objects\obj_infoloonkosten</object>
         <object>objects\obj_worker_red</object>
         <object>objects\obj_worker_blue</object>
         <object>objects\obj_worker_green</object>
         <object>objects\obj_worker_yellow</object>
-        <object>objects\obj_backscreenbalance</object>
-        <object>objects\obj_buttoncontinueloon</object>
-        <object>objects\obj_drawinfoloonkosten</object>
         <object>objects\obj_loonkostenprices</object>
-        <object>objects\obj_buttoncontinuebalance</object>
+        <object>objects\obj_drawinfoloonkosten</object>
         <object>objects\obj_drawbalancetext</object>
+        <objects name="Screen">
+          <object>objects\obj_infoloonkosten</object>
+          <object>objects\obj_backscreenbalance</object>
+        </objects>
+        <objects name="Button">
+          <object>objects\obj_buttoncontinuebalance</object>
+          <object>objects\obj_buttoncontinueloon</object>
+        </objects>
       </objects>
     </objects>
     <objects name="Server">

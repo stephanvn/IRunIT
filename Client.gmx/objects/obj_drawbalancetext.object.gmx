@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_left);
+            <string>draw_set_font(fnt_small);
+draw_set_halign(fa_left);
 draw_set_color(c_black);
 
 draw_text(275, 135, "Verrekening")

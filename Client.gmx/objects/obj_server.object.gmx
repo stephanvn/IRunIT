@@ -212,16 +212,18 @@ if (eventid == server) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_left);
+            <string>draw_set_font(fnt_small);
+draw_set_halign(fa_left);
 draw_set_color(c_black);
 
 draw_text(0, 0, "Verbonden spelers: " + string(ds_map_size(players)) );
 draw_line(0, 148, 800, 148);
 draw_text(0, 150, "Projecten: ");
 
-if (gameActive) {
-        draw_text(0, 300, "Round 1 countdown: "+string(minutes)+":"+string(seconds)); //Timer
-    }
+if (gameActive) 
+{
+    draw_text(0, 300, "Round 1 countdown: "+string(minutes)+":"+string(seconds)); //Timer
+}
     
 for (var i=0; i&lt;ds_list_size(bidlist); i++) 
 {

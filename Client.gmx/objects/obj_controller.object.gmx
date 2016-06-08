@@ -133,17 +133,20 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(fnt_large);
-draw_set_halign(fa_center);
-draw_set_color(c_green);
-draw_text(room_width/2 + 80, 10, state);
-draw_set_color(c_black);
-
-draw_set_font(fnt_small);
-draw_set_halign(fa_left);
-draw_text(0, 20, "Player: " + string(name));
-draw_sprite(spr_cash, image_index, room_width/2 + 260, 20);
-draw_text(room_width/2 + 290, 8, "$" + string(capital));
+            <string>if(room == rm_client) 
+{
+    draw_set_font(fnt_small);
+    draw_set_halign(fa_center);
+    draw_set_color(c_green);
+    draw_text(room_width/2 + 80, 0, state);
+    draw_set_color(c_black);
+    
+    draw_set_font(fnt_small);
+    draw_set_halign(fa_left);
+    draw_text(0, 0, "Team: " + string(name));
+    draw_text(700, 0, "Capital: $" + string(capital));
+    draw_line(0, 25, room_width, 25);
+}
 </string>
           </argument>
         </arguments>

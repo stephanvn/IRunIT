@@ -175,6 +175,7 @@ y = 200;
             <kind>1</kind>
             <string>draw_self();
 if (show == true) {
+    draw_set_font(fnt_small);
     draw_text(mouse_x, mouse_y, string(project_id));
     draw_text(mouse_x, mouse_y+20, string(name));
     draw_text(mouse_x, mouse_y+40, string(category));
