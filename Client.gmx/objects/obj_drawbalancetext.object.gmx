@@ -28,12 +28,25 @@
             <string>draw_set_halign(fa_left);
 draw_set_color(c_black);
 
-draw_text(350, 150, "Loonkosten")
-draw_text(350, 200, "Biedkosten")
-draw_text(350, 250, "Verbeterkosten")
-draw_text(350, 300, "Omzet")
-draw_text(350, 350, "Saldo")
-draw_text(350, 450, "Eigen vermogen(oud) + saldo = eigen vermogen (nieuw)")
+draw_text(275, 135, "Verrekening")
+
+draw_text(275, 170, "Loonkosten")
+draw_line(425, 188, 475, 188);
+
+draw_text(275, 220, "Biedkosten")
+draw_line(425, 238, 475, 238);
+
+draw_text(275, 270, "Verbeterkosten")
+draw_line(425, 288, 475, 288);
+
+draw_text(275, 320, "Omzet")
+draw_line(425, 338, 475, 338);
+
+draw_text(275, 370, "Saldo")
+draw_line(425, 388, 475, 388);
+
+draw_text(275, 420, "Eigen vermogen(oud) + saldo = eigen vermogen (nieuw)")
+draw_line(275, 440, 765, 440);
 </string>
           </argument>
         </arguments>

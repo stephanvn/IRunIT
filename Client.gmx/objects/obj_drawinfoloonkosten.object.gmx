@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(275,135, "Loonkosten")
+            <string>draw_text(275,135, "Loonkosten info")
 draw_text(275,175, "Medewerkers moeten een salaris krijgen, ongeacht of je ze inzet.")
 draw_text(275,190, "Hieronder een overzicht van de kosten bij het aantal medewerkers.")
 </string>
