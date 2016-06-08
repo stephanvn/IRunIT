@@ -19,6 +19,10 @@
         case 2: // Receive a bid from a client during the bid round
             other_player.bid = buffer_read(buff, buffer_s16);
             ds_list_add(bidlist, other_player.bid);
+            //BUG: The line below adds a player to a map, using its bid as a key.
+            //     If Player 1 bids "5", and Player 2 bids "5",
+            //     this code will attempt to add Player 2 with the same key as Player 1.
+            //     In a map, no two keys can be the same.
             ds_map_add(bidmap, other_player.bid, other_player);
             ds_list_sort(bidlist, false);
             other_player.capital -= other_player.bid;
