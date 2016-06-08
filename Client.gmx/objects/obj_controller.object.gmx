@@ -106,7 +106,10 @@ else {
     instance_create(0,0,obj_worker_red);
     instance_create(0,0,obj_worker_blue);
     instance_create(0,0,obj_worker_yellow);
-    instance_create(0,0,obj_worker_green);    
+    instance_create(0,0,obj_worker_green);
+    
+    instance_create(0,0,obj_info);
+    instance_create(0,0,obj_balance);    
 }
 </string>
           </argument>
@@ -133,23 +136,14 @@ else {
             <string>draw_set_font(fnt_large);
 draw_set_halign(fa_center);
 draw_set_color(c_green);
-draw_text(room_width/2, 50, state);
+draw_text(room_width/2 + 80, 10, state);
 draw_set_color(c_black);
 
 draw_set_font(fnt_small);
 draw_set_halign(fa_left);
 draw_text(0, 20, "Player: " + string(name));
-draw_sprite(spr_cash, image_index, 735, 15);
-draw_text(765, 8, "$" + string(capital));
-draw_text(605, 33, "Rode medewerkers: " + string(workers_red));
-draw_text(589, 53, "Blauwe medewerkers: " + string(workers_blue));
-draw_text(609, 73, "Gele medewerkers: " + string(workers_yellow));
-draw_text(586, 93, "Groene medewerkers: " + string(workers_green));
-draw_text(586, 123, "Problemen oplossen: " + string(skill_troubleshooting));
-draw_text(586, 143, "Onderzoek doen: " + string(skill_intel));
-draw_text(586, 163, "Samenwerken: " + string(skill_teamwork));
-draw_text(586, 183, "Communicatie: " + string(skill_communication));
-draw_text(586, 203, "Planning/organiseren: " + string(skill_planning));
+draw_sprite(spr_cash, image_index, room_width/2 + 260, 20);
+draw_text(room_width/2 + 290, 8, "$" + string(capital));
 </string>
           </argument>
         </arguments>

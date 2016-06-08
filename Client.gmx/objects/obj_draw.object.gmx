@@ -60,6 +60,12 @@ draw_text(400,520,"Loonkosten")
 draw_text(400,545,"Biedkosten")
 draw_text(400,570,"Verbeterkosten")
 
+//line in the middle of the screen
+draw_line(560, 0, 560, 1280);
+
+//line from bottom left text section to full width
+draw_line(0, 500, 1280, 500);
+
 //Verbeter information bottom right
 draw_text(650,520,"Categorie")
 draw_text(800,520,"Punten")
