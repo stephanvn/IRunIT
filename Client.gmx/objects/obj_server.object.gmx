@@ -224,12 +224,13 @@ if (gameActive)
 {
     draw_text(0, 300, "Round 1 countdown: "+string(minutes)+":"+string(seconds)); //Timer
 }
-    
-for (var i=0; i&lt;ds_list_size(bidlist); i++) 
+
+var first = ds_map_find_first(bidmap);    
+for (var i=0; i&lt;ds_map_size(bidmap); i++) 
 {
-    var bid = ds_list_find_value(bidlist, i);
-    var obj = ds_map_find_value(bidmap, bid);
-    draw_text(300, 400 + 20*i, string(bid) +" : "+ obj.name );
+    
+    draw_text(300, 400 + 20*i, string(first.bid) +" : "+ first.name );
+    first = ds_map_find_next(bidmap, first);
 }
 </string>
           </argument>
