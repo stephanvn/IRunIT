@@ -36,9 +36,9 @@ workers_yellow = 2;
 workers_green = 2;
 
 skill_troubleshooting = 0;
-skill_intel = 0;
-skill_teamwork = 0;
-skill_communication = 0;
+skill_intel = 2;
+skill_teamwork = 3;
+skill_communication = 1;
 skill_planning = 0;
 
 player_number = 0;
