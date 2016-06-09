@@ -109,6 +109,7 @@ else {
     instance_create(0,0,obj_worker_green);
     
     instance_create(0,0,obj_info);
+    instance_create(0,0, obj_level_info_icon);
     instance_create(0,0,obj_balance);    
     instance_create(0,0,obj_roundtime);
     instance_create(0,0,obj_capital);
