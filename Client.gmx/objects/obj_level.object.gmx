@@ -25,10 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(spr_level, 0, 800, 544);
-draw_sprite(spr_level, 0, 800, 579);
-draw_sprite(spr_level, 0, 800, 614);
-draw_sprite(spr_level, 0, 800, 649);
+            <string>draw_sprite(spr_levelgray, 0, 800, 544);
+draw_sprite(spr_levelgray, 0, 800, 579);
+draw_sprite(spr_levelgray, 0, 800, 614);
+draw_sprite(spr_levelgray, 0, 800, 649);
 </string>
           </argument>
         </arguments>

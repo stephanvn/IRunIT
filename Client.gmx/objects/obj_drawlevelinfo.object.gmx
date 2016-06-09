@@ -37,9 +37,9 @@ draw_text(275, 185, "Als ze allemaal level 2 zijn, ben jij level 2.")
 //level1
 draw_sprite(spr_level1, 0, 500, 230);
 //level2
-//draw_sprite(spr_level2, 0, 750, 230);
+draw_sprite(spr_level2, 0, 600, 230);
 //level3
-//draw_sprite(spr_level3, 0, 900, 230);
+draw_sprite(spr_level3, 0, 750, 230);
 
 
 
