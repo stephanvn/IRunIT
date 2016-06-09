@@ -114,6 +114,7 @@ else {
     instance_create(0,0,obj_capital);
     instance_create(0,0,obj_teamname);
     instance_create(0,0,obj_level_info);
+    instance_create(0,0,obj_levels);
 }
 </string>
           </argument>

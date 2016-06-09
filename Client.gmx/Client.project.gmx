@@ -146,10 +146,10 @@
       <objects name="Gamescreen">
         <object>objects\obj_emptycard</object>
         <object>objects\obj_emptycardfield</object>
-        <object>objects\obj_level</object>
+        <object>objects\obj_levels</object>
+        <object>objects\obj_levelbox</object>
         <object>objects\obj_projectempty</object>
         <object>objects\obj_draw</object>
-        <object>objects\obj_levelbox</object>
         <object>objects\obj_info</object>
         <object>objects\obj_balance</object>
         <object>objects\obj_teamname</object>
