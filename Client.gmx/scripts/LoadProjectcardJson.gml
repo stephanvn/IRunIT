@@ -1,6 +1,4 @@
 var jsonFile1 = file_text_open_read("categorie1.json");
-var jsonFile2 = file_text_open_read("categorie2.json");
-var jsonFile3 = file_text_open_read("categorie3.json");
 
 var data1 = "";
 while (!file_text_eof(jsonFile1))
@@ -9,22 +7,6 @@ while (!file_text_eof(jsonFile1))
     file_text_readln(jsonFile1);
 }
 file_text_close(jsonFile1);
-
-var data2 = "";
-while (!file_text_eof(jsonFile2))
-{
-    data2 += file_text_read_string(jsonFile2);
-    file_text_readln(jsonFile2);
-}
-file_text_close(jsonFile2);
-
-var data3 = "";
-while (!file_text_eof(jsonFile3))
-{
-    data3 += file_text_read_string(jsonFile3);
-    file_text_readln(jsonFile3);
-}
-file_text_close(jsonFile3);
 
 var jsonMap1 = json_decode(data1);
 var list1 = ds_map_find_value(jsonMap1, "default");
@@ -45,6 +27,16 @@ for (var i = 0; i < global.totalCards1; i++)
     global.cardData1[# i, VOORDEEL] = theEntry[? "VOORDEEL"];
 }
 
+var jsonFile2 = file_text_open_read("categorie2.json");
+
+var data2 = "";
+while (!file_text_eof(jsonFile2))
+{
+    data2 += file_text_read_string(jsonFile2);
+    file_text_readln(jsonFile2);
+}
+file_text_close(jsonFile2);
+
 var jsonMap2 = json_decode(data2);
 var list2 = ds_map_find_value(jsonMap2, "default");
 global.totalCards2 = ds_list_size(list2);
@@ -63,6 +55,16 @@ for (var i = 0; i < global.totalCards2; i++)
     global.cardData2[# i, TITEL] = theEntry[? "TITEL"];
     global.cardData2[# i, VOORDEEL] = theEntry[? "VOORDEEL"];
 }
+
+var jsonFile3 = file_text_open_read("categorie3.json");
+
+var data3 = "";
+while (!file_text_eof(jsonFile3))
+{
+    data3 += file_text_read_string(jsonFile3);
+    file_text_readln(jsonFile3);
+}
+file_text_close(jsonFile3);
 
 var jsonMap3 = json_decode(data3);
 var list3 = ds_map_find_value(jsonMap3, "default");

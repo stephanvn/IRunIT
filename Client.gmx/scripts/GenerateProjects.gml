@@ -1,28 +1,41 @@
 // Script for generating projects. Creates new projects and 
 // argugment0 = amount of projects to generate
 // arugment1 = project category
-
+LoadProjectcardJson();
 var projectsMap;
 
 for (var i = 0; i < argument0; i++) 
 {
     var p = instance_create(0, 0, obj_project);
     
-    var i = floor(random(global.totalCards1));
-      
+    var item = floor(random(global.totalCards1));
     p.name = global.cardData1[# i, TITEL];
     p.category = argument1;
     
     p.project_id = i;
-    p.req_blue = global.cardData1[# i, BLUE];
-    p.req_red = global.cardData1[# i, RED];
-    p.req_yellow = global.cardData1[# i, YELLOW];
-    p.req_green = global.cardData1[# i, GREEN];
+    p.req_blue = global.cardData1[# item, BLUE];
+    p.req_red = global.cardData1[# item, RED];
+    p.req_yellow = global.cardData1[# item, YELLOW];
+    p.req_green = global.cardData1[# item, GREEN];
     
-    p.month1_value = global.cardData1[# i, NIEUW];
-    p.month2_value = global.cardData1[# i, MAANDTWEE];
-    p.month3_value = global.cardData1[# i, MAANDDRIE];
-    p.month4_expired = global.cardData1[# i, VERWIJDEREN];
+    p.month1_value = global.cardData1[# item, NIEUW];
+    p.month2_value = global.cardData1[# item, MAANDTWEE];
+    p.month3_value = global.cardData1[# item, MAANDDRIE];
+    p.month4_expired = global.cardData1[# item, VERWIJDEREN];
+    
+    /*p.name = "test";
+    p.category = argument1;
+    
+    p.project_id = i;
+    p.req_blue = 1;
+    p.req_red = 2;
+    p.req_yellow = 3;
+    p.req_green = 4;
+    
+    p.month1_value = 10;
+    p.month2_value = 20;
+    p.month3_value = 30;
+    p.month4_expired = 40;*/
     
     switch (argument1) {
         case 1: ds_map_add(projects1, i, p); break;
