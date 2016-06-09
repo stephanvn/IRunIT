@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar players, highest_bid, socketlist, gameActive, projects1, projects2, projects3;
+            <string>globalvar players, highest_bid, socketlist, gameActive, projects1, projects2, projects3, bidturn;
 
 projects1 = ds_map_create();
 projects2 = ds_map_create();
@@ -38,6 +38,7 @@ bidlist = ds_list_create();
 bidmap = ds_map_create();
 socketlist = ds_list_create();
 gameActive = false;
+bidturn = 0;
 server_state = "Waiting to start...";
 
 debug = true;
@@ -211,16 +212,18 @@ if (eventid == server) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_left);
+            <string>draw_set_font(fnt_small);
+draw_set_halign(fa_left);
 draw_set_color(c_black);
 
 draw_text(0, 0, "Verbonden spelers: " + string(ds_map_size(players)) );
 draw_line(0, 148, 800, 148);
 draw_text(0, 150, "Projecten: ");
 
-if (gameActive) {
-        draw_text(0, 300, "Round 1 countdown: "+string(minutes)+":"+string(seconds)); //Timer
-    }
+if (gameActive) 
+{
+    draw_text(0, 300, "Round 1 countdown: "+string(minutes)+":"+string(seconds)); //Timer
+}
     
 for (var i=0; i&lt;ds_list_size(bidlist); i++) 
 {

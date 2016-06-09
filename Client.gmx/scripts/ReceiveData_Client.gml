@@ -15,6 +15,11 @@
             obj_controller.workers_blue = buffer_read(buff, buffer_u16);
             obj_controller.workers_yellow = buffer_read(buff, buffer_u16);
             obj_controller.workers_green = buffer_read(buff, buffer_u16);
+            obj_controller.skill_troubleshooting = buffer_read(buff, buffer_u16);
+            obj_controller.skill_intel = buffer_read(buff, buffer_u16);
+            obj_controller.skill_teamwork = buffer_read(buff, buffer_u16);
+            obj_controller.skill_communication = buffer_read(buff, buffer_u16);
+            obj_controller.skill_planning = buffer_read(buff, buffer_u16);
         break;
         
         case 1: // The server has started the game and the server has sent us the available projects
@@ -44,7 +49,7 @@
         
         case 3: // Local client's turn to pick projects
             obj_controller.canPickProjects = true;
-            obj_controller.state = "You get to pick your shitty projects now";
+            obj_controller.state = "Your turn to pick projects";
         break;
         
         case 4: // Remove projects chosen by someone else
@@ -62,5 +67,10 @@
                         instance_destroy(); }
                 }
             }
+        break;
+        
+        case 5: //Round 1 started
+            obj_controller.state = "Round 1 has begun";
+            room_goto(rm_gamescreen);
         break;
     }

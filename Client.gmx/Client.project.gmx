@@ -76,6 +76,8 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\spr_topmenu_item</sprite>
+    <sprite>sprites\spr_topmenu_itemlarge</sprite>
     <sprite>sprites\spr_textbox</sprite>
     <sprite>sprites\spr_button</sprite>
     <sprite>sprites\spr_blue</sprite>
@@ -96,6 +98,11 @@
       <sprite>sprites\spr_emptycard</sprite>
       <sprite>sprites\spr_projectempty</sprite>
       <sprite>sprites\spr_cardpile2</sprite>
+      <sprite>sprites\spr_levelbox</sprite>
+      <sprite>sprites\spr_info</sprite>
+      <sprite>sprites\spr_infotemplate</sprite>
+      <sprite>sprites\spr_buttoncontinue</sprite>
+      <sprite>sprites\spr_loonkostenprices</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -112,7 +119,11 @@
       <script>scripts\SendToEveryoneExcept.gml</script>
       <script>scripts\WriteProjectsToBuffer.gml</script>
       <script>scripts\CheckAllPlayersBidded.gml</script>
+      <script>scripts\LetNextPlayerPickProjects.gml</script>
+      <script>scripts\StartRound.gml</script>
       <script>scripts\LoadProjectcardJson.gml</script>
+      <script>scripts\NewPlayerJoined.gml</script>
+      <script>scripts\MakeProjectSelection.gml</script>
     </scripts>
     <scripts name="Client">
       <script>scripts\ReceiveData_Client.gml</script>
@@ -129,6 +140,7 @@
     <objects name="Client">
       <object>objects\obj_controller</object>
       <object>objects\par_textbox</object>
+      <object>objects\obj_send</object>
       <object>objects\obj_bid_button</object>
       <objects name="Gamescreen">
         <object>objects\obj_emptycard</object>
@@ -136,18 +148,38 @@
         <object>objects\obj_level</object>
         <object>objects\obj_projectempty</object>
         <object>objects\obj_draw</object>
+        <object>objects\obj_levelbox</object>
+        <object>objects\obj_info</object>
+        <object>objects\obj_balance</object>
+        <object>objects\obj_teamname</object>
+        <object>objects\obj_roundtime</object>
+        <object>objects\obj_capital</object>
+        <object>objects\obj_level_info</object>
+        <object>objects\obj_worker_red</object>
+        <object>objects\obj_worker_blue</object>
+        <object>objects\obj_worker_green</object>
+        <object>objects\obj_worker_yellow</object>
+        <object>objects\obj_loonkostenprices</object>
+        <object>objects\obj_drawinfoloonkosten</object>
+        <object>objects\obj_drawbalancetext</object>
+        <objects name="Screen">
+          <object>objects\obj_infoloonkosten</object>
+          <object>objects\obj_backscreenbalance</object>
+        </objects>
+        <objects name="Button">
+          <object>objects\obj_buttoncontinuebalance</object>
+          <object>objects\obj_buttoncontinueloon</object>
+        </objects>
       </objects>
     </objects>
     <objects name="Server">
       <object>objects\obj_server</object>
       <object>objects\obj_client_dummy</object>
       <object>objects\obj_project</object>
-      <object>objects\obj_worker</object>
       <object>objects\obj_start_server</object>
       <object>objects\obj_teamdev</object>
       <object>objects\obj_emp_growth</object>
     </objects>
-    <object>objects\obj_send</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_startmenu</room>

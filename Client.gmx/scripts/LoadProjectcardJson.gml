@@ -1,3 +1,4 @@
+
 var jsonFile1 = file_text_open_read("categorie1.json");
 
 var data1 = "";
@@ -84,3 +85,5 @@ for (var i = 0; i < global.totalCards3; i++)
     global.cardData3[# i, TITEL] = theEntry[? "TITEL"];
     global.cardData3[# i, VOORDEEL] = theEntry[? "VOORDEEL"];
 }
+
+

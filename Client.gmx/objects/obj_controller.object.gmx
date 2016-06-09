@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -36,6 +36,11 @@ workers_red = 0;
 workers_blue = 0;
 workers_yellow = 0;
 workers_green = 0;
+skill_troubleshooting = 0;
+skill_intel = 0;
+skill_teamwork = 0;
+skill_communication = 0;
+skill_planning = 0;
 maxpicks = 2;
 canPickProjects = false;
 pickedProjects = ds_list_create();
@@ -79,6 +84,42 @@ else {
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (room == rm_gamescreen) 
+{
+    instance_create(0,0,obj_worker_red);
+    instance_create(0,0,obj_worker_blue);
+    instance_create(0,0,obj_worker_yellow);
+    instance_create(0,0,obj_worker_green);
+    
+    instance_create(0,0,obj_info);
+    instance_create(0,0,obj_balance);    
+    instance_create(0,0,obj_roundtime);
+    instance_create(0,0,obj_capital);
+    instance_create(0,0,obj_teamname);
+    instance_create(0,0,obj_level_info);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -96,15 +137,30 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_left);
-draw_text(0, 0, "Game state: " + state);
-draw_text(0, 20, "Player: " + string(name));
-draw_sprite(spr_cash, image_index, 735, 15);
-draw_text(765, 8, "$" + string(capital));
-draw_text(605, 38, "Rode medewerkers: " + string(workers_red));
-draw_text(588, 68, "Blauwe medewerkers: " + string(workers_blue));
-draw_text(610, 98, "Gele medewerkers: " + string(workers_yellow));
-draw_text(590, 128, "Groene medewerkers: " + string(workers_green));
+            <string>if(room == rm_client) 
+{
+    draw_set_font(fnt_small);
+    draw_set_halign(fa_center);
+    draw_set_color(c_green);
+    draw_text(room_width/2 + 80, 0, state);
+    
+    draw_set_color(c_black);
+    draw_set_font(fnt_small);
+    draw_set_halign(fa_left);
+    draw_text(0, 0, "Team: " + string(name));
+    draw_text(700, 0, "Geld: $" + string(capital));
+    draw_line(0, 25, room_width, 25);
+}
+
+if(room == rm_gamescreen) 
+{
+    draw_set_font(fnt_small);
+    draw_set_halign(fa_left);
+    draw_set_color(c_black);
+    draw_text(570, 5, "Team: "+string(name));
+    draw_text(1018, 5, "Geld: "+string(capital));
+    draw_text(1162, 505, "Level");
+}
 </string>
           </argument>
         </arguments>

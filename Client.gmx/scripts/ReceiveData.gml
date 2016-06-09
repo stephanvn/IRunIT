@@ -13,22 +13,18 @@
     {
         case 1: // New player joined 
             other_player.name = buffer_read(buff, buffer_string);
-            buffer_seek(sendbuff, buffer_seek_start, 0);
-            buffer_write(sendbuff, buffer_s16, 0);
-            buffer_write(sendbuff, buffer_u16, other_player.capital);
-            buffer_write(sendbuff, buffer_u16, other_player.workers_red);
-            buffer_write(sendbuff, buffer_u16, other_player.workers_blue);
-            buffer_write(sendbuff, buffer_u16, other_player.workers_yellow);
-            buffer_write(sendbuff, buffer_u16, other_player.workers_green);
-            network_send_packet(sock, sendbuff, buffer_tell(sendbuff));
+            NewPlayerJoined(other_player.name, other_player, sock);
         break;
 
         case 2: // Receive a bid from a client during the bid round
             other_player.bid = buffer_read(buff, buffer_s16);
             ds_list_add(bidlist, other_player.bid);
+            //BUG: The line below adds a player to a map, using its bid as a key.
+            //     If Player 1 bids "5", and Player 2 bids "5",
+            //     this code will attempt to add Player 2 with the same key as Player 1.
+            //     In a map, no two keys can be the same.
             ds_map_add(bidmap, other_player.bid, other_player);
             ds_list_sort(bidlist, false);
-            
             other_player.capital -= other_player.bid;
             buffer_seek(sendbuff, buffer_seek_start, 0);
             buffer_write(sendbuff, buffer_s16, 2);
@@ -36,38 +32,13 @@
             network_send_packet(sock, sendbuff, buffer_tell(sendbuff));
             if (CheckAllPlayersBidded()) 
             {
-                IterateThroughBidders();
-                var obj = ds_map_find_value(bidmap, ds_list_find_value(bidlist, 0));
-                buffer_seek(sendbuff, buffer_seek_start, 0);
-                buffer_write(sendbuff, buffer_s16, 3);
-                network_send_packet(obj.socket, sendbuff, buffer_tell(sendbuff));
+                LetNextPlayerPickProjects();
             }
         break;
         
         case 3: // Client has picked their projects
             var amount = buffer_read(buff, buffer_u8);
-            global.chosenprojects = ds_list_create();
-            for (var i=0; i<amount; i++) 
-            {
-                ds_list_add(global.chosenprojects, buffer_read(buff, buffer_u8));
-            }
-            with (obj_project) 
-            {
-                for (var j=0; j<ds_list_size(global.chosenprojects); j++) 
-                {
-                    if (project_id == ds_list_find_value(global.chosenprojects, j)) { 
-                        ds_map_delete(projects1, project_id)
-                        instance_destroy(); }
-                }
-            }
-            buffer_seek(sendbuff, buffer_seek_start, 0);
-            buffer_write(sendbuff, buffer_s16, 4);
-            buffer_write(sendbuff, buffer_u8, amount);
-            for (var i=0; i<amount; i++) 
-            {
-                buffer_write(sendbuff, buffer_u8, ds_list_find_value(global.chosenprojects, i) );
-            }
-            SendToEveryoneExcept(sock);
+            MakeProjectSelection(amount, sock, buff);
         break;
 
         case 4: // You can keep adding network events endlessly like this
