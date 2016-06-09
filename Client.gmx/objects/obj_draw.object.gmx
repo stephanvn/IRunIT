@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-100</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -75,6 +75,14 @@ draw_text(580,578,"Onderzoek doen")
 draw_text(580,610,"Samenwerken")
 draw_text(580,642,"Communicatie")
 draw_text(580,674,"Plannen/organiseren")
+
+//Teken de projecten
+i = 65;
+for (var j=0; j&lt;ds_list_size(pickedProjects); j++) 
+{
+    draw_text(60,i,"Project " + string(ds_list_find_value(pickedProjects, j)));
+    i += 90;
+}
 </string>
           </argument>
         </arguments>
