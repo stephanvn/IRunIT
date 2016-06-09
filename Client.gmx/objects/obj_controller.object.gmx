@@ -157,7 +157,7 @@ if(room == rm_gamescreen)
     draw_set_font(fnt_small);
     draw_set_halign(fa_left);
     draw_set_color(c_black);
-    draw_text(765, 5, "Team: "+string(name));
+    draw_text(570, 5, "Team: "+string(name));
     draw_text(1015, 5, "Geld: "+string(capital));
     draw_text(1162, 505, "Level");
 }
