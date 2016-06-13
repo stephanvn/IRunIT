@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>globalvar players, highest_bid, socketlist, gameActive, projects1, projects2, projects3, bidturn;
-
+randomize();
+global.projectID = 0;
 projects1 = ds_map_create();
 projects2 = ds_map_create();
 projects3 = ds_map_create();

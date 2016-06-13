@@ -32,6 +32,7 @@ client = network_create_socket(network_socket_tcp); // Create a TCP/IP socket
 var connection = network_connect(client, global.ipaddress, 6510); // Connect to our server
 state = "init";
 capital = 0;
+bid = 0;
 workers_red = 0;
 workers_blue = 0;
 workers_yellow = 0;
@@ -150,7 +151,7 @@ else {
     draw_set_font(fnt_small);
     draw_set_halign(fa_left);
     draw_text(0, 0, "Team: " + string(name));
-    draw_text(700, 0, "Geld: $" + string(capital));
+    draw_text(700, 0, "Saldo: $" + string(capital));
     draw_line(0, 25, room_width, 25);
 }
 
@@ -160,8 +161,37 @@ if(room == rm_gamescreen)
     draw_set_halign(fa_left);
     draw_set_color(c_black);
     draw_text(570, 5, "Team: "+string(name));
-    draw_text(1018, 5, "Geld: "+string(capital));
+    draw_text(1018, 5, "Saldo: "+string(capital));
     draw_text(1162, 505, "Level");
+    
+    if(instance_exists(obj_backscreenbalance))
+    {
+        depth = -110;
+        if(bid &gt; 0) 
+        {
+            draw_set_color(c_red);
+            draw_text(425, 218, "$ " + string(bid));
+            draw_set_color(c_black);
+        }
+        else 
+        {
+            draw_set_color(c_black);
+            draw_text(425, 218, "$ " + string(bid));
+        }
+        
+        if(capital &gt; 0) 
+        {
+            draw_set_color(c_green);
+            draw_text(425, 368, "$ " + string(capital));
+            draw_set_color(c_black);
+        }
+        else 
+        {
+            draw_set_color(c_red);
+            draw_text(425, 368, "$ " + string(capital));
+            draw_set_color(c_black);
+        }
+    }
 }
 </string>
           </argument>

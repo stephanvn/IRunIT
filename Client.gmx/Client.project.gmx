@@ -93,6 +93,7 @@
     <sprite>sprites\spr_project_icon</sprite>
     <sprite>sprites\spr_bid_button</sprite>
     <sprite>sprites\spr_gaylord</sprite>
+    <sprite>sprites\spr_backtomenu</sprite>
     <sprites name="Gamescreen">
       <sprite>sprites\spr_cardpile1</sprite>
       <sprite>sprites\spr_levelgray</sprite>
@@ -143,6 +144,7 @@
   <objects name="objects">
     <object>objects\obj_choose_server</object>
     <object>objects\obj_choose_client</object>
+    <object>objects\obj_choose_tutorial</object>
     <objects name="Client">
       <object>objects\obj_controller</object>
       <object>objects\par_textbox</object>
@@ -181,6 +183,10 @@
           <object>objects\obj_buttoncontinuelevelinfo</object>
         </objects>
       </objects>
+      <objects name="Tutorial">
+        <object>objects\obj_tutorial</object>
+        <object>objects\obj_backtomenu</object>
+      </objects>
     </objects>
     <objects name="Server">
       <object>objects\obj_server</object>
@@ -197,6 +203,7 @@
     <rooms name="Client">
       <room>rooms\rm_client</room>
       <room>rooms\rm_gamescreen</room>
+      <room>rooms\rm_tutorial</room>
     </rooms>
     <rooms name="Server">
       <room>rooms\rm_server</room>

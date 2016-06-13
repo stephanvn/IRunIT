@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-110</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,29 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(fnt_small);
-draw_set_halign(fa_left);
-draw_set_color(c_black);
+            <string>draw_set_color(c_black);
 
-draw_text(275, 135, "Verrekening");
+var title = "Welkom bij Can you run it?";
+x = (room_width /2) - (string_width(title) / 2);
+//draw_text(x, 10, title);
+draw_text_transformed(x, 10, title, 3, 3, image_angle);
 
-draw_text(275, 170, "Loonkosten");
-draw_line(425, 188, 475, 188);
+var text = "Het doel van het spel is om het meest succesvolle bedrijf te zijn.
+Kies de beste projecten en laat je medewerkers deze afronden. Hoe sneller je dit doet, des te meer je ermee verdient.
+Neem meer medewerkers aan en groei tot het grootste bedrijf. Gebruik vaardigheids kaarten om je bedrijf te ontwikkelen
+en nog grotere projecten aan te nemen.
 
-draw_text(275, 220, "Biedkosten");
-draw_line(425, 238, 475, 238);
-
-draw_text(275, 270, "Verbeterkosten");
-draw_line(425, 288, 475, 288);
-
-draw_text(275, 320, "Omzet");
-draw_line(425, 338, 475, 338);
-
-draw_text(275, 370, "Saldo");
-draw_line(425, 388, 475, 388);
-
-draw_text(275, 420, "Eigen vermogen(oud) + saldo = eigen vermogen (nieuw)");
-draw_line(275, 440, 765, 440);
+Het team met het meest winstgevende bedrijf wint het spel.";
+x = (room_width /2) - (string_width(text) / 2);
+draw_text(x, 80, text);
 </string>
           </argument>
         </arguments>
