@@ -137,6 +137,7 @@
       <script>scripts\ReceiveData_Client.gml</script>
       <script>scripts\SendPickedProjects.gml</script>
       <script>scripts\Message.gml</script>
+      <script>scripts\DrawSkillLevels.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
