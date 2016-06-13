@@ -103,7 +103,6 @@
       <sprite>sprites\spr_cardpile2</sprite>
       <sprite>sprites\spr_levelbox</sprite>
       <sprite>sprites\spr_info</sprite>
-      <sprite>sprites\spr_infotemplate</sprite>
       <sprite>sprites\spr_tutinfo</sprite>
       <sprite>sprites\spr_message</sprite>
       <sprite>sprites\spr_buttoncontinue</sprite>
