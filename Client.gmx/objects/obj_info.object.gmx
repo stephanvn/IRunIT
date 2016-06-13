@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>image_single = 0;
 
-x = 490;
+/*x = 490;
 y = 520;
 </string>
           </argument>
@@ -51,10 +51,7 @@ y = 520;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(675, 350, obj_infoloonkosten);
-instance_create(910, 475, obj_buttoncontinueloon);
-instance_create(0, 0, obj_drawinfoloonkosten);
-instance_create(250, 200, obj_loonkostenprices);
+            <string>Message("Loonkosten info ## Medewerkers moeten een salaris krijgen, ongeacht of je ze inzet.#Hieronder een overzicht van de kosten bij het aantal medewerkers.","")
 </string>
           </argument>
         </arguments>

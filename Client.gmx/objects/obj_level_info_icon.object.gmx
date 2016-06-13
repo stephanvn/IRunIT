@@ -51,10 +51,7 @@ y = 505;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(675, 350, obj_levelinfo);
-instance_create(910, 475, obj_buttoncontinuelevelinfo);
-instance_create(0, 0, obj_drawlevelinfo);
-//instance_create(250, 200, obj_loonkostenprices);
+            <string>Message("","levelinfo");
 </string>
           </argument>
         </arguments>

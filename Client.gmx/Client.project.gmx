@@ -105,6 +105,7 @@
       <sprite>sprites\spr_info</sprite>
       <sprite>sprites\spr_infotemplate</sprite>
       <sprite>sprites\spr_tutinfo</sprite>
+      <sprite>sprites\spr_message</sprite>
       <sprite>sprites\spr_buttoncontinue</sprite>
       <sprite>sprites\spr_loonkostenprices</sprite>
       <sprite>sprites\spr_level1</sprite>
@@ -112,6 +113,7 @@
       <sprite>sprites\spr_level3</sprite>
     </sprites>
     <sprite>sprites\spr_host_found</sprite>
+    <sprite>sprites\spr_closebutton</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\startlogo</background>
@@ -136,6 +138,7 @@
     <scripts name="Client">
       <script>scripts\ReceiveData_Client.gml</script>
       <script>scripts\SendPickedProjects.gml</script>
+      <script>scripts\Message.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -148,6 +151,7 @@
     <object>objects\obj_choose_tutorial</object>
     <objects name="Client">
       <object>objects\obj_controller</object>
+      <object>objects\obj_found_host</object>
       <object>objects\par_textbox</object>
       <object>objects\obj_send</object>
       <object>objects\obj_bid_button</object>
@@ -169,19 +173,9 @@
         <object>objects\obj_worker_blue</object>
         <object>objects\obj_worker_green</object>
         <object>objects\obj_worker_yellow</object>
-        <object>objects\obj_loonkostenprices</object>
-        <object>objects\obj_drawinfoloonkosten</object>
-        <object>objects\obj_drawbalancetext</object>
-        <object>objects\obj_drawlevelinfo</object>
         <objects name="Screen">
-          <object>objects\obj_infoloonkosten</object>
-          <object>objects\obj_levelinfo</object>
-          <object>objects\obj_backscreenbalance</object>
-        </objects>
-        <objects name="Button">
-          <object>objects\obj_buttoncontinuebalance</object>
-          <object>objects\obj_buttoncontinueloon</object>
-          <object>objects\obj_buttoncontinuelevelinfo</object>
+          <object>objects\obj_message</object>
+          <object>objects\obj_closebutton</object>
         </objects>
       </objects>
       <objects name="Tutorial">
@@ -198,7 +192,6 @@
       <object>objects\obj_teamdev</object>
       <object>objects\obj_emp_growth</object>
     </objects>
-    <object>objects\obj_found_host</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_startmenu</room>
