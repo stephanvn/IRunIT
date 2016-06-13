@@ -57,6 +57,8 @@ alarm[0] = 90;
           <argument>
             <kind>1</kind>
             <string>if (keep == false) {
+    ds_map_delete(obj_choose_client.serverlist_obj, ip);
+    ds_list_delete(obj_choose_client.serverlist, ds_list_find_index(obj_choose_client.serverlist, ip));
     instance_destroy();
 }
 keep = false;
