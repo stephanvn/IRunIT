@@ -19,9 +19,17 @@ else
     for(i = 1 ; i < ds_map_size(bidmap) ; i++)
     {
         bidturn = ds_map_find_next(bidmap, bidturn);
-        if(highest.bid < bidturn.bid) highest = bidturn;
-        
-        
+        if(highest.bid < bidturn.bid) 
+        {
+            highest = bidturn;
+        }
+        else if(highest.bid == bidturn.bid) 
+        {
+            if(floor(random(2)) == 1) 
+            {
+                highest = bidturn;
+            }
+        }   
     }
     
     buffer_seek(sendbuff, buffer_seek_start, 0);
