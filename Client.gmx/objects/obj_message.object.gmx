@@ -60,22 +60,22 @@ if (type == "levelinfo")
     draw_set_halign(fa_left);
     draw_set_color(c_black);
     //description text
-    draw_text(275, 135, "Level info")
-    draw_text(275, 170, "Je gaat een level omhoog als je alle categorieën verbeterd hebt.")
-    draw_text(275, 185, "Als ze allemaal level 2 zijn, ben jij level 2.")
+    draw_text(275, 170, "Level info")
+    draw_text(275, 205, "Je gaat een level omhoog als je alle categorieën verbeterd hebt.")
+    draw_text(275, 225, "Als ze allemaal level 2 zijn, ben jij level 2.")
     //level1
-    draw_sprite(spr_level1, 0, 500, 230);
+    draw_sprite(spr_level1, 0, 500, 260);
     //level2
-    draw_sprite(spr_level2, 0, 675, 230);
+    draw_sprite(spr_level2, 0, 675, 260);
     //level3
-    draw_sprite(spr_level3, 0, 825, 230);
+    draw_sprite(spr_level3, 0, 825, 260);
     //table text &amp; lines
-    draw_text(275, 300, "Aantal opdrachten die je mag pakken:")
-    draw_text(275, 350, "Categorie van de opdrachten:")
-    draw_line(265, 335, 1010, 335);
+    draw_text(275, 320, "Aantal opdrachten die je mag pakken:")
+    draw_text(275, 370, "Categorie van de opdrachten:")
+    draw_line(265, 355, 1010, 355);
     //verticals
-    draw_line(750, 300, 750, 375);
-    draw_line(900, 300, 900, 375);
+    draw_line(730, 320, 730, 395);
+    draw_line(900, 320, 900, 395);
 }
 else if (type == "balanceinfo")
 {
@@ -83,25 +83,50 @@ else if (type == "balanceinfo")
     draw_set_halign(fa_left);
     draw_set_color(c_black);
     
-    draw_text(275, 135, "Verrekening");
+    draw_text(275, 170, "Verrekening");
     
-    draw_text(275, 170, "Loonkosten");
-    draw_line(425, 188, 475, 188);
+    draw_text(275, 205, "Loonkosten");
+    draw_line(425, 223, 475, 223);
     
-    draw_text(275, 220, "Biedkosten");
-    draw_line(425, 238, 475, 238);
+    draw_text(275, 255, "Biedkosten");
+    draw_line(425, 273, 475, 273);
     
-    draw_text(275, 270, "Verbeterkosten");
-    draw_line(425, 288, 475, 288);
+    if(obj_controller.bid &gt; 0) 
+    {
+        draw_set_color(c_red);
+        draw_text(425, 253, "- $ " + string(obj_controller.bid));
+        draw_set_color(c_black);
+    }
+    else 
+    {
+        draw_set_color(c_black);
+        draw_text(425, 253, "$ " + string(obj_controller.bid));
+    }
     
-    draw_text(275, 320, "Omzet");
-    draw_line(425, 338, 475, 338);
+    draw_text(275, 305, "Verbeterkosten");
+    draw_line(425, 323, 475, 323);
     
-    draw_text(275, 370, "Saldo");
-    draw_line(425, 388, 475, 388);
+    draw_text(275, 355, "Omzet");
+    draw_line(425, 373, 475, 373);
     
-    draw_text(275, 420, "Eigen vermogen(oud) + saldo = eigen vermogen (nieuw)");
-    draw_line(275, 440, 765, 440);
+    draw_text(275, 405, "Saldo");
+    draw_line(425, 423, 475, 423);
+    
+    if(obj_controller.capital &gt; 0) 
+    {
+        draw_set_color(c_green);
+        draw_text(425, 403, "$ " + string(obj_controller.capital));
+        draw_set_color(c_black);
+    }
+    else 
+    {
+        draw_set_color(c_red);
+        draw_text(425, 403, "$ " + string(obj_controller.capital));
+        draw_set_color(c_black);
+    }
+    
+    draw_text(275, 470, "Eigen vermogen(oud) + saldo = eigen vermogen (nieuw)");
+    draw_line(275, 490, 765, 490);
 }
 </string>
           </argument>
