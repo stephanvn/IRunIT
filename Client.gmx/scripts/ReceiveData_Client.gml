@@ -74,7 +74,7 @@
             room_goto(rm_gamescreen);
         break;
         
-        case 6: // Same as case 1, but with names_players instead of projects
+        case 7: // Same as case 1, but with names_players instead of projects
             // Amount of projects
             var amount = buffer_read(buff, buffer_u8);
             for (var i=0; i<amount; i++) 
