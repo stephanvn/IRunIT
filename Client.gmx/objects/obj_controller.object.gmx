@@ -164,34 +164,9 @@ if(room == rm_gamescreen)
     draw_text(1018, 5, "Saldo: "+string(capital));
     draw_text(1162, 505, "Level");
     
-    if(instance_exists(obj_backscreenbalance))
-    {
-        depth = -110;
-        if(bid &gt; 0) 
-        {
-            draw_set_color(c_red);
-            draw_text(425, 218, "$ " + string(bid));
-            draw_set_color(c_black);
-        }
-        else 
-        {
-            draw_set_color(c_black);
-            draw_text(425, 218, "$ " + string(bid));
-        }
-        
-        if(capital &gt; 0) 
-        {
-            draw_set_color(c_green);
-            draw_text(425, 368, "$ " + string(capital));
-            draw_set_color(c_black);
-        }
-        else 
-        {
-            draw_set_color(c_red);
-            draw_text(425, 368, "$ " + string(capital));
-            draw_set_color(c_black);
-        }
-    }
+    //draw the visual representation of the game
+
+    
 }
 </string>
           </argument>

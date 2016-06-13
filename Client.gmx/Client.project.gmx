@@ -103,7 +103,6 @@
       <sprite>sprites\spr_cardpile2</sprite>
       <sprite>sprites\spr_levelbox</sprite>
       <sprite>sprites\spr_info</sprite>
-      <sprite>sprites\spr_infotemplate</sprite>
       <sprite>sprites\spr_tutinfo</sprite>
       <sprite>sprites\spr_message</sprite>
       <sprite>sprites\spr_buttoncontinue</sprite>
@@ -114,9 +113,12 @@
     </sprites>
     <sprite>sprites\spr_host_found</sprite>
     <sprite>sprites\spr_closebutton</sprite>
+    <sprite>sprites\sprite36</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\startlogo</background>
+    <background>background\bk_floor1</background>
+    <background>background\bk_overlay</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -193,6 +195,7 @@
       <object>objects\obj_teamdev</object>
       <object>objects\obj_emp_growth</object>
     </objects>
+    <object>objects\obj_mouse_follow</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_startmenu</room>
