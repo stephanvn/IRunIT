@@ -25,87 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var offset_left = 800;
-var levels = 0;
-
-//Probleem oplossen
-levels = floor(obj_controller.skill_troubleshooting / 3);
-
-for (var j=0; j&lt;(obj_controller.skill_troubleshooting - (levels * 3)); j++) 
-{
-    draw_sprite(spr_levelgreen, 0, offset_left, 544);
-    offset_left += 29;
-}
-
-if((obj_controller.skill_troubleshooting - (levels * 3)) &lt; 3) {
-    for (var j=0; j&lt;(3 - (obj_controller.skill_troubleshooting - (levels * 3))); j++) 
-    {
-        draw_sprite(spr_levelgray, 0, offset_left, 544);
-        offset_left += 29;
-    }  
-}
-
-draw_text(920, 550, string(levels + 1));
+            <string>//Probleem oplossen
+DrawSkillLevels(obj_controller.skill_troubleshooting, 544);
 
 //Onderzoek doen
-offset_left = 800;
-for (var j=0; j&lt;obj_controller.skill_intel; j++) 
-{
-    draw_sprite(spr_levelgreen, 0, offset_left, 576);
-    offset_left += 29;
-}
-if(obj_controller.skill_intel &lt; 3) {
-    for (var j=0; j&lt;(3 - obj_controller.skill_intel); j++) 
-    {
-        draw_sprite(spr_levelgray, 0, offset_left, 576);
-        offset_left += 29;
-    }  
-}
+DrawSkillLevels(obj_controller.skill_intel, 576);
 
 //Samenwerken
-offset_left = 800;
-for (var j=0; j&lt;obj_controller.skill_teamwork; j++) 
-{
-    draw_sprite(spr_levelgreen, 0, offset_left, 608);
-    offset_left += 29;
-}
-if(obj_controller.skill_teamwork &lt; 3) {
-    for (var j=0; j&lt;(3 - obj_controller.skill_teamwork); j++) 
-    {
-        draw_sprite(spr_levelgray, 0, offset_left, 608);
-        offset_left += 29;
-    }  
-}
+DrawSkillLevels(obj_controller.skill_teamwork, 608);
 
 //Communicatie
-offset_left = 800;
-for (var j=0; j&lt;obj_controller.skill_communication; j++) 
-{
-    draw_sprite(spr_levelgreen, 0, offset_left, 640);
-    offset_left += 29;
-}
-if(obj_controller.skill_communication &lt; 3) {
-    for (var j=0; j&lt;(3 - obj_controller.skill_communication); j++) 
-    {
-        draw_sprite(spr_levelgray, 0, offset_left, 640);
-        offset_left += 29;
-    }  
-}
+DrawSkillLevels(obj_controller.skill_communication, 640);
 
 //Planning/organiseren
-offset_left = 800;
-for (var j=0; j&lt;obj_controller.skill_planning; j++) 
-{
-    draw_sprite(spr_levelgreen, 0, offset_left, 672);
-    offset_left += 29;
-}
-if(obj_controller.skill_planning &lt; 3) {
-    for (var j=0; j&lt;(3 - obj_controller.skill_planning); j++) 
-    {
-        draw_sprite(spr_levelgray, 0, offset_left, 672);
-        offset_left += 29;
-    }  
-}
+DrawSkillLevels(obj_controller.skill_planning, 672);
 </string>
           </argument>
         </arguments>
