@@ -73,4 +73,16 @@
             obj_controller.state = "Round 1 has begun";
             room_goto(rm_gamescreen);
         break;
+        
+        case 6: // Same as case 1, but with names_players instead of projects
+            // Amount of projects
+            var amount = buffer_read(buff, buffer_u8);
+            for (var i=0; i<amount; i++) 
+            {
+                var t_object = instance_create(596, 52, obj_team); //596+(i*45) ?
+                t_object.name = buffer_read(buff, buffer_string);
+                ds_list_add(teams, t_object);
+                show_message(ds_list_find_value(teams, i).name); //DEBUG
+            }
+        break;
     }

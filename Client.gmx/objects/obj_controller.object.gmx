@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar sendbuff, client, pickedProjects;
+            <string>globalvar sendbuff, client, pickedProjects, teams;
 name = get_string("Enter your name","");
 sendbuff = buffer_create(256, buffer_grow, 1); // Create a buffer for the network messages
 client = network_create_socket(network_socket_tcp); // Create a TCP/IP socket
@@ -44,6 +44,7 @@ skill_planning = 0;
 maxpicks = 2;
 canPickProjects = false;
 pickedProjects = ds_list_create();
+teams = ds_list_create();
 
 if (connection != 0) { // show error if connection failed
     show_message("Error - can not connect to server!!");

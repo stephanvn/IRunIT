@@ -123,6 +123,7 @@
       <script>scripts\SendToEveryone.gml</script>
       <script>scripts\SendToEveryoneExcept.gml</script>
       <script>scripts\WriteProjectsToBuffer.gml</script>
+      <script>scripts\WriteNamesPlayersToBuffer.gml</script>
       <script>scripts\CheckAllPlayersBidded.gml</script>
       <script>scripts\LetNextPlayerPickProjects.gml</script>
       <script>scripts\StartRound.gml</script>
@@ -165,6 +166,7 @@
         <object>objects\obj_worker_blue</object>
         <object>objects\obj_worker_green</object>
         <object>objects\obj_worker_yellow</object>
+        <object>objects\obj_team</object>
         <object>objects\obj_loonkostenprices</object>
         <object>objects\obj_drawinfoloonkosten</object>
         <object>objects\obj_drawbalancetext</object>
