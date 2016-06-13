@@ -104,6 +104,7 @@
       <sprite>sprites\spr_levelbox</sprite>
       <sprite>sprites\spr_info</sprite>
       <sprite>sprites\spr_infotemplate</sprite>
+      <sprite>sprites\spr_tutinfo</sprite>
       <sprite>sprites\spr_buttoncontinue</sprite>
       <sprite>sprites\spr_loonkostenprices</sprite>
       <sprite>sprites\spr_level1</sprite>
@@ -186,6 +187,7 @@
       <objects name="Tutorial">
         <object>objects\obj_tutorial</object>
         <object>objects\obj_backtomenu</object>
+        <object>objects\obj_tut1</object>
       </objects>
     </objects>
     <objects name="Server">
