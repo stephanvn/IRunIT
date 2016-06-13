@@ -25,7 +25,7 @@ else
         }
         else if(highest.bid == bidturn.bid) 
         {
-            if(floor(random(2)) == 1) 
+            if(floor(random(2)) == 1) // 50/50 kans op 1 of 0
             {
                 highest = bidturn;
             }

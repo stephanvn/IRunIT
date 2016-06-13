@@ -8,20 +8,35 @@ for (var i = 0; i < argument0; i++)
 {
     var p = instance_create(0, 0, obj_project);
     
-    var item = floor(random(global.totalCards1));
-    p.name = global.cardData1[# i, TITEL];
+    var item = 0;
+    var card = 0;
+    switch(argument1) 
+    {
+        case 1: item = floor(random(global.totalCards1));
+                card = global.cardData1;
+                break;
+        case 2: item = floor(random(global.totalCards2));
+                card = global.cardData2;
+                break;
+        case 3: item = floor(random(global.totalCards3));
+                card = global.cardData3;
+                break;
+    }
+    
+    
+    p.name = card[# item, TITEL];
     p.category = argument1;
     
     p.project_id = i;
-    p.req_blue = global.cardData1[# item, BLUE];
-    p.req_red = global.cardData1[# item, RED];
-    p.req_yellow = global.cardData1[# item, YELLOW];
-    p.req_green = global.cardData1[# item, GREEN];
+    p.req_blue = card[# item, BLUE];
+    p.req_red = card[# item, RED];
+    p.req_yellow = card[# item, YELLOW];
+    p.req_green = card[# item, GREEN];
     
-    p.month1_value = global.cardData1[# item, NIEUW];
-    p.month2_value = global.cardData1[# item, MAANDTWEE];
-    p.month3_value = global.cardData1[# item, MAANDDRIE];
-    p.month4_expired = global.cardData1[# item, VERWIJDEREN];
+    p.month1_value = card[# item, NIEUW];
+    p.month2_value = card[# item, MAANDTWEE];
+    p.month3_value = card[# item, MAANDDRIE];
+    p.month4_expired = card[# item, VERWIJDEREN];
 
     
     switch (argument1) {
