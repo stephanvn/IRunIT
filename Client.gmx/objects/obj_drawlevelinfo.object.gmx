@@ -25,33 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(fnt_small);
-draw_set_halign(fa_left);
-draw_set_color(c_black);
-
-//description text
-draw_text(275, 135, "Level info")
-draw_text(275, 170, "Je gaat een level omhoog als je alle categorieën verbeterd hebt.")
-draw_text(275, 185, "Als ze allemaal level 2 zijn, ben jij level 2.")
-
-//level1
-draw_sprite(spr_level1, 0, 500, 230);
-//level2
-draw_sprite(spr_level2, 0, 675, 230);
-//level3
-draw_sprite(spr_level3, 0, 825, 230);
-
-
-
-//table text &amp; lines
-draw_text(275, 300, "Aantal opdrachten die je mag pakken:")
-draw_text(275, 350, "Categorie van de opdrachten:")
-draw_line(265, 335, 1010, 335);
-//verticals
-draw_line(750, 300, 750, 375);
-draw_line(900, 300, 900, 375);
-
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
