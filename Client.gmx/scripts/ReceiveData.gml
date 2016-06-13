@@ -18,6 +18,11 @@
 
         case 2: // Receive a bid from a client during the bid round
             other_player.bid = buffer_read(buff, buffer_s16);
+            buffer_seek(sendbuff, buffer_seek_start, 0);
+            buffer_write(sendbuff, buffer_s16, 6);
+            buffer_write(sendbuff, buffer_u16, other_player.bid);
+            network_send_packet(sock, sendbuff, buffer_tell(sendbuff));
+            
             ds_list_add(bidlist, other_player.bid);
             //BUG: The line below adds a player to a map, using its bid as a key.
             //     If Player 1 bids "5", and Player 2 bids "5",
@@ -30,6 +35,7 @@
             buffer_write(sendbuff, buffer_s16, 2);
             buffer_write(sendbuff, buffer_u16, other_player.capital);
             network_send_packet(sock, sendbuff, buffer_tell(sendbuff));
+            
             if (CheckAllPlayersBidded()) 
             {
                 LetNextPlayerPickProjects();

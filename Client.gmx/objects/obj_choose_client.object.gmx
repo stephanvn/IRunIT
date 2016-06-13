@@ -26,6 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>image_single = 0;
+broadcast_server = network_create_server( network_socket_udp, 6511, 100 );
+serverlist = ds_list_create();
+serverlist_obj = ds_map_create();
 </string>
           </argument>
         </arguments>
@@ -49,6 +52,54 @@
           <argument>
             <kind>1</kind>
             <string>room_goto(rm_client);
+global.ipaddress = "localhost";
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="68">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// UDP server code - Detect servers "broadcast"
+
+var eventid = ds_map_find_value(async_load, "id");
+
+if( eventid == broadcast_server )
+{
+    var ip = ds_map_find_value(async_load, "ip");
+    var buff = ds_map_find_value(async_load, "buffer");
+    var name = buffer_read(buff, buffer_string );
+    var index = ds_list_find_index(serverlist, ip);
+    
+    if (index &lt; 0) {
+        ds_list_add(serverlist, ip);
+        var o = instance_create(0,0,obj_found_host);
+        o.ip = ip
+        o.name = name;
+        ds_map_add(serverlist_obj, ip, o);
+    }    
+    else {
+        var obj = ds_map_find_value(serverlist_obj, ip);
+        obj.keep = true;
+        } 
+    
+} 
+
 </string>
           </argument>
         </arguments>

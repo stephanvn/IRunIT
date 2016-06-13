@@ -93,6 +93,7 @@
     <sprite>sprites\spr_project_icon</sprite>
     <sprite>sprites\spr_bid_button</sprite>
     <sprite>sprites\spr_gaylord</sprite>
+    <sprite>sprites\spr_backtomenu</sprite>
     <sprites name="Gamescreen">
       <sprite>sprites\spr_cardpile1</sprite>
       <sprite>sprites\spr_levelgray</sprite>
@@ -102,16 +103,22 @@
       <sprite>sprites\spr_cardpile2</sprite>
       <sprite>sprites\spr_levelbox</sprite>
       <sprite>sprites\spr_info</sprite>
-      <sprite>sprites\spr_infotemplate</sprite>
+      <sprite>sprites\spr_tutinfo</sprite>
+      <sprite>sprites\spr_message</sprite>
       <sprite>sprites\spr_buttoncontinue</sprite>
       <sprite>sprites\spr_loonkostenprices</sprite>
       <sprite>sprites\spr_level1</sprite>
       <sprite>sprites\spr_level2</sprite>
       <sprite>sprites\spr_level3</sprite>
     </sprites>
+    <sprite>sprites\spr_host_found</sprite>
+    <sprite>sprites\spr_closebutton</sprite>
+    <sprite>sprites\sprite36</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\startlogo</background>
+    <background>background\bk_floor1</background>
+    <background>background\bk_overlay</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -134,6 +141,8 @@
     <scripts name="Client">
       <script>scripts\ReceiveData_Client.gml</script>
       <script>scripts\SendPickedProjects.gml</script>
+      <script>scripts\Message.gml</script>
+      <script>scripts\DrawSkillLevels.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -143,8 +152,10 @@
   <objects name="objects">
     <object>objects\obj_choose_server</object>
     <object>objects\obj_choose_client</object>
+    <object>objects\obj_choose_tutorial</object>
     <objects name="Client">
       <object>objects\obj_controller</object>
+      <object>objects\obj_found_host</object>
       <object>objects\par_textbox</object>
       <object>objects\obj_send</object>
       <object>objects\obj_bid_button</object>
@@ -167,20 +178,15 @@
         <object>objects\obj_worker_green</object>
         <object>objects\obj_worker_yellow</object>
         <object>objects\obj_team</object>
-        <object>objects\obj_loonkostenprices</object>
-        <object>objects\obj_drawinfoloonkosten</object>
-        <object>objects\obj_drawbalancetext</object>
-        <object>objects\obj_drawlevelinfo</object>
         <objects name="Screen">
-          <object>objects\obj_infoloonkosten</object>
-          <object>objects\obj_levelinfo</object>
-          <object>objects\obj_backscreenbalance</object>
+          <object>objects\obj_message</object>
+          <object>objects\obj_closebutton</object>
         </objects>
-        <objects name="Button">
-          <object>objects\obj_buttoncontinuebalance</object>
-          <object>objects\obj_buttoncontinueloon</object>
-          <object>objects\obj_buttoncontinuelevelinfo</object>
-        </objects>
+      </objects>
+      <objects name="Tutorial">
+        <object>objects\obj_tutorial</object>
+        <object>objects\obj_backtomenu</object>
+        <object>objects\obj_tut1</object>
       </objects>
     </objects>
     <objects name="Server">
@@ -191,12 +197,14 @@
       <object>objects\obj_teamdev</object>
       <object>objects\obj_emp_growth</object>
     </objects>
+    <object>objects\obj_mouse_follow</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_startmenu</room>
     <rooms name="Client">
       <room>rooms\rm_client</room>
       <room>rooms\rm_gamescreen</room>
+      <room>rooms\rm_tutorial</room>
     </rooms>
     <rooms name="Server">
       <room>rooms\rm_server</room>

@@ -49,50 +49,67 @@ surface_resize(application_surface, view_wview, view_hview);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//months at the top left
-draw_text(60,10,"Maand 1")
-draw_text(180,10,"Maand 2")
-draw_text(320,10,"Maand 3")
-draw_text(440,10,"Te laat")
-
-//monthly costs
-draw_text(400,520,"Loonkosten")
-draw_text(400,545,"Biedkosten")
-draw_text(400,570,"Verbeterkosten")
-
-//line in the middle of the screen
-draw_line(560, 0, 560, 1280);
-
-//line from bottom left text section to full width
-draw_line(0, 500, 1280, 500);
-
-//Verbeter information bottom right
-draw_text(650,520,"Categorie")
-draw_text(800,520,"Punten")
-draw_text(900,520,"Level")
-draw_text(580,546,"Problemen oplossen")
-draw_text(580,578,"Onderzoek doen")
-draw_text(580,610,"Samenwerken")
-draw_text(580,642,"Communicatie")
-draw_text(580,674,"Plannen/organiseren")
-
-//Teken de projecten
-i = 65;
-for (var j=0; j&lt;ds_list_size(pickedProjects); j++) 
+            <string>if(room == rm_client) 
 {
-    draw_text(60,i,"Project " + string(ds_list_find_value(pickedProjects, j)));
-    i += 90;
+    draw_set_font(fnt_small);
+    draw_set_halign(fa_center);
+    draw_set_color(c_green);
+    draw_text(room_width/2 + 80, 0, state);
+    
+    draw_set_color(c_black);
+    draw_set_font(fnt_small);
+    draw_set_halign(fa_left);
+    draw_text(0, 0, "Team: " + string(name));
+    draw_text(700, 0, "Saldo: $" + string(capital));
+    draw_line(0, 25, room_width, 25);
 }
 
-/*
-//Teken de teams
-i2 = 200; //200?
-for (var j2=0; j2&lt;ds_list_size(teams); j2++) {
-    var team_to_show = ds_list_find_value(teams, j2);
-    draw_text(200, i2, "Team '" + string(team_to_show.name) + "'"); //200?
-    i2 += 100; //100?
+if(room == rm_gamescreen)
+{
+    draw_text(60,10,"Maand 1")
+    draw_text(180,10,"Maand 2")
+    draw_text(320,10,"Maand 3")
+    draw_text(440,10,"Te laat")
+    
+    //monthly costs
+    draw_text(400,520,"Loonkosten")
+    draw_text(400,545,"Biedkosten")
+    draw_text(400,570,"Verbeterkosten")
+    
+    //line in the middle of the screen
+    draw_line(560, 0, 560, 1280);
+    
+    //line from bottom left text section to full width
+    draw_line(0, 500, 1280, 500);
+    
+    //Verbeter information bottom right
+    draw_text(650,520,"Categorie")
+    draw_text(800,520,"Punten")
+    draw_text(900,520,"Level")
+    draw_text(580,546,"Problemen oplossen")
+    draw_text(580,578,"Onderzoek doen")
+    draw_text(580,610,"Samenwerken")
+    draw_text(580,642,"Communicatie")
+    draw_text(580,674,"Plannen/organiseren")
+    
+    //Teken de projecten
+    i = 65;
+    for (var j=0; j &lt; ds_list_size(pickedProjects); j++) 
+    {
+        draw_text(60,i,"Project " + string(ds_list_find_value(pickedProjects, j)));
+        i += 90;
+    }
+    
+    /*
+    //Teken de teams
+    i2 = 200; //200?
+    for (var j2=0; j2&amp;lt;ds_list_size(teams); j2++) {
+        var team_to_show = ds_list_find_value(teams, j2);
+        draw_text(200, i2, "Team '" + string(team_to_show.name) + "'"); //200?
+        i2 += 100; //100?
+    }
+    */
 }
-*/
 </string>
           </argument>
         </arguments>

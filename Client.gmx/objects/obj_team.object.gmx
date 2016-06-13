@@ -3,7 +3,7 @@
   <spriteName>spr_teamindicator</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-300</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,13 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>name = "";
-
 info_show = true;
+
 if (room == rm_client) visible = false;
 
-
-while (!place_free(x,y)) {
-    x = x+30;
+while (!place_free(x,y)) 
+{
+  x = x+30;
 }
 </string>
           </argument>
@@ -80,7 +80,8 @@ while (!place_free(x,y)) {
           <argument>
             <kind>1</kind>
             <string>draw_self();
-if (info_show == true) {
+if (info_show == true) 
+{
     draw_set_font(fnt_small);
     draw_set_halign(fa_center);
     draw_text(x, y+40, name);
