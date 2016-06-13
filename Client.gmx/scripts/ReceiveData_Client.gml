@@ -73,4 +73,7 @@
             obj_controller.state = "Round 1 has begun";
             room_goto(rm_gamescreen);
         break;
+        case 6: // Update bidded value @Client
+            obj_controller.bid = buffer_read(buff, buffer_u16);
+        break;
     }
