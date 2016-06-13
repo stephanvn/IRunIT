@@ -35,11 +35,11 @@ workers_blue = 2;
 workers_yellow = 2;
 workers_green = 2;
 
-skill_troubleshooting = 7;
+skill_troubleshooting = 2;
 skill_intel = 2;
-skill_teamwork = 3;
-skill_communication = 4;
-skill_planning = 13;
+skill_teamwork = 2;
+skill_communication = 2;
+skill_planning = 2;
 
 player_number = 0;
 bid = -1;
