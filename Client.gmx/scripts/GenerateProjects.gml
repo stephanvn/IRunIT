@@ -27,7 +27,7 @@ for (var i = 0; i < argument0; i++)
     p.name = card[# item, TITEL];
     p.category = argument1;
     
-    p.project_id = i;
+    p.project_id = global.projectID++;
     p.req_blue = card[# item, BLUE];
     p.req_red = card[# item, RED];
     p.req_yellow = card[# item, YELLOW];
