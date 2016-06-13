@@ -84,7 +84,6 @@
                 var t_object = instance_create(596, 52, obj_team); //596+(i*45) ?
                 t_object.name = buffer_read(buff, buffer_string);
                 ds_list_add(teams, t_object);
-                show_message(ds_list_find_value(teams, i).name); //DEBUG
             }
         break;
     }
