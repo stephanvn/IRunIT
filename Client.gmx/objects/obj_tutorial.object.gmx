@@ -30,7 +30,7 @@
 var title = "Welkom bij Can you run it?";
 x = (room_width /2) - (string_width(title) / 2);
 //draw_text(x, 10, title);
-draw_text_transformed(x, 10, title, 3, 3, image_angle);
+draw_text_transformed(x - 250, 10, title, 3, 3, image_angle);
 
 var text = "Het doel van het spel is om het meest succesvolle bedrijf te zijn.
 Kies de beste projecten en laat je medewerkers deze afronden. Hoe sneller je dit doet, des te meer je ermee verdient.
