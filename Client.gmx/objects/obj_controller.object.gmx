@@ -29,7 +29,7 @@
 name = get_string("Enter your name","");
 sendbuff = buffer_create(256, buffer_grow, 1); // Create a buffer for the network messages
 client = network_create_socket(network_socket_tcp); // Create a TCP/IP socket
-var connection = network_connect(client, "localhost", 6510); // Connect to our server
+var connection = network_connect(client, global.ipaddress, 6510); // Connect to our server
 state = "init";
 capital = 0;
 workers_red = 0;

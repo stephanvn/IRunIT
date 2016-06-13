@@ -109,6 +109,7 @@
       <sprite>sprites\spr_level2</sprite>
       <sprite>sprites\spr_level3</sprite>
     </sprites>
+    <sprite>sprites\spr_host_found</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\startlogo</background>
@@ -189,6 +190,7 @@
       <object>objects\obj_teamdev</object>
       <object>objects\obj_emp_growth</object>
     </objects>
+    <object>objects\obj_found_host</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_startmenu</room>
