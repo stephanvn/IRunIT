@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>image_single = 0;
 
-/*x = 490;
+x = 490;
 y = 520;
 </string>
           </argument>
