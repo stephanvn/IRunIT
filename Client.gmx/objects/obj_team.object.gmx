@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>name = "";
+balance = "";
 info_show = true;
 
 if (room == rm_client) visible = false;
@@ -89,6 +90,7 @@ while (!place_free(x,y))
         draw_set_font(fnt_small);
         draw_set_halign(fa_center);
         draw_text(x, y+40, name);
+        draw_text(x, y+60, string(balance))
     }
 }
 </string>

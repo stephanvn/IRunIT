@@ -130,7 +130,7 @@
       <script>scripts\SendToEveryone.gml</script>
       <script>scripts\SendToEveryoneExcept.gml</script>
       <script>scripts\WriteProjectsToBuffer.gml</script>
-      <script>scripts\WriteNamesPlayersToBuffer.gml</script>
+      <script>scripts\WriteDataTeamsToBuffer.gml</script>
       <script>scripts\CheckAllPlayersBidded.gml</script>
       <script>scripts\LetNextPlayerPickProjects.gml</script>
       <script>scripts\StartRound.gml</script>

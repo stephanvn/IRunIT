@@ -83,6 +83,8 @@
             {
                 var t_object = instance_create(1280 + 40 + 100*i, 40, obj_team); //596+(i*45) ?
                 t_object.name = buffer_read(buff, buffer_string);
+                t_object.balance = buffer_read(buff, buffer_u16);
+                //show_message("Speler " + string(t_object.name) + " heeft bedrag " + string(t_object.balance) + "."); //DEBUG
                 ds_list_add(teams, t_object);
             }
         break;
