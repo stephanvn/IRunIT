@@ -30,10 +30,12 @@ info_show = true;
 
 if (room == rm_client) visible = false;
 
+/*
 while (!place_free(x,y)) 
 {
   x = x+30;
 }
+*/
 </string>
           </argument>
         </arguments>
@@ -79,12 +81,15 @@ while (!place_free(x,y))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
-if (info_show == true) 
+            <string>if (view_current==1)
 {
-    draw_set_font(fnt_small);
-    draw_set_halign(fa_center);
-    draw_text(x, y+40, name);
+    draw_self();
+    if (info_show == true) 
+    {
+        draw_set_font(fnt_small);
+        draw_set_halign(fa_center);
+        draw_text(x, y+40, name);
+    }
 }
 </string>
           </argument>

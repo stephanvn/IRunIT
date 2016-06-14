@@ -81,7 +81,7 @@
             var amount = buffer_read(buff, buffer_u8);
             for (var i=0; i<amount; i++) 
             {
-                var t_object = instance_create(596, 52, obj_team); //596+(i*45) ?
+                var t_object = instance_create(1280 + 40 + 100*i, 40, obj_team); //596+(i*45) ?
                 t_object.name = buffer_read(buff, buffer_string);
                 ds_list_add(teams, t_object);
             }
