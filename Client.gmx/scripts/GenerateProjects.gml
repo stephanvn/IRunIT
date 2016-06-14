@@ -40,8 +40,8 @@ for (var i = 0; i < argument0; i++)
 
     
     switch (argument1) {
-        case 1: ds_map_add(projects1, i, p); break;
-        case 2: ds_map_add(projects2, i, p); break;
-        case 3: ds_map_add(projects3, i, p); break;
+        case 1: ds_map_add(projects1, p.project_id, p); break;
+        case 2: ds_map_add(projects2, p.project_id, p); break;
+        case 3: ds_map_add(projects3, p.project_id, p); break;
     }
 }
