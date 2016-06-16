@@ -65,7 +65,7 @@ image_single = 0;
           <argument>
             <kind>1</kind>
             <string>x = 35 + (40 * project_id);
-y = 200;
+y = 220;
 </string>
           </argument>
         </arguments>

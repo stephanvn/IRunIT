@@ -254,8 +254,8 @@ draw_set_halign(fa_left);
 draw_set_color(c_black);
 
 draw_text(0, 0, "Verbonden spelers: " + string(ds_map_size(players)) );
-draw_line(0, 148, 800, 148);
-draw_text(0, 150, "Projecten: ");
+draw_line(0, 168, 800, 168);
+draw_text(0, 170, "Projecten: ");
 
 if (gameActive) 
 {

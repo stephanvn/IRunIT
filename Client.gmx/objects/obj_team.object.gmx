@@ -59,7 +59,10 @@ while (!place_free(x,y))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (room == rm_gamescreen) visible = true;
+            <string>//The "teams" functionality has become obsolete for the client.
+
+/*
+if (room == rm_gamescreen) visible = true;
 </string>
           </argument>
         </arguments>
