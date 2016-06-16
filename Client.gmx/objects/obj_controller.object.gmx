@@ -119,8 +119,17 @@ else {
     instance_create(0,0,obj_level_info);
     instance_create(0,0,obj_levels);
     
-    instance_create(1280 + 360, 265, obj_workers_place);
-    instance_create(1280 + 75, 66, obj_workers_desk_back);
+    instance_create(1280 + 360,           0 + 530,            obj_workers_place);
+    
+    instance_create(1280 + 75 + 30,       0 + 131 + 160,      obj_workers_desk_back);
+    instance_create(1280 + 75 + 170,      0 + 131 + 160 - 72, obj_workers_desk_back);
+    instance_create(1280 + 75 + 30 + 48,  0 + 131 + 160 + 24, obj_workers_desk_front);
+    instance_create(1280 + 75 + 170 + 48, 0 + 131 + 160 - 48, obj_workers_desk_front);
+    instance_create(1280 + 75 + 230,      0 + 131 + 260,      obj_workers_desk_back);
+    instance_create(1280 + 75 + 370,      0 + 131 + 260 - 72, obj_workers_desk_back);
+    instance_create(1280 + 75 + 230 + 48, 0 + 131 + 260 + 24, obj_workers_desk_front);
+    instance_create(1280 + 75 + 370 + 48, 0 + 131 + 260 - 48, obj_workers_desk_front);
+    
 }
 </string>
           </argument>
