@@ -118,6 +118,9 @@ else {
     instance_create(0,0,obj_teamname);
     instance_create(0,0,obj_level_info);
     instance_create(0,0,obj_levels);
+    
+    instance_create(1280 + 360, 265, obj_workers_place);
+    instance_create(1280 + 75, 66, obj_workers_desk_back);
 }
 </string>
           </argument>

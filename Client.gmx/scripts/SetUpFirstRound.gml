@@ -24,7 +24,3 @@ buffer_write(sendbuff, buffer_s16, 7);
 buffer_write(sendbuff, buffer_u8, ds_list_size(names_players));
 WriteDataTeamsToBuffer(names_players, balances_players);
 SendToEveryone();
-
-buffer_seek(sendbuff, buffer_seek_start, 0);
-buffer_write(sendbuff, buffer_s16, 8);
-SendToEveryone();
