@@ -88,4 +88,7 @@
                 ds_list_add(teams, t_object);
             }
         break;
+        case 8:
+            var p_object = instance_create(1280 + 360, 265, obj_workers_place);
+        break;
     }
