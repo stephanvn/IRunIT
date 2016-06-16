@@ -111,6 +111,7 @@
       <sprite>sprites\spr_level2</sprite>
       <sprite>sprites\spr_level3</sprite>
       <sprite>sprites\spr_workers_place_1</sprite>
+      <sprite>sprites\spr_workers_desk_back_1</sprite>
     </sprites>
     <sprite>sprites\spr_host_found</sprite>
     <sprite>sprites\spr_closebutton</sprite>
@@ -178,8 +179,9 @@
         <object>objects\obj_worker_blue</object>
         <object>objects\obj_worker_green</object>
         <object>objects\obj_worker_yellow</object>
-        <object>objects\obj_workers_place</object>
         <object>objects\obj_team</object>
+        <object>objects\obj_workers_place</object>
+        <object>objects\obj_workers_desk_back</object>
         <objects name="Screen">
           <object>objects\obj_message</object>
           <object>objects\obj_closebutton</object>

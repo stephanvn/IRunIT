@@ -90,5 +90,6 @@
         break;
         case 8:
             var p_object = instance_create(1280 + 360, 265, obj_workers_place);
+            var d_object = instance_create(1280 + 75, 66, obj_workers_desk_back);
         break;
     }
