@@ -51,6 +51,7 @@
             var projectid = buffer_read(buff, buffer_u8);
             p = ds_map_find_value(projects , projectid);
             buffer_seek(sendbuff, buffer_seek_start, 0);
+            buffer_write(sendbuff, buffer_s16, 8);
             buffer_write(sendbuff, buffer_u8, p.project_id); 
             buffer_write(sendbuff, buffer_string, p.name);
             buffer_write(sendbuff, buffer_u8, p.category);

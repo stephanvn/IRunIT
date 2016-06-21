@@ -92,4 +92,8 @@
                 ds_list_add(teams, t_object);
             }
         break;
+        
+        case 8:
+            //response op verzoek voor projectdata bij id
+        break;
     }
