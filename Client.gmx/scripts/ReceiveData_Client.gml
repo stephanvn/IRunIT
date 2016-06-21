@@ -95,5 +95,7 @@
         
         case 8:
             //response op verzoek voor projectdata bij id
+            var p_id = buffer_read(buff, buffer_u8); 
+            var p_name = buffer_read(buff, buffer_string); 
         break;
     }
