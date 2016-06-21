@@ -31,6 +31,7 @@ global.projectID = 0;
 projects1 = ds_map_create();
 projects2 = ds_map_create();
 projects3 = ds_map_create();
+projects = ds_map_create();
 broadcast_buffer = buffer_create(32, buffer_fixed, 1);
 player_buffer = buffer_create(16384, buffer_fixed, 1);
 sendbuff = buffer_create(256, buffer_grow, 1); // Create a buffer for the network messages

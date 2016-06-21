@@ -44,4 +44,5 @@ for (var i = 0; i < argument0; i++)
         case 2: ds_map_add(projects2, p.project_id, p); break;
         case 3: ds_map_add(projects3, p.project_id, p); break;
     }
+    ds_map_add(projects, p.project_id, p); 
 }
