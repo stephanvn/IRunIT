@@ -36,6 +36,11 @@ req_red = 0;
 req_yellow = 0;
 req_green = 0;
 
+done_blue = 0;
+done_red = 0;
+done_yellow = 0;
+done_green = 0;
+
 month1_value = 0;
 month2_value = 0;
 month3_value = 0;

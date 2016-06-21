@@ -36,6 +36,10 @@
                 p.req_red = buffer_read(buff, buffer_u8); 
                 p.req_yellow = buffer_read(buff, buffer_u8); 
                 p.req_green = buffer_read(buff, buffer_u8); 
+                p.done_blue = buffer_read(buff, buffer_u8); 
+                p.done_red = buffer_read(buff, buffer_u8); 
+                p.done_yellow = buffer_read(buff, buffer_u8); 
+                p.done_green = buffer_read(buff, buffer_u8); 
                 p.month1_value = buffer_read(buff, buffer_s16); 
                 p.month2_value = buffer_read(buff, buffer_s16); 
                 p.month3_value = buffer_read(buff, buffer_s16); 

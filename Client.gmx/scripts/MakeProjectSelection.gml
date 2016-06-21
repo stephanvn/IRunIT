@@ -13,7 +13,7 @@
         {
             if (project_id == ds_list_find_value(global.chosenprojects, j)) 
             { 
-                ds_map_delete(projects1, project_id)
+                //ds_map_delete(projects1, project_id)
                 instance_destroy(); 
             }
         }
