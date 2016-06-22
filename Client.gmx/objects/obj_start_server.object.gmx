@@ -25,23 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Start the game
-
-if (!gameActive) {
-    sprite_index = spr_stop;
-    gameActive = true;
-    obj_server.alarm[0] = room_speed * 60 * 10;
-    sprite_index = spr_stop;
-    with (obj_server) 
-    {
-        SetUpFirstRound();
-    }
-}
-else 
-{
-    sprite_index = spr_start;
-    gameActive = false;
-}
+            <string>with (obj_server) event_user(0);
 </string>
           </argument>
         </arguments>

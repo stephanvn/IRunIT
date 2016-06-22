@@ -233,6 +233,51 @@ if (eventid == server) {
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Start the game
+
+if (!gameActive) {
+    sprite_index = spr_stop;
+    gameActive = true;
+    obj_server.alarm[0] = room_speed * 60 * 10;
+    
+    buffer_seek(sendbuff, buffer_seek_start, 0);
+    buffer_write(sendbuff, buffer_s16, 9);
+    buffer_write(sendbuff, buffer_u8, 10);
+    SendToEveryone();
+    
+    sprite_index = spr_stop;
+    with (obj_server) 
+    {
+        SetUpFirstRound();
+    }
+}
+else 
+{
+    sprite_index = spr_start;
+    gameActive = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>

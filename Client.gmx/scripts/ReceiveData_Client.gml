@@ -98,4 +98,9 @@
             var p_id = buffer_read(buff, buffer_u8); 
             var p_name = buffer_read(buff, buffer_string); 
         break;
+        
+        case 9: //Start the timer
+            var minutes = buffer_read(buff, buffer_u8);
+            obj_controller.alarm[0] = room_speed * 60 * minutes;
+        break;
     }
