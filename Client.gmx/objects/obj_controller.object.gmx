@@ -61,6 +61,31 @@ else {
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>    totalseconds = alarm[0] / 60 ;
+    minutes = floor(totalseconds / 60);
+    seconds = floor(totalseconds % 60);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="68">
       <action>
         <libid>1</libid>
@@ -104,7 +129,7 @@ else {
           <argument>
             <kind>1</kind>
             <string>if (room == rm_gamescreen) 
-{
+{   
     instance_create(0,0,obj_worker_red);
     instance_create(0,0,obj_worker_blue);
     instance_create(0,0,obj_worker_yellow);
@@ -181,8 +206,9 @@ if(room == rm_gamescreen)
     draw_set_font(fnt_small);
     draw_set_halign(fa_left);
     draw_set_color(c_black);
-    draw_text(570, 5, "Team: "+string(name));
-    draw_text(1018, 5, "Saldo: "+string(capital));
+    draw_text(570, 5, "Team: " + string(name));
+    draw_text(1018, 5, "Saldo: " + string(capital));
+    draw_text(890, 5, "Tijd over: " + string(minutes)+ ":" +string(seconds));
     draw_text(1162, 505, "Level");
     
     //draw the visual representation of the game

@@ -52,11 +52,6 @@ y = 0;
           <argument>
             <kind>1</kind>
             <string>draw_self();
-
-draw_set_font(fnt_small);
-draw_set_halign(fa_left);
-draw_set_color(c_black);
-draw_text(890, 5, "Tijd over: ");
 </string>
           </argument>
         </arguments>
