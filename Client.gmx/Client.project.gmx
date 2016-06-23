@@ -126,6 +126,7 @@
     <background>background\startlogo</background>
     <background>background\bk_floor1</background>
     <background>background\bk_overlay</background>
+    <background>background\start_background</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
