@@ -128,6 +128,13 @@ else if (type == "balanceinfo")
     draw_text(275, 470, "Eigen vermogen(oud) + saldo = eigen vermogen (nieuw)");
     draw_line(275, 490, 765, 490);
 }
+else if(type == "loonkosteninfo")
+{
+    draw_text(275, 170, "Loonkosten info");
+    draw_text(275, 205, "Medewerkers moeten een salaris krijgen, ongeacht of je ze inzet.");
+    draw_text(275, 225, "Hieronder een overzicht van de kosten bij het aantal medewerkers.");
+    draw_sprite(spr_loonkostenprices, 0, 275, 245);
+}
 </string>
           </argument>
         </arguments>
