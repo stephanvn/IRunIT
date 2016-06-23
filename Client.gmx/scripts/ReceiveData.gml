@@ -48,26 +48,31 @@
         break;
 
         case 4: 
-            var projectid = buffer_read(buff, buffer_u8);
-            p = ds_map_find_value(projects , projectid);
+            var amount = buffer_read(buff, buffer_u8);
             buffer_seek(sendbuff, buffer_seek_start, 0);
             buffer_write(sendbuff, buffer_s16, 8);
-            buffer_write(sendbuff, buffer_u8, p.project_id); 
-            buffer_write(sendbuff, buffer_string, p.name);
-            buffer_write(sendbuff, buffer_u8, p.category);
-            buffer_write(sendbuff, buffer_u8, p.req_blue);
-            buffer_write(sendbuff, buffer_u8, p.req_red);
-            buffer_write(sendbuff, buffer_u8, p.req_yellow);
-            buffer_write(sendbuff, buffer_u8, p.req_green);
-            buffer_write(sendbuff, buffer_u8, p.done_blue);
-            buffer_write(sendbuff, buffer_u8, p.done_red);
-            buffer_write(sendbuff, buffer_u8, p.done_yellow);
-            buffer_write(sendbuff, buffer_u8, p.done_green);
-            buffer_write(sendbuff, buffer_s16, p.month1_value);
-            buffer_write(sendbuff, buffer_s16, p.month2_value);
-            buffer_write(sendbuff, buffer_s16, p.month3_value);
-            buffer_write(sendbuff, buffer_s16, p.month4_expired);
-            
+            buffer_write(sendbuff, buffer_u8, amount);
+            for(var i = 0 ; i < amount ; i++)
+            {
+                var projectid = buffer_read(buff, buffer_u8);
+                p = ds_map_find_value(projects , projectid);
+                
+                buffer_write(sendbuff, buffer_u8, p.project_id); 
+                buffer_write(sendbuff, buffer_string, p.name);
+                buffer_write(sendbuff, buffer_u8, p.category);
+                buffer_write(sendbuff, buffer_u8, p.req_blue);
+                buffer_write(sendbuff, buffer_u8, p.req_red);
+                buffer_write(sendbuff, buffer_u8, p.req_yellow);
+                buffer_write(sendbuff, buffer_u8, p.req_green);
+                buffer_write(sendbuff, buffer_u8, p.done_blue);
+                buffer_write(sendbuff, buffer_u8, p.done_red);
+                buffer_write(sendbuff, buffer_u8, p.done_yellow);
+                buffer_write(sendbuff, buffer_u8, p.done_green);
+                buffer_write(sendbuff, buffer_s16, p.month1_value);
+                buffer_write(sendbuff, buffer_s16, p.month2_value);
+                buffer_write(sendbuff, buffer_s16, p.month3_value);
+                buffer_write(sendbuff, buffer_s16, p.month4_expired);
+            }
             network_send_packet(sock, sendbuff, buffer_tell(sendbuff));
             
         break;
