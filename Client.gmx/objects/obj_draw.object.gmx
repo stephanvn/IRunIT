@@ -66,6 +66,13 @@ surface_resize(application_surface, view_wview, view_hview);
 
 if(room == rm_gamescreen)
 {
+    
+    for (var i=0; i&lt;4; i++) {    
+        for (var j=0; j&lt;4; j++) {        
+            draw_sprite(spr_projectempty, 0, 32 + 128*i, 32+96*j);
+        }
+    }
+
     draw_text(60,10,"Maand 1")
     draw_text(180,10,"Maand 2")
     draw_text(320,10,"Maand 3")
