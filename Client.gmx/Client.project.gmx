@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="9" name="datafiles">
+  <datafiles number="10" name="datafiles">
     <datafile>
       <name>categorie1.json</name>
       <exists>-1</exists>
