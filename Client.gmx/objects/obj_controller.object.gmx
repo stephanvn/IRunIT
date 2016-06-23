@@ -228,7 +228,7 @@ if(room == rm_gamescreen)
 {
     draw_set_font(fnt_small);
     draw_set_halign(fa_left);
-    draw_set_color(c_black);
+    draw_set_color(c_white);
     draw_text(570, 5, "Team: " + string(name));
     draw_text(1018, 5, "Saldo: " + string(capital));
     draw_text(890, 5, "Tijd over: " + string(minutes)+ ":" +string(seconds));

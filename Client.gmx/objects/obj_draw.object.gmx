@@ -66,6 +66,8 @@ surface_resize(application_surface, view_wview, view_hview);
 
 if(room == rm_gamescreen)
 {
+    draw_set_color(c_white);
+    draw_set_font(fnt_small);
     
     for (var i=0; i&lt;4; i++) {    
         for (var j=0; j&lt;4; j++) {        

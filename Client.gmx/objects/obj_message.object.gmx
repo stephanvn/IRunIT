@@ -58,7 +58,7 @@ if (type == "levelinfo")
 {
     draw_set_font(fnt_small);
     draw_set_halign(fa_left);
-    draw_set_color(c_black);
+    draw_set_color(c_white);
     //description text
     draw_text(275, 170, "Level info")
     draw_text(275, 205, "Je gaat een level omhoog als je alle categorieën verbeterd hebt.")
