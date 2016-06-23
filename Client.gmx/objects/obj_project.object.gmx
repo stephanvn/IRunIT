@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -161,6 +161,38 @@ y = 220;
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (room == rm_gamescreen) {
+    for (var i=0; i &lt; ds_list_size(pickedProjects); i++) 
+    {
+        if (project_id == ds_list_find_value(pickedProjects, i))
+        {
+            sprite_index = spr_projectcard;
+        }
+    }
+    if sprite_index != spr_projectcard instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -181,17 +213,18 @@ y = 220;
             <string>draw_self();
 if (show == true) {
     draw_set_font(fnt_small);
-    draw_text(mouse_x, mouse_y, string(project_id));
-    draw_text(mouse_x, mouse_y+20, string(name));
-    draw_text(mouse_x, mouse_y+40, string(category));
-    draw_text(mouse_x, mouse_y+60, string(req_blue));
-    draw_text(mouse_x, mouse_y+80, string(req_red));
-    draw_text(mouse_x, mouse_y+100, string(req_yellow));
-    draw_text(mouse_x, mouse_y+120, string(req_green));
-    draw_text(mouse_x, mouse_y+140, string(month1_value));
-    draw_text(mouse_x, mouse_y+160, string(month2_value));
-    draw_text(mouse_x, mouse_y+180, string(month3_value));
-    draw_text(mouse_x, mouse_y+200, string(month4_expired));
+    draw_sprite(spr_popup, 0, mouse_x, mouse_y);
+    draw_text_ext(mouse_x+12, mouse_y+12, name, -1, 310);
+    draw_text(mouse_x+255, mouse_y+62, "ID: "+string(project_id));
+    draw_text(mouse_x, mouse_y+60, "Categorie: "+string(category));
+    draw_text(mouse_x, mouse_y+80, "Ben. blauw:"+string(req_blue));
+    draw_text(mouse_x, mouse_y+100, "Ben. rood:"+string(req_red));
+    draw_text(mouse_x, mouse_y+120, "Ben. geel:"+string(req_yellow));
+    draw_text(mouse_x, mouse_y+140, "Ben. groen:"+string(req_green));
+    draw_text(mouse_x, mouse_y+160, "Opbrengst na 1 maand:"+string(month1_value));
+    draw_text(mouse_x, mouse_y+180, "Na 2 maanden:"+string(month2_value));
+    draw_text(mouse_x, mouse_y+200, "Na 3 maanden:"+string(month3_value));
+    draw_text(mouse_x, mouse_y+220, "Vervallen: "+string(month4_expired));
 }
 </string>
           </argument>

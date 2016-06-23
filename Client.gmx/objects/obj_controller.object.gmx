@@ -167,7 +167,7 @@ else {
     instance_create(0,0,obj_level_info);
     instance_create(0,0,obj_levels);
     
-    instance_create(1280 + 360,       0 + 530,            obj_workers_place);
+    instance_create(1280 + 360,       0 + 530,       obj_workers_place);
     
     instance_create(1280 + 105,       0 + 291,       obj_workers_desk_back);
     instance_create(1280 + 245,       0 + 291 - 72,  obj_workers_desk_back);

@@ -92,14 +92,6 @@ if(room == rm_gamescreen)
     draw_text(580,642,"Communicatie")
     draw_text(580,674,"Plannen/organiseren")
     
-    //Teken de projecten
-    i = 65;
-    for (var j=0; j &lt; ds_list_size(pickedProjects); j++) 
-    {
-        draw_text(60,i,"Project " + string(ds_list_find_value(pickedProjects, j)));
-        i += 90;
-    }
-    
     /*
     //Teken de teams
     i2 = 200; //200?

@@ -100,6 +100,7 @@
       <sprite>sprites\spr_levelgreen</sprite>
       <sprite>sprites\spr_emptycard</sprite>
       <sprite>sprites\spr_projectempty</sprite>
+      <sprite>sprites\spr_projectcard</sprite>
       <sprite>sprites\spr_cardpile2</sprite>
       <sprite>sprites\spr_levelbox</sprite>
       <sprite>sprites\spr_info</sprite>
@@ -119,6 +120,7 @@
     <sprite>sprites\spr_host_found</sprite>
     <sprite>sprites\spr_closebutton</sprite>
     <sprite>sprites\sprite36</sprite>
+    <sprite>sprites\spr_popup</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\startlogo</background>
@@ -203,12 +205,12 @@
     <objects name="Server">
       <object>objects\obj_server</object>
       <object>objects\obj_client_dummy</object>
-      <object>objects\obj_project</object>
       <object>objects\obj_start_server</object>
       <object>objects\obj_teamdev</object>
       <object>objects\obj_emp_growth</object>
     </objects>
     <object>objects\obj_mouse_follow</object>
+    <object>objects\obj_project</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_startmenu</room>
