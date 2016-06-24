@@ -184,6 +184,31 @@ if (obj_controller.canPickProjects == true)
           <argument>
             <kind>1</kind>
             <string>///Ingame
+if (room == rm_gamescreen) {
+    if (global.mouse_drag == true) {
+        with (obj_worker) { 
+            if (dragging == true) {
+                //event_user(0);
+                if (color == "red" &amp;&amp; other.done_red &lt; other.req_red) { 
+                    obj_controller.workers_red--; 
+                    other.done_red++;
+                }
+                if (color == "blue" &amp;&amp; other.done_blue &lt; other.req_blue) { 
+                    obj_controller.workers_blue--;
+                    other.done_blue++; 
+                }
+                if (color == "green" &amp;&amp; other.done_green &lt; other.req_green) { 
+                    obj_controller.workers_green--;
+                    other.done_green++; 
+                }
+                if (color == "yellow" &amp;&amp; other.done_yellow &lt; other.req_yellow) { 
+                    obj_controller.workers_yellow--;
+                    other.done_yellow++;
+                }
+            }
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -263,6 +288,25 @@ if (show == true) {
     draw_text(mouse_x+12, mouse_y+200, "Na 2 maanden:"+string(month2_value));
     draw_text(mouse_x+12, mouse_y+220, "Na 3 maanden:"+string(month3_value));
     draw_text(mouse_x+12, mouse_y+240, "Vervallen: "+string(month4_expired));
+    
+    if (room == rm_gamescreen) {
+    draw_sprite(spr_popup, 1, mouse_x+340, mouse_y);
+        var total = req_red + req_blue + req_yellow + req_green;
+        var wip = done_red + done_blue + done_yellow + done_green;
+        var percentage = wip / total * 100;
+        draw_text(mouse_x+340+12, mouse_y+12, "Progress: "+string(percentage)+"%");
+        
+        for (var i=0; i&lt;req_red; i++) { draw_sprite_ext(spr_worker, 0, mouse_x+340+32+32*i, mouse_y+76, 1, 1, 0, -1, 0.3); }
+        for (var i=0; i&lt;req_blue; i++) { draw_sprite_ext(spr_worker, 1, mouse_x+340+32+32*i, mouse_y+140, 1, 1, 0, -1, 0.3); }
+        for (var i=0; i&lt;req_yellow; i++) { draw_sprite_ext(spr_worker, 2, mouse_x+340+32+32*i, mouse_y+204, 1, 1, 0, -1, 0.3); }
+        for (var i=0; i&lt;req_green; i++) { draw_sprite_ext(spr_worker, 3, mouse_x+340+32+32*i, mouse_y+268, 1, 1, 0, -1, 0.3); }
+        
+        for (var i=0; i&lt;done_red; i++) { draw_sprite(spr_worker, 0, mouse_x+340+32+32*i, mouse_y+76); }
+        for (var i=0; i&lt;done_blue; i++) { draw_sprite(spr_worker, 1, mouse_x+340+32+32*i, mouse_y+140); }
+        for (var i=0; i&lt;done_yellow; i++) { draw_sprite(spr_worker, 2, mouse_x+340+32+32*i, mouse_y+204); }
+        for (var i=0; i&lt;done_green; i++) { draw_sprite(spr_worker, 3, mouse_x+340+32+32*i, mouse_y+268); }
+    }
+    
 }
 </string>
           </argument>
