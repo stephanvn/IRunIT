@@ -3,7 +3,7 @@
   <spriteName>spr_project_icon</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-5</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -298,13 +298,13 @@ if (show == true) {
         
         for (var i=0; i&lt;req_red; i++) { draw_sprite_ext(spr_worker, 0, mouse_x+340+32+32*i, mouse_y+76, 1, 1, 0, -1, 0.3); }
         for (var i=0; i&lt;req_blue; i++) { draw_sprite_ext(spr_worker, 1, mouse_x+340+32+32*i, mouse_y+140, 1, 1, 0, -1, 0.3); }
-        for (var i=0; i&lt;req_yellow; i++) { draw_sprite_ext(spr_worker, 2, mouse_x+340+32+32*i, mouse_y+204, 1, 1, 0, -1, 0.3); }
-        for (var i=0; i&lt;req_green; i++) { draw_sprite_ext(spr_worker, 3, mouse_x+340+32+32*i, mouse_y+268, 1, 1, 0, -1, 0.3); }
+        for (var i=0; i&lt;req_green; i++) { draw_sprite_ext(spr_worker, 2, mouse_x+340+32+32*i, mouse_y+204, 1, 1, 0, -1, 0.3); }
+        for (var i=0; i&lt;req_yellow; i++) { draw_sprite_ext(spr_worker, 3, mouse_x+340+32+32*i, mouse_y+268, 1, 1, 0, -1, 0.3); }
         
         for (var i=0; i&lt;done_red; i++) { draw_sprite(spr_worker, 0, mouse_x+340+32+32*i, mouse_y+76); }
         for (var i=0; i&lt;done_blue; i++) { draw_sprite(spr_worker, 1, mouse_x+340+32+32*i, mouse_y+140); }
-        for (var i=0; i&lt;done_yellow; i++) { draw_sprite(spr_worker, 2, mouse_x+340+32+32*i, mouse_y+204); }
-        for (var i=0; i&lt;done_green; i++) { draw_sprite(spr_worker, 3, mouse_x+340+32+32*i, mouse_y+268); }
+        for (var i=0; i&lt;done_green; i++) { draw_sprite(spr_worker, 2, mouse_x+340+32+32*i, mouse_y+204); }
+        for (var i=0; i&lt;done_yellow; i++) { draw_sprite(spr_worker, 3, mouse_x+340+32+32*i, mouse_y+268); }
     }
     
 }

@@ -46,6 +46,7 @@ maxpicks = 2;
 canPickProjects = false;
 pickedProjects = ds_list_create();
 teams = ds_list_create();
+global.mouse_drag = false;
 
 if (connection != 0) { // show error if connection failed
     show_message("Error - can not connect to server!!");
