@@ -26,10 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>globalvar players, highest_bid, socketlist, gameActive, projects1, projects2, projects3, bidturn;
-
+randomize();
+global.projectID = 0;
 projects1 = ds_map_create();
 projects2 = ds_map_create();
 projects3 = ds_map_create();
+projects = ds_map_create();
 broadcast_buffer = buffer_create(32, buffer_fixed, 1);
 player_buffer = buffer_create(16384, buffer_fixed, 1);
 sendbuff = buffer_create(256, buffer_grow, 1); // Create a buffer for the network messages
@@ -54,6 +56,42 @@ if (server &lt; 0) { //network_server_create returns a bool. If it returns &lt;0
 
 seconds = 10;
 minutes = 10;
+
+serverName = get_string("enter name for server","");
+
+alarm[0] = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Broadcast our location occasionally. Clients pick this up and can then display servers to the user. 
+
+buffer_seek( broadcast_buffer, buffer_seek_start, 0 );
+buffer_write( broadcast_buffer, buffer_string, serverName );
+network_send_broadcast( server, 6511, broadcast_buffer, buffer_tell(broadcast_buffer) );
+
+// Broadcast once a second...
+if (!gameActive) {
+alarm[0]=60; }
+
 </string>
           </argument>
         </arguments>
@@ -195,6 +233,51 @@ if (eventid == server) {
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Start the game
+
+if (!gameActive) {
+    sprite_index = spr_stop;
+    gameActive = true;
+    obj_server.alarm[0] = room_speed * 60 * 10;
+    
+    buffer_seek(sendbuff, buffer_seek_start, 0);
+    buffer_write(sendbuff, buffer_s16, 9);
+    buffer_write(sendbuff, buffer_u8, 10);
+    SendToEveryone();
+    
+    sprite_index = spr_stop;
+    with (obj_server) 
+    {
+        SetUpFirstRound();
+    }
+}
+else 
+{
+    sprite_index = spr_start;
+    gameActive = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -212,22 +295,25 @@ if (eventid == server) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_left);
+            <string>draw_set_font(fnt_small);
+draw_set_halign(fa_left);
 draw_set_color(c_black);
 
 draw_text(0, 0, "Verbonden spelers: " + string(ds_map_size(players)) );
-draw_line(0, 148, 800, 148);
-draw_text(0, 150, "Projecten: ");
+draw_line(0, 168, 800, 168);
+draw_text(0, 170, "Projecten: ");
 
-if (gameActive) {
-        draw_text(0, 300, "Round 1 countdown: "+string(minutes)+":"+string(seconds)); //Timer
-    }
-    
-for (var i=0; i&lt;ds_list_size(bidlist); i++) 
+if (gameActive) 
 {
-    var bid = ds_list_find_value(bidlist, i);
-    var obj = ds_map_find_value(bidmap, bid);
-    draw_text(300, 400 + 20*i, string(bid) +" : "+ obj.name );
+    draw_text(0, 300, "Round 1 countdown: "+string(minutes)+":"+string(seconds)); //Timer
+}
+
+var first = ds_map_find_first(bidmap);    
+for (var i=0; i&lt;ds_map_size(bidmap); i++) 
+{
+    
+    draw_text(300, 400 + 20*i, string(first.bid) +" : "+ first.name );
+    first = ds_map_find_next(bidmap, first);
 }
 </string>
           </argument>

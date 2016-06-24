@@ -14,6 +14,7 @@ with (obj_project)
     for (var j=0; j<ds_list_size(pickedProjects); j++) 
     {
         if (project_id == ds_list_find_value(pickedProjects, j)) { 
-            instance_destroy(); }
+            //instance_destroy(); 
+            }
     }
 }

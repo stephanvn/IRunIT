@@ -11,6 +11,10 @@ for (var i = 0; i < ds_map_size(argument0); i++) {
     buffer_write(sendbuff, buffer_u8, p.req_red);
     buffer_write(sendbuff, buffer_u8, p.req_yellow);
     buffer_write(sendbuff, buffer_u8, p.req_green);
+    buffer_write(sendbuff, buffer_u8, p.done_blue);
+    buffer_write(sendbuff, buffer_u8, p.done_red);
+    buffer_write(sendbuff, buffer_u8, p.done_yellow);
+    buffer_write(sendbuff, buffer_u8, p.done_green);
     buffer_write(sendbuff, buffer_s16, p.month1_value);
     buffer_write(sendbuff, buffer_s16, p.month2_value);
     buffer_write(sendbuff, buffer_s16, p.month3_value);

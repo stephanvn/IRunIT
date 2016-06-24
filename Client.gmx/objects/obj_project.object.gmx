@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -36,18 +36,27 @@ req_red = 0;
 req_yellow = 0;
 req_green = 0;
 
+done_blue = 0;
+done_red = 0;
+done_yellow = 0;
+done_green = 0;
+
 month1_value = 0;
 month2_value = 0;
 month3_value = 0;
 month4_expired = 0;
 
+month = 1;
+
 image_single = 0;
+
+alarm[0] = 2;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -65,7 +74,7 @@ image_single = 0;
           <argument>
             <kind>1</kind>
             <string>x = 35 + (40 * project_id);
-y = 200;
+y = 220;
 </string>
           </argument>
         </arguments>
@@ -134,7 +143,9 @@ y = 200;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_controller.canPickProjects == true)
+            <string>///Biedscherm
+if (room != rm_gamescreen) {
+if (obj_controller.canPickProjects == true)
 {
     if (image_single=0) 
     {
@@ -151,12 +162,75 @@ y = 200;
         image_single = 0;
     }
 }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Ingame
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (room == rm_gamescreen) {
+    for (var i=0; i &lt; ds_list_size(pickedProjects); i++) 
+    {
+        if (project_id == ds_list_find_value(pickedProjects, i))
+        {
+            sprite_index = spr_projectcard;
+            y = 32 + 96*i;
+        }
+    }
+    if sprite_index != spr_projectcard instance_destroy();
+
+    switch (month)
+    {
+        case 1: x = 32;  break;
+        case 2: x = 160; break;
+        case 3: x = 288; break;
+        case 4: x = 416; break;                        
+    } 
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -175,17 +249,20 @@ y = 200;
             <kind>1</kind>
             <string>draw_self();
 if (show == true) {
-    draw_text(mouse_x, mouse_y, string(project_id));
-    draw_text(mouse_x, mouse_y+20, string(name));
-    draw_text(mouse_x, mouse_y+40, string(category));
-    draw_text(mouse_x, mouse_y+60, string(req_blue));
-    draw_text(mouse_x, mouse_y+80, string(req_red));
-    draw_text(mouse_x, mouse_y+100, string(req_yellow));
-    draw_text(mouse_x, mouse_y+120, string(req_green));
-    draw_text(mouse_x, mouse_y+140, string(month1_value));
-    draw_text(mouse_x, mouse_y+160, string(month2_value));
-    draw_text(mouse_x, mouse_y+180, string(month3_value));
-    draw_text(mouse_x, mouse_y+200, string(month4_expired));
+    draw_set_font(fnt_small);
+    draw_set_color(c_white);
+    draw_sprite(spr_popup, 0, mouse_x, mouse_y);
+    draw_text_ext(mouse_x+12, mouse_y+12, name, -1, 290);
+    draw_text(mouse_x+255, mouse_y+75, "ID: "+string(project_id));
+    draw_text(mouse_x+12, mouse_y+80, "Categorie: "+string(category));
+    draw_text(mouse_x+12, mouse_y+100, "Ben. blauw:"+string(req_blue));
+    draw_text(mouse_x+12, mouse_y+120, "Ben. rood:"+string(req_red));
+    draw_text(mouse_x+12, mouse_y+140, "Ben. geel:"+string(req_yellow));
+    draw_text(mouse_x+12, mouse_y+160, "Ben. groen:"+string(req_green));
+    draw_text(mouse_x+12, mouse_y+180, "Opbrengst na 1 maand:"+string(month1_value));
+    draw_text(mouse_x+12, mouse_y+200, "Na 2 maanden:"+string(month2_value));
+    draw_text(mouse_x+12, mouse_y+220, "Na 3 maanden:"+string(month3_value));
+    draw_text(mouse_x+12, mouse_y+240, "Vervallen: "+string(month4_expired));
 }
 </string>
           </argument>

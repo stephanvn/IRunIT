@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-101</depth>
+  <depth>-110</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(275,135, "Loonkosten")
+            <string>draw_set_font(fnt_small);
+draw_set_color(c_black);
+draw_text(275,135, "Loonkosten info")
 draw_text(275,175, "Medewerkers moeten een salaris krijgen, ongeacht of je ze inzet.")
 draw_text(275,190, "Hieronder een overzicht van de kosten bij het aantal medewerkers.")
 </string>

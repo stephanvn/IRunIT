@@ -25,13 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar sendbuff, client, pickedProjects;
+            <string>globalvar sendbuff, client, pickedProjects, teams;
 name = get_string("Enter your name","");
 sendbuff = buffer_create(256, buffer_grow, 1); // Create a buffer for the network messages
 client = network_create_socket(network_socket_tcp); // Create a TCP/IP socket
-var connection = network_connect(client, "localhost", 6510); // Connect to our server
+var connection = network_connect(client, global.ipaddress, 6510); // Connect to our server
 state = "init";
 capital = 0;
+bid = 0;
 workers_red = 0;
 workers_blue = 0;
 workers_yellow = 0;
@@ -44,6 +45,7 @@ skill_planning = 0;
 maxpicks = 2;
 canPickProjects = false;
 pickedProjects = ds_list_create();
+teams = ds_list_create();
 
 if (connection != 0) { // show error if connection failed
     show_message("Error - can not connect to server!!");
@@ -54,6 +56,54 @@ else {
     buffer_write(sendbuff, buffer_string, name); // Write the name you just entered to the buffer
     network_send_packet(client, sendbuff, buffer_tell(sendbuff)); // Send this message to the server
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[0]=60;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>    totalseconds = alarm[0] / 60 ;
+    minutes = floor(totalseconds / 60);
+    seconds = floor(totalseconds % 60);
 </string>
           </argument>
         </arguments>
@@ -102,11 +152,40 @@ else {
           <argument>
             <kind>1</kind>
             <string>if (room == rm_gamescreen) 
-{
+{   
     instance_create(0,0,obj_worker_red);
     instance_create(0,0,obj_worker_blue);
     instance_create(0,0,obj_worker_yellow);
-    instance_create(0,0,obj_worker_green);    
+    instance_create(0,0,obj_worker_green);
+    
+    instance_create(0,0,obj_info);
+    instance_create(0,0, obj_level_info_icon);
+    instance_create(0,0,obj_balance);    
+    instance_create(0,0,obj_roundtime);
+    instance_create(0,0,obj_capital);
+    instance_create(0,0,obj_teamname);
+    instance_create(0,0,obj_level_info);
+    instance_create(0,0,obj_levels);
+    
+    instance_create(1280 + 360,       0 + 530,       obj_workers_place);
+    
+    instance_create(1280 + 105,       0 + 291,       obj_workers_desk_back);
+    instance_create(1280 + 245,       0 + 291 - 72,  obj_workers_desk_back);
+    instance_create(1280 + 105 + 48,  0 + 315,       obj_workers_desk_front);
+    instance_create(1280 + 245 + 48,  0 + 315 - 72,  obj_workers_desk_front);
+    instance_create(1280 + 305,       0 + 391,       obj_workers_desk_back);
+    instance_create(1280 + 445,       0 + 391 - 72,  obj_workers_desk_back);
+    instance_create(1280 + 305 + 48,  0 + 415,       obj_workers_desk_front);
+    instance_create(1280 + 445 + 48,  0 + 415 - 72,  obj_workers_desk_front);
+    
+    instance_create(1280 + 105 - 36,  0 + 291 - 51,  obj_workers_chair_front);
+    instance_create(1280 + 245 - 36,  0 + 291 - 123, obj_workers_chair_front);
+    instance_create(1280 + 105 + 76,  0 + 315 - 9,   obj_workers_chair_back);
+    instance_create(1280 + 245 + 76,  0 + 315 - 81,  obj_workers_chair_back);
+    instance_create(1280 + 305 - 36,  0 + 391 - 51,  obj_workers_chair_front);
+    instance_create(1280 + 445 - 36,  0 + 391 - 123, obj_workers_chair_front);
+    instance_create(1280 + 305 + 76,  0 + 415 - 9,   obj_workers_chair_back);
+    instance_create(1280 + 445 + 76,  0 + 415 - 81,  obj_workers_chair_back);
 }
 </string>
           </argument>
@@ -130,26 +209,35 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(fnt_large);
-draw_set_halign(fa_center);
-draw_set_color(c_green);
-draw_text(room_width/2, 50, state);
-draw_set_color(c_black);
+            <string>if(room == rm_client) 
+{
+    draw_set_font(fnt_small);
+    draw_set_halign(fa_center);
+    draw_set_color(c_green);
+    draw_text(room_width/2 + 80, 0, state);
+    
+    draw_set_color(c_black);
+    draw_set_font(fnt_small);
+    draw_set_halign(fa_left);
+    draw_text(0, 0, "Team: " + string(name));
+    draw_text(700, 0, "Saldo: $" + string(capital));
+    draw_line(0, 25, room_width, 25);
+}
 
-draw_set_font(fnt_small);
-draw_set_halign(fa_left);
-draw_text(0, 20, "Player: " + string(name));
-draw_sprite(spr_cash, image_index, 735, 15);
-draw_text(765, 8, "$" + string(capital));
-draw_text(605, 33, "Rode medewerkers: " + string(workers_red));
-draw_text(589, 53, "Blauwe medewerkers: " + string(workers_blue));
-draw_text(609, 73, "Gele medewerkers: " + string(workers_yellow));
-draw_text(586, 93, "Groene medewerkers: " + string(workers_green));
-draw_text(586, 123, "Problemen oplossen: " + string(skill_troubleshooting));
-draw_text(586, 143, "Onderzoek doen: " + string(skill_intel));
-draw_text(586, 163, "Samenwerken: " + string(skill_teamwork));
-draw_text(586, 183, "Communicatie: " + string(skill_communication));
-draw_text(586, 203, "Planning/organiseren: " + string(skill_planning));
+if(room == rm_gamescreen) 
+{
+    draw_set_font(fnt_small);
+    draw_set_halign(fa_left);
+    draw_set_color(c_white);
+    draw_text(570, 5, "Team: " + string(name));
+    draw_text(1018, 5, "Saldo: " + string(capital));
+    draw_text(890, 5, "Tijd over: " + string(minutes)+ ":" +string(seconds));
+    draw_text(1162, 505, "Level");
+    
+    //draw the visual representation of the game
+
+    
+}
 </string>
           </argument>
         </arguments>

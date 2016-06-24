@@ -36,6 +36,10 @@
                 p.req_red = buffer_read(buff, buffer_u8); 
                 p.req_yellow = buffer_read(buff, buffer_u8); 
                 p.req_green = buffer_read(buff, buffer_u8); 
+                p.done_blue = buffer_read(buff, buffer_u8); 
+                p.done_red = buffer_read(buff, buffer_u8); 
+                p.done_yellow = buffer_read(buff, buffer_u8); 
+                p.done_green = buffer_read(buff, buffer_u8); 
                 p.month1_value = buffer_read(buff, buffer_s16); 
                 p.month2_value = buffer_read(buff, buffer_s16); 
                 p.month3_value = buffer_read(buff, buffer_s16); 
@@ -72,5 +76,33 @@
         case 5: //Round 1 started
             obj_controller.state = "Round 1 has begun";
             room_goto(rm_gamescreen);
+        break;
+        
+        case 6: // Update bidded value @Client
+            obj_controller.bid = buffer_read(buff, buffer_u16);
+        break;
+        
+        case 7: // Same as case 1, but with names_players instead of projects
+            // Amount of projects
+            var amount = buffer_read(buff, buffer_u8);
+            for (var i=0; i<amount; i++) 
+            {
+                var t_object = instance_create(1280 + 40 + 100*i, 40, obj_team); //596+(i*45) ?
+                t_object.name = buffer_read(buff, buffer_string);
+                t_object.balance = buffer_read(buff, buffer_u16);
+                //show_message("Speler " + string(t_object.name) + " heeft bedrag " + string(t_object.balance) + "."); //DEBUG
+                ds_list_add(teams, t_object);
+            }
+        break;
+        
+        case 8:
+            //response op verzoek voor projectdata bij id
+            var p_id = buffer_read(buff, buffer_u8); 
+            var p_name = buffer_read(buff, buffer_string); 
+        break;
+        
+        case 9: //Start the timer
+            var minutes = buffer_read(buff, buffer_u8);
+            obj_controller.alarm[0] = room_speed * 60 * minutes;
         break;
     }

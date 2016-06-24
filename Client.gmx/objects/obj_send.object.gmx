@@ -48,11 +48,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_controller.canPickProjects == true)
+            <string>if (obj_controller.canPickProjects == true) 
 {
-    SendPickedProjects();
-    obj_controller.canPickProjects = false;
-    obj_controller.state = "Other people are picking projects"
+    if(ds_list_size(pickedProjects) &gt; 0) {
+        SendPickedProjects();
+        obj_controller.canPickProjects = false;
+        obj_controller.state = "Other people are picking projects"
+    }
+    else {
+        show_message("Selecteer tenminste 1 project");
+    }
 }
 </string>
           </argument>

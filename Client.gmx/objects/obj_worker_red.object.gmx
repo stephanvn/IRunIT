@@ -51,7 +51,11 @@ dragging = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dragging = false;
+            <string>if (dragging) {
+    
+}
+dragging = false;
+global.mouse_drag = false;
 </string>
           </argument>
         </arguments>
@@ -75,6 +79,7 @@ dragging = false;
           <argument>
             <kind>1</kind>
             <string>dragging = true;
+global.mouse_drag = true;
 </string>
           </argument>
         </arguments>

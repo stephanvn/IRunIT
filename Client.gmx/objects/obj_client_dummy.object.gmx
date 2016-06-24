@@ -35,11 +35,11 @@ workers_blue = 2;
 workers_yellow = 2;
 workers_green = 2;
 
-skill_troubleshooting = 0;
-skill_intel = 0;
-skill_teamwork = 0;
-skill_communication = 0;
-skill_planning = 0;
+skill_troubleshooting = 2;
+skill_intel = 2;
+skill_teamwork = 2;
+skill_communication = 2;
+skill_planning = 2;
 
 player_number = 0;
 bid = -1;
@@ -91,9 +91,11 @@ y = 60;
             <kind>1</kind>
             <string>draw_self();
 draw_set_halign(fa_center);
+draw_set_font(fnt_small);
 draw_text(x, y+40, name);
 if(bid &gt; -1) {
     draw_text(x, y+60, "Bod: "+string(bid));
+    draw_text(x, y+80, "Saldo: "+string(capital));
 }
 </string>
           </argument>

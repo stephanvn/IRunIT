@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-101</depth>
+  <depth>-110</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,16 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_left);
-draw_set_color(c_black);
-
-draw_text(350, 150, "Loonkosten")
-draw_text(350, 200, "Biedkosten")
-draw_text(350, 250, "Verbeterkosten")
-draw_text(350, 300, "Omzet")
-draw_text(350, 350, "Saldo")
-draw_text(350, 450, "Eigen vermogen(oud) + saldo = eigen vermogen (nieuw)")
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
