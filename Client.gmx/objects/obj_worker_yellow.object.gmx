@@ -28,7 +28,7 @@
             <string>color = "yellow";
 image_single = 3;
 x = 160;
-y = 448;
+y = 458;
 dragging = false;
 </string>
           </argument>
@@ -75,7 +75,10 @@ dragging = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(x, y-40, string(obj_controller.workers_yellow));
+            <string>draw_set_font(fnt_small);
+draw_set_halign(fa_center);
+draw_text(x, y-50, string(obj_controller.workers_yellow));
+draw_set_halign(fa_left);
 event_inherited();
 </string>
           </argument>
