@@ -70,9 +70,18 @@ if (type == "levelinfo")
     //level3
     draw_sprite(spr_level3, 0, 825, 260);
     //table text &amp; lines
-    draw_text(275, 320, "Aantal opdrachten die je mag pakken:")
-    draw_text(275, 370, "Categorie van de opdrachten:")
+    draw_text(275, 320, "Aantal opdrachten die je mag pakken:");
+    draw_set_halign(fa_center);
+    draw_text(650, 320, "2");
+    draw_text(800, 320, "3");
+    draw_text(950, 320, "4");
+    draw_set_halign(fa_left);
+    draw_text(275, 370, "Categorie van de opdrachten:");
     draw_line(265, 355, 1010, 355);
+    draw_set_halign(fa_center);
+    draw_text(650, 370, "1");
+    draw_text(800, 370, "1 &amp; 2");
+    draw_text(950, 370, "1 &amp; 2 &amp; 3");
     //verticals
     draw_line(730, 320, 730, 395);
     draw_line(900, 320, 900, 395);
